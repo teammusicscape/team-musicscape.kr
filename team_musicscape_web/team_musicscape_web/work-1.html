@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who am A.I. — Team Musicscape</title>
+    <meta name="description" content="Who am A.I. — Team Musicscape 작품 아카이브">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="work.css">
+</head>
+<body>
+<nav class="nav bg" id="nav">
+    <a href="index.html" class="nav-brand">Team Musicscape</a>
+    <div class="nav-right">
+        <div class="lang-btns">
+            <button class="lang-btn active" data-lang="ko">KO</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span></button>
+    </div>
+</nav>
+<div class="side-menu" id="sideMenu">
+    <button class="side-close" id="sideClose">✕</button>
+    <ul class="side-links">
+        <li><a href="index.html#hero" class="sl-link">Home</a></li>
+        <li><a href="index.html#philosophy" class="sl-link">Philosophy</a></li>
+        <li><a href="index.html#manifesto" class="sl-link">Manifesto</a></li>
+        <li><a href="index.html#projects" class="sl-link">Projects</a></li>
+        <li><a href="index.html#members" class="sl-link">Members</a></li>
+        <li><a href="index.html#contact" class="sl-link">Contact</a></li>
+    </ul>
+</div>
+<div class="side-backdrop" id="sideBackdrop"></div>
+
+<div class="work-hero">
+    <div class="work-video-wrap">
+        <iframe src="https://www.youtube.com/embed/X9t6DeLxGKs?rel=0&modestbranding=1" title="Who am A.I." frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<main class="work-main">
+    <div class="work-wrap">
+        <aside class="work-meta">
+            <p class="work-eyebrow">Works</p>
+            <h1 class="work-title-main">Who am A.I.</h1>
+            <dl class="work-info">
+                <dt>English</dt><dd>Who am A.I.</dd>
+                <dt>공연</dt><dd>MUSICSCAPE — 그림자의 경계에서</dd>
+                <dt>날짜</dt><dd>2025.11.29 — 11.30</dd>
+                <dt>장소</dt><dd>예술의전당 자유소극장</dd>
+                <dt>장르</dt><dd>입체음향 · 전자음악 · 실내악</dd>
+            </dl>
+            <a href="index.html#projects" class="work-back">← Projects 로 돌아가기</a>
+        </aside>
+        <article class="work-desc">
+            <h2>작품 소개</h2>
+            <p>Who am I? Who am A.I.? 인간과 인공지능이 서로를 비추는 시대, 이 곡은 그 경계에서 태어났다. 입체음향과 전자적 질감이 교차하며 현실과 가상의 경계가 흐려지고, 그 안에서 악기들의 숨결은 인간만이 지닌 불완전함과 따뜻함을 들려준다. 인간과 기술이 서로의 거울이 되어가는 시대의 정체성 혼란을 드러내며, 기술이 인간을 닮아갈수록, 인간다움의 본질은 무엇으로 남는가… 그 물음에 대한 음악적 사유가 이 곡의 중심에 놓여 있다.</p>
+        </article>
+    </div>
+</main>
+
+<footer class="footer"><p>© 2025 Team Musicscape</p></footer>
+<script>
+const ham=document.getElementById('hamburger'),sm=document.getElementById('sideMenu'),sb=document.getElementById('sideBackdrop'),sc=document.getElementById('sideClose');
+function o(){sm.classList.add('open');sb.classList.add('open');document.body.style.overflow='hidden';}
+function c(){sm.classList.remove('open');sb.classList.remove('open');document.body.style.overflow='';}
+ham.addEventListener('click',o);sc.addEventListener('click',c);sb.addEventListener('click',c);
+document.querySelectorAll('.sl-link').forEach(l=>l.addEventListener('click',c));
+</script>
+</body>
+</html>
+
+

@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>산 — Mountain — Team Musicscape</title>
+    <meta name="description" content="산 — Mountain — Team Musicscape">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="work.css">
+</head>
+<body>
+<nav class="nav bg" id="nav">
+    <a href="index-en.html" class="nav-brand">Team Musicscape</a>
+    <div class="nav-right">
+        <div class="lang-btns">
+            <button class="lang-btn" data-lang="ko">KO</button>
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span></button>
+    </div>
+</nav>
+<div class="side-menu" id="sideMenu">
+    <button class="side-close" id="sideClose">✕</button>
+    <ul class="side-links">
+        <li><a href="index-en.html#hero" class="sl-link">Home</a></li>
+        <li><a href="index-en.html#philosophy" class="sl-link">Philosophy</a></li>
+        <li><a href="index-en.html#manifesto" class="sl-link">Manifesto</a></li>
+        <li><a href="index-en.html#projects" class="sl-link">Projects</a></li>
+        <li><a href="index-en.html#members" class="sl-link">Members</a></li>
+        <li><a href="index-en.html#contact" class="sl-link">Contact</a></li>
+    </ul>
+</div>
+<div class="side-backdrop" id="sideBackdrop"></div>
+
+<div class="work-hero">
+    <div class="work-video-wrap">
+        <iframe src="https://www.youtube.com/embed/Nwgj58lfs-I?rel=0&modestbranding=1"
+            title="산 — Mountain" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    </div>
+</div>
+
+<main class="work-main">
+    <div class="work-wrap">
+        <aside class="work-meta">
+            <p class="work-eyebrow">Works</p>
+            <h1 class="work-title-main">산 — Mountain</h1>
+            <dl class="work-info">
+                <dt>English</dt><dd>Mountain</dd>
+                <dt>Performance</dt><dd>From here to everywhere...</dd>
+                <dt>Date</dt><dd>2025.10.25</dd>
+                <dt>Venue</dt><dd>Incheon Jung-gu Cultural Center</dd>
+                <dt>Genre</dt><dd>기타 Solo · Musicscape 연작</dd>
+            </dl>
+            <a href="index-en.html#projects" class="work-back">← Back to Projects</a>
+        </aside>
+        <article class="work-desc">
+            <h2>About the Work</h2>
+            <p>The path up a mountain is shaped by alternating ascents and descents, calm and difficulty. Passing through deep shade before encountering light again, one begins to see life reflected within the landscape. Mountain translates this journey into music, with the guitar tracing slopes and summits, symbolizing perseverance, achievement, and hope at the end of hardship.</p>
+        </article>
+    </div>
+</main>
+<footer class="footer"><p>© 2025 Team Musicscape</p></footer>
+<script>
+const ham=document.getElementById('hamburger'),sm=document.getElementById('sideMenu'),sb=document.getElementById('sideBackdrop'),sc=document.getElementById('sideClose');
+function o(){sm.classList.add('open');sb.classList.add('open');document.body.style.overflow='hidden';}
+function c(){sm.classList.remove('open');sb.classList.remove('open');document.body.style.overflow='';}
+ham.addEventListener('click',o);sc.addEventListener('click',c);sb.addEventListener('click',c);
+document.querySelectorAll('.sl-link').forEach(l=>l.addEventListener('click',c));
+</script>
+</body>
+</html>
+
+
+
+
+

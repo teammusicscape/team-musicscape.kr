@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>서 — Calligraphy — Team Musicscape</title>
+    <meta name="description" content="서 — Calligraphy — Team Musicscape 작품 아카이브">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="work.css">
+</head>
+<body>
+<nav class="nav bg" id="nav">
+    <a href="index.html" class="nav-brand">Team Musicscape</a>
+    <div class="nav-right">
+        <div class="lang-btns">
+            <button class="lang-btn active" data-lang="ko">KO</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span></button>
+    </div>
+</nav>
+<div class="side-menu" id="sideMenu">
+    <button class="side-close" id="sideClose">✕</button>
+    <ul class="side-links">
+        <li><a href="index.html#hero" class="sl-link">Home</a></li>
+        <li><a href="index.html#philosophy" class="sl-link">Philosophy</a></li>
+        <li><a href="index.html#manifesto" class="sl-link">Manifesto</a></li>
+        <li><a href="index.html#projects" class="sl-link">Projects</a></li>
+        <li><a href="index.html#members" class="sl-link">Members</a></li>
+        <li><a href="index.html#contact" class="sl-link">Contact</a></li>
+    </ul>
+</div>
+<div class="side-backdrop" id="sideBackdrop"></div>
+
+<div class="work-hero">
+    <div class="work-video-wrap">
+        <iframe src="https://www.youtube.com/embed/2wGK1N1Cz60?rel=0&modestbranding=1" title="서 — Calligraphy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<main class="work-main">
+    <div class="work-wrap">
+        <aside class="work-meta">
+            <p class="work-eyebrow">Works</p>
+            <h1 class="work-title-main">서 — Calligraphy</h1>
+            <dl class="work-info">
+                <dt>English</dt><dd>Calligraphy</dd>
+                <dt>공연</dt><dd>From here to everywhere...</dd>
+                <dt>날짜</dt><dd>2025.10.25</dd>
+                <dt>장소</dt><dd>인천 중구문화회관 공연장</dd>
+                <dt>장르</dt><dd>기타 독주 · 전통 헌정</dd>
+            </dl>
+            <a href="index.html#projects" class="work-back">← Projects 로 돌아가기</a>
+        </aside>
+        <article class="work-desc">
+            <h2>작품 소개</h2>
+            <p>이 곡은 서예의 호흡과 필법, 그리고 그 안에 담긴 정신에서 출발한다. 각 섹션은 붓의 획이 이어지듯 변화하면서도 끊김 없이 이어지며, 다양한 주법은 먹의 농담과 필선의 기세를 음악으로 번역한다. 이 곡은 작곡가 최인이 예술의전당 서예박물관 기획전 최치원전에 참여하며 탄생했다. 서예라는 우수한 우리 문화에 대한 헌정이자, 동시에 최치원의 삶과 정신을 담아낸 작품이다. 곡 속에는 우리 전통문화의 깊은 정신성과 그것을 알리고자 하는 작곡가의 열망이 깃들어 있다.</p>
+        </article>
+    </div>
+</main>
+
+<footer class="footer"><p>© 2025 Team Musicscape</p></footer>
+<script>
+const ham=document.getElementById('hamburger'),sm=document.getElementById('sideMenu'),sb=document.getElementById('sideBackdrop'),sc=document.getElementById('sideClose');
+function o(){sm.classList.add('open');sb.classList.add('open');document.body.style.overflow='hidden';}
+function c(){sm.classList.remove('open');sb.classList.remove('open');document.body.style.overflow='';}
+ham.addEventListener('click',o);sc.addEventListener('click',c);sb.addEventListener('click',c);
+document.querySelectorAll('.sl-link').forEach(l=>l.addEventListener('click',c));
+</script>
+</body>
+</html>
+
+

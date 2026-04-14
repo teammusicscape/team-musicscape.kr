@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prayer — Team Musicscape</title>
+    <meta name="description" content="Prayer — Team Musicscape 작품 아카이브">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="work.css">
+</head>
+<body>
+<nav class="nav bg" id="nav">
+    <a href="index.html" class="nav-brand">Team Musicscape</a>
+    <div class="nav-right">
+        <div class="lang-btns">
+            <button class="lang-btn active" data-lang="ko">KO</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span></button>
+    </div>
+</nav>
+<div class="side-menu" id="sideMenu">
+    <button class="side-close" id="sideClose">✕</button>
+    <ul class="side-links">
+        <li><a href="index.html#hero" class="sl-link">Home</a></li>
+        <li><a href="index.html#philosophy" class="sl-link">Philosophy</a></li>
+        <li><a href="index.html#manifesto" class="sl-link">Manifesto</a></li>
+        <li><a href="index.html#projects" class="sl-link">Projects</a></li>
+        <li><a href="index.html#members" class="sl-link">Members</a></li>
+        <li><a href="index.html#contact" class="sl-link">Contact</a></li>
+    </ul>
+</div>
+<div class="side-backdrop" id="sideBackdrop"></div>
+
+<div class="work-hero">
+    <div class="work-video-wrap">
+        <iframe src="https://www.youtube.com/embed/TlJMMEXeZmM?rel=0&modestbranding=1" title="Prayer" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<main class="work-main">
+    <div class="work-wrap">
+        <aside class="work-meta">
+            <p class="work-eyebrow">Works</p>
+            <h1 class="work-title-main">Prayer</h1>
+            <dl class="work-info">
+                <dt>English</dt><dd>Prayer</dd>
+                <dt>공연</dt><dd>From here to everywhere...</dd>
+                <dt>날짜</dt><dd>2025.10.25</dd>
+                <dt>장소</dt><dd>인천 중구문화회관 공연장</dd>
+                <dt>장르</dt><dd>실내악 · 미디어</dd>
+            </dl>
+            <a href="index.html#projects" class="work-back">← Projects 로 돌아가기</a>
+        </aside>
+        <article class="work-desc">
+            <h2>작품 소개</h2>
+            <p>전쟁과 갈등, 부패와 혼란으로 가득한 현실 속에서 평범한 사람들은 늘 불안 속에 살아간다. 이 곡은 그 혼란 속에서 살아가는 모두를 위한 기도다. 격렬한 외침 보다 고요한 음악 속에 간절한 바람을 담아, 음악은 곧 기도가 된다. 소시민들의 작은 울림과 기도가 모여 세상 속에서 희망의 불씨가 되기를 바라는 마음을 담은 작품이다.</p>
+        </article>
+    </div>
+</main>
+
+<footer class="footer"><p>© 2025 Team Musicscape</p></footer>
+<script>
+const ham=document.getElementById('hamburger'),sm=document.getElementById('sideMenu'),sb=document.getElementById('sideBackdrop'),sc=document.getElementById('sideClose');
+function o(){sm.classList.add('open');sb.classList.add('open');document.body.style.overflow='hidden';}
+function c(){sm.classList.remove('open');sb.classList.remove('open');document.body.style.overflow='';}
+ham.addEventListener('click',o);sc.addEventListener('click',c);sb.addEventListener('click',c);
+document.querySelectorAll('.sl-link').forEach(l=>l.addEventListener('click',c));
+</script>
+</body>
+</html>
+
+
