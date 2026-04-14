@@ -29,14 +29,24 @@ sideClose.addEventListener('click', closeMenu);
 sideBackdrop.addEventListener('click', closeMenu);
 document.querySelectorAll('.sl-link').forEach(l => l.addEventListener('click', closeMenu));
 
-// ── 3. 언어 버튼 (활성 표시) ────────────────────
+// ── 3. 언어 버튼 (활성 표시 및 리다이렉트) ────────────────────
 document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.addEventListener('click', () => {
-        document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        // 나중에 번역 페이지로 이동하는 로직 추가 예정
-        // const lang = btn.dataset.lang;
-        // window.location.href = `/${lang}/index.html`;
+        const lang = btn.dataset.lang;
+        let currentFile = window.location.pathname.split('/').pop() || 'index.html';
+        // HTML을 다루지 않는 루트 도메인 (/) 일 경우 index.html
+        if (!currentFile.endsWith('.html')) currentFile = 'index.html';
+        
+        // "work-1-en.html" 같은 이름에서 "-en" 꼬리표 떼내어 기본형(ko) 만들기
+        let baseFile = currentFile.replace('-en.html', '.html').replace('-zh.html', '.html');
+        
+        if (lang === 'en') {
+            window.location.href = baseFile.replace('.html', '-en.html');
+        } else if (lang === 'ko') {
+            window.location.href = baseFile;
+        } else if (lang === 'zh') {
+            // window.location.href = baseFile.replace('.html', '-zh.html');
+        }
     });
 });
 

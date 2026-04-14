@@ -1,0 +1,442 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Musicscape</title>
+    <meta name="description" content="Musicscape — Where music becomes a spatial experience">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+<body>
+
+    <!-- ============ NAV ============ -->
+    <nav class="nav" id="nav">
+        <a href="#hero" class="nav-brand">Team Musicscape</a>
+        <div class="nav-right">
+            <!-- Language Buttons -->
+            <div class="lang-btns">
+                <button class="lang-btn" data-lang="ko">KO</button>
+                <button class="lang-btn active" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">ZH</button>
+            </div>
+            <!-- Hamburger -->
+            <button class="nav-hamburger" id="hamburger" aria-label="Menu">
+                <span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <button class="side-close" id="sideClose">✕</button>
+        <ul class="side-links">
+            <li><a href="#hero" class="sl-link">Home</a></li>
+            <li><a href="#philosophy" class="sl-link">Philosophy</a></li>
+            <li><a href="#manifesto" class="sl-link">Manifesto</a></li>
+            <li><a href="#projects" class="sl-link">Projects</a></li>
+            <li><a href="#members" class="sl-link">Members</a></li>
+            <li><a href="#contact" class="sl-link">Contact</a></li>
+        </ul>
+    </div>
+    <!-- Side Backdrop -->
+    <div class="side-backdrop" id="sideBackdrop"></div>
+
+    <!-- ============ HERO SLIDESHOW ============ -->
+    <section class="hero" id="hero">
+        <div class="slides">
+
+            <!-- Video Slides -->
+            <div class="slide slide-video active" data-link="work-3-en.html">
+                <div id="ytframe-0" class="hero-video-frame" data-ytid="FQ-jjLOwpcA"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-1.jpg')"></div>
+            </div>
+            <div class="slide slide-video" data-link="work-11-en.html">
+                <div id="ytframe-1" class="hero-video-frame" data-ytid="bElhsRoAVGs"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-2.jpg')"></div>
+            </div>
+            <div class="slide slide-video" data-link="work-1-en.html">
+                <div id="ytframe-2" class="hero-video-frame" data-ytid="GhqmSrpRvmc"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-3.jpg')"></div>
+            </div>
+            <div class="slide slide-video" data-link="work-4-en.html">
+                <div id="ytframe-3" class="hero-video-frame" data-ytid="S9PKO89mGzs"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-4.jpg')"></div>
+            </div>
+            <div class="slide slide-video" data-link="work-2-en.html">
+                <div id="ytframe-4" class="hero-video-frame" data-ytid="h8iYjsf8pec"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-5.jpg')"></div>
+            </div>
+            <div class="slide slide-video" data-link="work-6-en.html">
+                <div id="ytframe-5" class="hero-video-frame" data-ytid="-5izw0VezU0"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-6.jpg')"></div>
+            </div>
+
+            <!-- Image Slides -->
+            <div class="slide" data-link="work-5-en.html"  style="background-image:url('images/hero-11.jpg')"></div>
+            <div class="slide" data-link="work-7-en.html"  style="background-image:url('images/hero-7.jpg')"></div>
+            <div class="slide" data-link="work-8-en.html"  style="background-image:url('images/hero-8.jpg')"></div>
+            <div class="slide" data-link="work-9-en.html"  style="background-image:url('images/hero-9.jpg')"></div>
+            <div class="slide" data-link="work-10-en.html" style="background-image:url('images/hero-10.jpg')"></div>
+
+        </div>
+
+        <!-- View Work Btn -->
+        <button class="hero-click-hint" id="viewWorkBtn">View Work &rsaquo;</button>
+        <!-- Sound Toggle -->
+        <button class="hero-sound-btn" id="soundBtn" aria-label="Toggle Sound">🔇</button>
+        <div class="hero-overlay"></div>
+
+        <button class="hero-arrow left"  id="prevBtn" aria-label="Previous">&lt;</button>
+        <button class="hero-arrow right" id="nextBtn" aria-label="Next">&gt;</button>
+
+        <div class="hero-dots" id="heroDots">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+            <button class="dot" data-index="2"></button>
+            <button class="dot" data-index="3"></button>
+            <button class="dot" data-index="4"></button>
+            <button class="dot" data-index="5"></button>
+            <button class="dot" data-index="6"></button>
+            <button class="dot" data-index="7"></button>
+            <button class="dot" data-index="8"></button>
+            <button class="dot" data-index="9"></button>
+            <button class="dot" data-index="10"></button>
+        </div>
+    </section>
+
+    <!-- ============ PHILOSOPHY ============ -->
+    <section class="section philosophy" id="philosophy">
+        <div class="wrap">
+            <p class="section-eyebrow reveal">Philosophy</p>
+            <blockquote class="philosophy-quote reveal">
+                "The most beautiful music resides within your mind."
+            </blockquote>
+            <div class="philosophy-body reveal">
+                <p>For Musicscape, music is a living process that unfolds through the shared experience of performers, space, and audience.</p>
+                <p>Every piece begins with a single question.<br>
+                    We explore this question through the diverse languages of music, space, imagery, and technology,<br>
+                    creating a platform for audiences to confront their own emotions and memories.</p>
+                <p>A performance is a process of discovering the music that already exists within.<br>
+                    Musicscape is the practice of crafting those moments of discovery.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MANIFESTO ============ -->
+    <section class="section manifesto" id="manifesto">
+        <div class="wrap">
+            <p class="section-eyebrow reveal">Manifesto</p>
+            <div class="manifesto-grid">
+
+                <div class="m-card reveal" style="background-image:url('images/card1.jpg')">
+                    <div class="m-card-inner">
+                        <div class="m-card-front">
+                            <span class="m-num">01</span>
+                            <h3 class="m-title">Meaning<br>Before Form</h3>
+                        </div>
+                        <div class="m-card-back">
+                            <span class="m-num">01</span>
+                            <h3 class="m-title">Meaning Before Form</h3>
+                            <p>The starting point of Musicscape is not form or technology, but the questions and messages we wish to convey. Every piece begins with a philosophical inquiry. Form is the language to communicate the message, and technology is the tool to expand it.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-card reveal" style="background-image:url('images/card2.jpg')">
+                    <div class="m-card-inner">
+                        <div class="m-card-front">
+                            <span class="m-num">02</span>
+                            <h3 class="m-title">Expanding<br>the Listening</h3>
+                        </div>
+                        <div class="m-card-back">
+                            <span class="m-num">02</span>
+                            <h3 class="m-title">Expanding the Listening Experience</h3>
+                            <p>We expand music from something to be passively heard into a space to be actively experienced. Through spatial audio, media art, stage direction, and audience participation, music unfolds as a sensory landscape.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-card reveal" style="background-image:url('images/card3.jpg')">
+                    <div class="m-card-inner">
+                        <div class="m-card-front">
+                            <span class="m-num">03</span>
+                            <h3 class="m-title">Technology<br>as a Tool</h3>
+                        </div>
+                        <div class="m-card-back">
+                            <span class="m-num">03</span>
+                            <h3 class="m-title">Technology as a Musical Tool</h3>
+                            <p>Technology is not the goal, but a tool to convey meaning and emotion more deeply. Every choice in spatial audio, interactive systems, and media technology stems from a single question: Does this technology deepen the message of the work?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-card reveal" style="background-image:url('images/card4.jpg')">
+                    <div class="m-card-inner">
+                        <div class="m-card-front">
+                            <span class="m-num">04</span>
+                            <h3 class="m-title">Collaboration<br>Across Disciplines</h3>
+                        </div>
+                        <div class="m-card-back">
+                            <span class="m-num">04</span>
+                            <h3 class="m-title">Collaboration Across Disciplines</h3>
+                            <p>It is a collaborative creative process guided by creators across various fields—musicians, media artists, technical designers, and directors. The convergence of diverse expertise creates a new artistic language.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-card reveal" style="background-image:url('images/card5.jpg')">
+                    <div class="m-card-inner">
+                        <div class="m-card-front">
+                            <span class="m-num">05</span>
+                            <h3 class="m-title">Music as a<br>Shared Space</h3>
+                        </div>
+                        <div class="m-card-back">
+                            <span class="m-num">05</span>
+                            <h3 class="m-title">Music as a Shared Space</h3>
+                            <p>We create spaces where people share experiences and connect through music. A performance is a collective moment shaped by the audience, space, and sound, and in that moment, music connects individuals and communities.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section projects" id="projects">
+        <div class="wrap">
+            <p class="section-eyebrow reveal">Projects</p>
+            <h2 class="section-title reveal">Archive</h2>
+            <div class="projects-grid">
+
+                <a href="programme-en.html" target="_blank" class="project-card reveal">
+                    <div class="project-img">
+                        <div class="project-img-inner" style="background-image:url('images/poster-3.jpeg')"></div>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-year">2026</span>
+                        <h3 class="project-name">MUSICSCAPE - RESONANT LANDSCAPE</h3>
+                        <p class="project-desc">2026.4.17. Kamppi Chapel, Helsinki, Finland<br>2026.4.25. Lukaali, Fiskars, Finland</p>
+                        <span class="project-cta">View Programme →</span>
+                    </div>
+                </a>
+
+                <a href="https://2025sac.musicscape.fischerinsel-art.com/archive/" target="_blank" class="project-card reveal">
+                    <div class="project-img">
+                        <div class="project-img-inner" style="background-image:url('images/poster-1.jpg')"></div>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-year">2025</span>
+                        <h3 class="project-name">MUSICSCAPE - At the Borders of Shadows</h3>
+                        <p class="project-desc">2025.11.29~2025.11.30. Seoul Arts Center Jayu Theater</p>
+                        <span class="project-cta">View Archive →</span>
+                    </div>
+                </a>
+
+                <a href="https://2025incheon.fischerinsel-art.com/archive/" target="_blank" class="project-card reveal">
+                    <div class="project-img">
+                        <div class="project-img-inner" style="background-image:url('images/poster-2.jpg')"></div>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-year">2025</span>
+                        <h3 class="project-name">From here to everywhere...</h3>
+                        <p class="project-desc">2025.10.25. Incheon Jung-gu Cultural Center</p>
+                        <span class="project-cta">View Archive →</span>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- ── Works Mosaic ── -->
+            <div class="works-label reveal">
+                <p class="section-eyebrow" style="margin-top:5rem;">Works</p>
+                <p style="color:var(--muted);font-size:0.88rem;margin-top:0.5rem;">Click on individual works from each performance to explore.</p>
+            </div>
+            <div class="works-mosaic reveal">
+
+                <!-- Row 1 -->
+                <a href="work-1-en.html" class="work-tile large">
+                    <img src="images/work-1.jpg" alt="Who am A.I." class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">Who am A.I.</span>
+                </a>
+                <a href="work-2-en.html" class="work-tile small">
+                    <img src="images/work-2.jpg" alt="숲 — Forest" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">숲 — Forest</span>
+                </a>
+                <a href="work-7-en.html" class="work-tile large">
+                    <img src="images/work-7.webp" alt="석,풍,수 — Stone, Wind, Water" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">석,풍,수 — Stone, Wind, Water</span>
+                </a>
+                <!-- Row 2 -->
+                <a href="work-4-en.html" class="work-tile medium">
+                    <img src="images/work-4.jpg" alt="가던길 — the Way" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">가던길 — the Way</span>
+                </a>
+                <a href="work-5-en.html" class="work-tile medium">
+                    <img src="images/work-5.jpg" alt="Prayer" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">Prayer</span>
+                </a>
+                <a href="work-6-en.html" class="work-tile small">
+                    <img src="images/work-6.jpg" alt="서 — Calligraphy" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">서 — Calligraphy</span>
+                </a>
+                <a href="work-3-en.html" class="work-tile small">
+                    <img src="images/work-3.jpg" alt="At the Borders of Shadows" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">At the Borders of Shadows</span>
+                </a>
+                <!-- Row 3 -->
+                <a href="work-8-en.html" class="work-tile medium">
+                    <img src="images/work-8.webp" alt="섬 — Island" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">섬 — Island</span>
+                </a>
+                <a href="work-9-en.html" class="work-tile small">
+                    <img src="images/work-9.jpg" alt="바다 — Sea" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">바다 — Sea</span>
+                </a>
+                <a href="work-10-en.html" class="work-tile large">
+                    <img src="images/work-10.webp" alt="공간 — Space" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">공간 — Space</span>
+                </a>
+                <!-- Row 4 -->
+                <a href="work-11-en.html" class="work-tile medium">
+                    <img src="images/work-11.jpg" alt="Dawn" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">Dawn</span>
+                </a>
+                <a href="work-12-en.html" class="work-tile small">
+                    <img src="images/work-12.webp" alt="산 — Mountain" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">산 — Mountain</span>
+                </a>
+                <a href="work-13-en.html" class="work-tile small">
+                    <img src="images/work-13.webp" alt="Bluehour" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">Bluehour</span>
+                </a>
+                <a href="work-14-en.html" class="work-tile large">
+                    <img src="images/work-14.webp" alt="At Gampo Sea" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">At Gampo Sea</span>
+                </a>
+                <a href="work-15-en.html" class="work-tile medium">
+                    <img src="images/work-15.webp" alt="From Here to Everywhere..." class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">From Here to Everywhere...</span>
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============ MEMBERS ============ -->
+    <section class="section members" id="members">
+        <div class="wrap">
+            <p class="section-eyebrow reveal">Members</p>
+            <h2 class="section-title reveal">Creative Team</h2>
+            <div class="members-grid">
+
+                <div class="member reveal">
+                    <div class="member-img" style="background-image:url('images/member-choi.jpg')"></div>
+                    <h3 class="member-name">In Choi</h3>
+                    <p class="member-role">Director · Music Director · Composer · Guitar</p>
+                </div>
+
+                <div class="member reveal">
+                    <div class="member-img member-img--no-photo"></div>
+                    <h3 class="member-name">Suyong Lee</h3>
+                    <p class="member-role">Sound Design · Sound Director</p>
+                </div>
+
+                <div class="member reveal">
+                    <div class="member-img member-img--no-photo"></div>
+                    <h3 class="member-name">Puri Lee</h3>
+                    <p class="member-role">Visual Design · Visual Director</p>
+                </div>
+
+                <div class="member reveal">
+                    <div class="member-img member-img--no-photo"></div>
+                    <h3 class="member-name">Yewon Choi</h3>
+                    <p class="member-role">Lighting Design · Lighting Director</p>
+                </div>
+
+                <div class="member reveal">
+                    <div class="member-img" style="background-image:url('images/member-yoo.jpg')"></div>
+                    <h3 class="member-name">Hyunsoo Yoo</h3>
+                    <p class="member-role">Piri (Korean Bamboo Oboe)</p>
+                </div>
+
+                <div class="member reveal">
+                    <div class="member-img" style="background-image:url('images/member-park.jpg')"></div>
+                    <h3 class="member-name">Jaerin Park</h3>
+                    <p class="member-role">Violin</p>
+                </div>
+
+                <div class="member reveal">
+                    <div class="member-img" style="background-image:url('images/member-park1.jpg')"></div>
+                    <h3 class="member-name">Kiheung Park</h3>
+                    <p class="member-role">Cello</p>
+                </div>
+
+                <div class="member reveal">
+                    <div class="member-img" style="background-image:url('images/member-eki.jpg')"></div>
+                    <h3 class="member-name">Paul-Erik Söderqvist</h3>
+                    <p class="member-role">Composer · Guitar</p>
+                </div>
+
+                <div class="member reveal">
+                    <div class="member-img member-img--no-photo"></div>
+                    <h3 class="member-name">Miri Lee</h3>
+                    <p class="member-role">Planning · Producer</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+        <div class="wrap">
+            <p class="section-eyebrow reveal">Contact</p>
+            <h2 class="section-title reveal">Let's Create<br>Together</h2>
+            <p class="contact-desc reveal">Feel free to reach out for performance planning, collaborations, or just to chat.</p>
+            <div class="contact-links reveal">
+                <a href="mailto:teammusicscape@gmail.com" class="contact-link">
+                    <span class="contact-icon">✉</span>
+                    teammusicscape@gmail.com
+                </a>
+                <a href="https://www.instagram.com/Team_Musicscape" target="_blank" class="contact-link">
+                    <span class="contact-icon">◻</span>
+                    Instagram @Team_Musicscape
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Team Musicscape</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+
