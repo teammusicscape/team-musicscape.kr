@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>섬 — Island — Team Musicscape</title>
+    <meta name="description" content="섬 — Island — Team Musicscape 작품 아카이브">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="work.css">
+</head>
+<body>
+<nav class="nav bg" id="nav">
+    <a href="index.html" class="nav-brand">Team Musicscape</a>
+    <div class="nav-right">
+        <div class="lang-btns">
+            <button class="lang-btn active" data-lang="ko">KO</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span></button>
+    </div>
+</nav>
+<div class="side-menu" id="sideMenu">
+    <button class="side-close" id="sideClose">✕</button>
+    <ul class="side-links">
+        <li><a href="index.html#hero" class="sl-link">Home</a></li>
+        <li><a href="index.html#philosophy" class="sl-link">Philosophy</a></li>
+        <li><a href="index.html#manifesto" class="sl-link">Manifesto</a></li>
+        <li><a href="index.html#projects" class="sl-link">Projects</a></li>
+        <li><a href="index.html#members" class="sl-link">Members</a></li>
+        <li><a href="index.html#contact" class="sl-link">Contact</a></li>
+    </ul>
+</div>
+<div class="side-backdrop" id="sideBackdrop"></div>
+
+<div class="work-hero">
+    <div class="work-video-wrap">
+        <iframe src="https://www.youtube.com/embed/qS3f9Fu8bB4?rel=0&modestbranding=1" title="섬 — Island" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<main class="work-main">
+    <div class="work-wrap">
+        <aside class="work-meta">
+            <p class="work-eyebrow">Works</p>
+            <h1 class="work-title-main">섬 — Island</h1>
+            <dl class="work-info">
+                <dt>English</dt><dd>Island</dd>
+                <dt>공연</dt><dd>From here to everywhere...</dd>
+                <dt>날짜</dt><dd>2025.10.25</dd>
+                <dt>장소</dt><dd>인천 중구문화회관 공연장</dd>
+                <dt>장르</dt><dd>실내악 · 서정</dd>
+            </dl>
+            <a href="index.html#projects" class="work-back">← Projects 로 돌아가기</a>
+        </aside>
+        <article class="work-desc">
+            <h2>작품 소개</h2>
+            <p>서해의 섬들을 여행하며 얻은 인상에서 출발한 곡이다. 멀리서 바라본 외딴섬은 고독하고 외로워 보였으나, 막상 다가가면 길은 험난해도 곳곳마다 아름다운 비경과 생기 넘치는 식생들로 가득 차 있었다. 〈섬〉은 고독과 편견, 낯섦에서 새로운 이해와 아름다움을 발견해 가는 과정을 음악으로 담아낸 작품이다. 특히 이 곡이 쓰여진 것은 코로나 시기였다. 모두가 섬처럼 고립되고 외로웠던 그 시간, 서로에게 다가가기가 더욱 어려웠던 경험은 곡의 정서와 겹쳐진다.</p>
+        </article>
+    </div>
+</main>
+
+<footer class="footer"><p>© 2025 Team Musicscape</p></footer>
+<script>
+const ham=document.getElementById('hamburger'),sm=document.getElementById('sideMenu'),sb=document.getElementById('sideBackdrop'),sc=document.getElementById('sideClose');
+function o(){sm.classList.add('open');sb.classList.add('open');document.body.style.overflow='hidden';}
+function c(){sm.classList.remove('open');sb.classList.remove('open');document.body.style.overflow='';}
+ham.addEventListener('click',o);sc.addEventListener('click',c);sb.addEventListener('click',c);
+document.querySelectorAll('.sl-link').forEach(l=>l.addEventListener('click',c));
+</script>
+</body>
+</html>
+
+

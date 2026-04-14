@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>석, 풍, 수 — Stone, Wind, Water — Team Musicscape</title>
+    <meta name="description" content="석, 풍, 수 — Stone, Wind, Water — Team Musicscape 작품 아카이브">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="work.css">
+</head>
+<body>
+<nav class="nav bg" id="nav">
+    <a href="index.html" class="nav-brand">Team Musicscape</a>
+    <div class="nav-right">
+        <div class="lang-btns">
+            <button class="lang-btn active" data-lang="ko">KO</button>
+            <button class="lang-btn" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="zh">ZH</button>
+        </div>
+        <button class="nav-hamburger" id="hamburger" aria-label="메뉴"><span></span><span></span></button>
+    </div>
+</nav>
+<div class="side-menu" id="sideMenu">
+    <button class="side-close" id="sideClose">✕</button>
+    <ul class="side-links">
+        <li><a href="index.html#hero" class="sl-link">Home</a></li>
+        <li><a href="index.html#philosophy" class="sl-link">Philosophy</a></li>
+        <li><a href="index.html#manifesto" class="sl-link">Manifesto</a></li>
+        <li><a href="index.html#projects" class="sl-link">Projects</a></li>
+        <li><a href="index.html#members" class="sl-link">Members</a></li>
+        <li><a href="index.html#contact" class="sl-link">Contact</a></li>
+    </ul>
+</div>
+<div class="side-backdrop" id="sideBackdrop"></div>
+
+<div class="work-hero">
+    <div class="work-video-wrap">
+        <iframe src="https://www.youtube.com/embed/SBz08-iJxP8?rel=0&modestbranding=1" title="석, 풍, 수 — Stone, Wind, Water" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>
+
+<main class="work-main">
+    <div class="work-wrap">
+        <aside class="work-meta">
+            <p class="work-eyebrow">Works</p>
+            <h1 class="work-title-main">석, 풍, 수 — Stone, Wind, Water</h1>
+            <dl class="work-info">
+                <dt>English</dt><dd>Stone, Wind, Water</dd>
+                <dt>공연</dt><dd>MUSICSCAPE — 그림자의 경계에서</dd>
+                <dt>날짜</dt><dd>2025.11.29 — 11.30</dd>
+                <dt>장소</dt><dd>예술의전당 자유소극장</dd>
+                <dt>장르</dt><dd>기타 독주 · 공간 감각</dd>
+            </dl>
+            <a href="index.html#projects" class="work-back">← Projects 로 돌아가기</a>
+        </aside>
+        <article class="work-desc">
+            <h2>작품 소개</h2>
+            <p>건축가 이타미 준(유동룡)의 제주 건축 작품 〈석풍수〉에서 받은 인상으로 작곡된 곡이다. 하늘과 땅, 인간을 잇는 '천지인(天地人)'의 사상과 제주의 바람·돌·물의 요소가 건축에 스며든 장면에서 깊은 감명을 받았다. 기타의 울림은 바람과 돌, 물의 감각을 담아내며, 자연과 인간, 그리고 사람을 귀하게 여기는 건축가와 음악가의 따뜻한 마음이 만나 하나의 서정적 풍경으로 그려진다. 제주의 풍경과 건축, 그리고 인간의 정신이 교차하는 순간을 경험하게 한다.</p>
+        </article>
+    </div>
+</main>
+
+<footer class="footer"><p>© 2025 Team Musicscape</p></footer>
+<script>
+const ham=document.getElementById('hamburger'),sm=document.getElementById('sideMenu'),sb=document.getElementById('sideBackdrop'),sc=document.getElementById('sideClose');
+function o(){sm.classList.add('open');sb.classList.add('open');document.body.style.overflow='hidden';}
+function c(){sm.classList.remove('open');sb.classList.remove('open');document.body.style.overflow='';}
+ham.addEventListener('click',o);sc.addEventListener('click',c);sb.addEventListener('click',c);
+document.querySelectorAll('.sl-link').forEach(l=>l.addEventListener('click',c));
+</script>
+</body>
+</html>
+
+

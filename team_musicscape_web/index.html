@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Musicscape</title>
+    <meta name="description" content="뮤직스케이프 — 음악이 공간이 되는 경험">
+    <!-- Pretendard (현대차 스타일 한글) + Space Grotesk (Mercerlab 스타일 영문) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <link rel="stylesheet" href="style.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+</head>
+
+<body>
+
+    <!-- ============ NAV ============ -->
+    <nav class="nav" id="nav">
+        <a href="#hero" class="nav-brand">Team Musicscape</a>
+        <div class="nav-right">
+            <!-- 언어 전환 버튼 -->
+            <div class="lang-btns">
+                <button class="lang-btn active" data-lang="ko">KO</button>
+                <button class="lang-btn" data-lang="en">EN</button>
+                <button class="lang-btn" data-lang="zh">ZH</button>
+            </div>
+            <!-- 햄버거 -->
+            <button class="nav-hamburger" id="hamburger" aria-label="메뉴">
+                <span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 오른쪽 슬라이드 메뉴 -->
+    <div class="side-menu" id="sideMenu">
+        <button class="side-close" id="sideClose">✕</button>
+        <ul class="side-links">
+            <li><a href="#hero" class="sl-link">Home</a></li>
+            <li><a href="#philosophy" class="sl-link">Philosophy</a></li>
+            <li><a href="#manifesto" class="sl-link">Manifesto</a></li>
+            <li><a href="#projects" class="sl-link">Projects</a></li>
+            <li><a href="#members" class="sl-link">Members</a></li>
+            <li><a href="#contact" class="sl-link">Contact</a></li>
+        </ul>
+    </div>
+    <!-- 메뉴 딵 배경 (클릭하면 닫힌) -->
+    <div class="side-backdrop" id="sideBackdrop"></div>
+
+    <!-- ============ HERO SLIDESHOW ============ -->
+    <section class="hero" id="hero">
+        <div class="slides">
+
+            <!-- ▶ 영상 슬라이드 6개 -->
+            <div class="slide slide-video active" data-link="work-3.html">
+                <div id="ytframe-0" class="hero-video-frame" data-ytid="FQ-jjLOwpcA"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-1.jpg')"></div>
+            </div>
+            <div class="slide slide-video" data-link="work-11.html">
+                <div id="ytframe-1" class="hero-video-frame" data-ytid="bElhsRoAVGs"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-2.jpg')"></div>
+            </div>
+            <div class="slide slide-video" data-link="work-1.html">
+                <div id="ytframe-2" class="hero-video-frame" data-ytid="GhqmSrpRvmc"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-3.jpg')"></div>
+            </div>
+            <div class="slide slide-video" data-link="work-4.html">
+                <div id="ytframe-3" class="hero-video-frame" data-ytid="S9PKO89mGzs"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-4.jpg')"></div>
+            </div>
+            <div class="slide slide-video" data-link="work-2.html">
+                <div id="ytframe-4" class="hero-video-frame" data-ytid="h8iYjsf8pec"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-5.jpg')"></div>
+            </div>
+            <div class="slide slide-video" data-link="work-6.html">
+                <div id="ytframe-5" class="hero-video-frame" data-ytid="-5izw0VezU0"></div>
+                <div class="slide-video-thumb" style="background-image:url('images/hero-6.jpg')"></div>
+            </div>
+
+            <!-- 📷 사진 슬라이드 5개 -->
+            <div class="slide" data-link="work-5.html"  style="background-image:url('images/hero-11.jpg')"></div>
+            <div class="slide" data-link="work-7.html"  style="background-image:url('images/hero-7.jpg')"></div>
+            <div class="slide" data-link="work-8.html"  style="background-image:url('images/hero-8.jpg')"></div>
+            <div class="slide" data-link="work-9.html"  style="background-image:url('images/hero-9.jpg')"></div>
+            <div class="slide" data-link="work-10.html" style="background-image:url('images/hero-10.jpg')"></div>
+
+        </div>
+
+        <!-- View Work 클릭 버튼 -->
+        <button class="hero-click-hint" id="viewWorkBtn">View Work &rsaquo;</button>
+        <!-- 사운드 토글 버튼 -->
+        <button class="hero-sound-btn" id="soundBtn" aria-label="소리 켜기">🔇</button>
+        <div class="hero-overlay"></div>
+
+        <button class="hero-arrow left"  id="prevBtn" aria-label="이전">&lt;</button>
+        <button class="hero-arrow right" id="nextBtn" aria-label="다음">&gt;</button>
+
+        <div class="hero-dots" id="heroDots">
+            <button class="dot active" data-index="0"></button>
+            <button class="dot" data-index="1"></button>
+            <button class="dot" data-index="2"></button>
+            <button class="dot" data-index="3"></button>
+            <button class="dot" data-index="4"></button>
+            <button class="dot" data-index="5"></button>
+            <button class="dot" data-index="6"></button>
+            <button class="dot" data-index="7"></button>
+            <button class="dot" data-index="8"></button>
+            <button class="dot" data-index="9"></button>
+            <button class="dot" data-index="10"></button>
+        </div>
+    </section>
+
+    <!-- ============ PHILOSOPHY ============ -->
+    <section class="section philosophy" id="philosophy">
+        <div class="wrap">
+            <p class="section-eyebrow reveal">Philosophy</p>
+            <blockquote class="philosophy-quote reveal">
+                "가장 아름다운 음악은 당신의 마음속에 있습니다."
+            </blockquote>
+            <div class="philosophy-body reveal">
+                <p>뮤직스케이프에게 음악은 연주자와 공간, 그리고 관객의 경험 속에서 살아나는 하나의 과정입니다.</p>
+                <p>모든 작품은 하나의 질문에서 시작됩니다.<br>
+                    우리는 그 질문을 음악, 공간, 이미지, 기술이라는 다양한 언어를 통해 탐구하며<br>
+                    관객이 자신의 감정과 기억을 마주할 수 있는 경험의 장을 만듭니다.</p>
+                <p>공연은 각자의 마음속에 이미 존재하는 음악을 발견하는 과정입니다.<br>
+                    뮤직스케이프는 그 발견의 순간을 만들어가는 작업입니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ MANIFESTO (5 CARDS) ============ -->
+    <section class="section manifesto" id="manifesto">
+        <div class="wrap">
+            <p class="section-eyebrow reveal">Manifesto</p>
+            <div class="manifesto-grid">
+
+                <div class="m-card reveal" style="background-image:url('images/card1.jpg')">
+                    <div class="m-card-inner">
+                        <div class="m-card-front">
+                            <span class="m-num">01</span>
+                            <h3 class="m-title">Meaning<br>Before Form</h3>
+                        </div>
+                        <div class="m-card-back">
+                            <span class="m-num">01</span>
+                            <h3 class="m-title">Meaning Before Form</h3>
+                            <p>뮤직스케이프의 출발점은 형식이나 기술이 아니라 전하고자 하는 질문과 메시지이다. 모든 작품은 하나의 철학적 질문에서 시작된다. 형식은 메시지를 전달하기 위한
+                                언어이며 기술은 그 언어를 확장하는 도구이다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-card reveal" style="background-image:url('images/card2.jpg')">
+                    <div class="m-card-inner">
+                        <div class="m-card-front">
+                            <span class="m-num">02</span>
+                            <h3 class="m-title">Expanding<br>the Listening</h3>
+                        </div>
+                        <div class="m-card-back">
+                            <span class="m-num">02</span>
+                            <h3 class="m-title">Expanding the Listening Experience</h3>
+                            <p>음악을 단순히 듣는 대상이 아니라 경험하는 공간으로 확장한다. 공간 음향, 미디어 아트, 무대 연출, 관객 참여를 통해 음악이 하나의 감각적
+                                풍경(Soundscape)으로 펼쳐진다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-card reveal" style="background-image:url('images/card3.jpg')">
+                    <div class="m-card-inner">
+                        <div class="m-card-front">
+                            <span class="m-num">03</span>
+                            <h3 class="m-title">Technology<br>as a Tool</h3>
+                        </div>
+                        <div class="m-card-back">
+                            <span class="m-num">03</span>
+                            <h3 class="m-title">Technology as a Musical Tool</h3>
+                            <p>기술은 목적이 아니라 의미와 감정을 더 깊이 전달하기 위한 도구이다. 입체음향, 인터랙티브 시스템, 미디어 기술의 모든 선택은 하나의 질문에서 출발한다: 이
+                                기술이 작품의 메시지를 더 깊게 전달하는가?</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-card reveal" style="background-image:url('images/card4.jpg')">
+                    <div class="m-card-inner">
+                        <div class="m-card-front">
+                            <span class="m-num">04</span>
+                            <h3 class="m-title">Collaboration<br>Across Disciplines</h3>
+                        </div>
+                        <div class="m-card-back">
+                            <span class="m-num">04</span>
+                            <h3 class="m-title">Collaboration Across Disciplines</h3>
+                            <p>음악가, 미디어 아티스트, 기술 디자이너, 연출가 등 다양한 분야의 창작자들이 함께 만드는 협업적 창작 과정이다. 각자의 전문성이 만나 새로운 예술적 언어를
+                                만든다.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="m-card reveal" style="background-image:url('images/card5.jpg')">
+                    <div class="m-card-inner">
+                        <div class="m-card-front">
+                            <span class="m-num">05</span>
+                            <h3 class="m-title">Music as a<br>Shared Space</h3>
+                        </div>
+                        <div class="m-card-back">
+                            <span class="m-num">05</span>
+                            <h3 class="m-title">Music as a Shared Space</h3>
+                            <p>음악을 통해 사람들이 함께 경험하고 연결되는 공간을 만든다. 공연은 관객, 공간, 소리가 함께 만들어가는 공동의 순간이며, 그 순간 속에서 음악은 개인과
+                                공동체를 연결한다.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section projects" id="projects">
+        <div class="wrap">
+            <p class="section-eyebrow reveal">Projects</p>
+            <h2 class="section-title reveal">Archive</h2>
+            <div class="projects-grid">
+
+                <a href="programme.html" target="_blank" class="project-card reveal">
+                    <div class="project-img">
+                        <!-- 포스터 사진: images/poster-3.jpeg -->
+                        <div class="project-img-inner" style="background-image:url('images/poster-3.jpeg')"></div>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-year">2026</span>
+                        <h3 class="project-name">MUSICSCAPE - RESONANT LANDSCAPE</h3>
+                        <p class="project-desc">2026.4.17. Kamppi Chapel, Helsinki, Finland<br>2026.4.25. Lukaali, Fiskars, Finland</p>
+                        <span class="project-cta">View Programme →</span>
+                    </div>
+                </a>
+
+                <a href="https://2025sac.musicscape.fischerinsel-art.com/archive/" target="_blank" class="project-card reveal">
+                    <div class="project-img">
+                        <!-- 포스터 사진: images/poster-1.jpg -->
+                        <div class="project-img-inner" style="background-image:url('images/poster-1.jpg')"></div>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-year">2025</span>
+                        <h3 class="project-name">MUSICSCAPE - 그림자의 경계에서</h3>
+                        <p class="project-desc">2025.11.29~2025.11.30. 예술의전당 자유소극장</p>
+                        <span class="project-cta">View Archive →</span>
+                    </div>
+                </a>
+
+                <a href="https://2025incheon.fischerinsel-art.com/archive/" target="_blank" class="project-card reveal">
+                    <div class="project-img">
+                        <!-- 포스터 사진: images/poster-2.jpg -->
+                        <div class="project-img-inner" style="background-image:url('images/poster-2.jpg')"></div>
+                    </div>
+                    <div class="project-meta">
+                        <span class="project-year">2025</span>
+                        <h3 class="project-name">From here to everywhere...</h3>
+                        <p class="project-desc">2025.10.25. 인천 중구문화회관 공연장</p>
+                        <span class="project-cta">View Archive →</span>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- ── Works 불규칙 그리드 ── -->
+            <div class="works-label reveal">
+                <p class="section-eyebrow" style="margin-top:5rem;">Works</p>
+                <p style="color:var(--muted);font-size:0.88rem;margin-top:0.5rem;">각 공연의 개별 작품을 클릭해서 확인하세요</p>
+            </div>
+            <div class="works-mosaic reveal">
+
+                <!-- Row 1 -->
+                <a href="work-1.html" class="work-tile large">
+                    <img src="images/work-1.jpg" alt="Who am A.I." class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">Who am A.I.</span>
+                </a>
+                <a href="work-2.html" class="work-tile small">
+                    <img src="images/work-2.jpg" alt="숲 — Forest" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">숲 — Forest</span>
+                </a>
+                <!-- 타일 3: 석풍수 (기존 7번 자리의 large) -->
+                <a href="work-7.html" class="work-tile large">
+                    <img src="images/work-7.webp" alt="석,풍,수 — Stone, Wind, Water" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">석,풍,수 — Stone, Wind, Water</span>
+                </a>
+                <!-- Row 2 -->
+                <a href="work-4.html" class="work-tile medium">
+                    <img src="images/work-4.jpg" alt="가던길 — the Way" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">가던길 — the Way</span>
+                </a>
+                <a href="work-5.html" class="work-tile medium">
+                    <img src="images/work-5.jpg" alt="Prayer" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">Prayer</span>
+                </a>
+                <a href="work-6.html" class="work-tile small">
+                    <img src="images/work-6.jpg" alt="서 — Calligraphy" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">서 — Calligraphy</span>
+                </a>
+                <!-- 타일 7: 그림자의 경계에서 (기존 3번 자리의 small) -->
+                <a href="work-3.html" class="work-tile small">
+                    <img src="images/work-3.jpg" alt="그림자의 경계에서" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">그림자의 경계에서</span>
+                </a>
+                <!-- Row 3 -->
+                <a href="work-8.html" class="work-tile medium">
+                    <img src="images/work-8.webp" alt="섬 — Island" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">섬 — Island</span>
+                </a>
+                <a href="work-9.html" class="work-tile small">
+                    <img src="images/work-9.jpg" alt="바다 — Sea" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">바다 — Sea</span>
+                </a>
+                <a href="work-10.html" class="work-tile large">
+                    <img src="images/work-10.webp" alt="공간 — Space" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">공간 — Space</span>
+                </a>
+                <!-- Row 4: 신규 11~15 -->
+                <a href="work-11.html" class="work-tile medium">
+                    <img src="images/work-11.jpg" alt="Dawn" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">Dawn</span>
+                </a>
+                <a href="work-12.html" class="work-tile small">
+                    <img src="images/work-12.webp" alt="산 — Mountain" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">산 — Mountain</span>
+                </a>
+                <a href="work-13.html" class="work-tile small">
+                    <img src="images/work-13.webp" alt="Bluehour" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">Bluehour</span>
+                </a>
+                <a href="work-14.html" class="work-tile large">
+                    <img src="images/work-14.webp" alt="감포 앞바다에서" class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">감포 앞바다에서</span>
+                </a>
+                <a href="work-15.html" class="work-tile medium">
+                    <img src="images/work-15.webp" alt="From Here to Everywhere..." class="work-bg-img">
+                    <div class="work-overlay"></div>
+                    <span class="work-title">From Here to Everywhere...</span>
+                </a>
+
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- ============ MEMBERS ============ -->
+    <section class="section members" id="members">
+        <div class="wrap">
+            <p class="section-eyebrow reveal">Members</p>
+            <h2 class="section-title reveal">Creative Team</h2>
+            <div class="members-grid">
+
+                <!-- 1. 최인 -->
+                <div class="member reveal">
+                    <div class="member-img" style="background-image:url('images/member-choi.jpg')"></div>
+                    <h3 class="member-name">최인</h3>
+                    <p class="member-role">대표 · 음악감독 · 작곡 · 기타</p>
+                </div>
+
+                <!-- 2. 이수용 -->
+                <div class="member reveal">
+                    <div class="member-img member-img--no-photo"></div>
+                    <h3 class="member-name">이수용</h3>
+                    <p class="member-role">음향디자인 · 음향감독</p>
+                </div>
+
+                <!-- 3. 이뿌리 -->
+                <div class="member reveal">
+                    <div class="member-img member-img--no-photo"></div>
+                    <h3 class="member-name">이뿌리</h3>
+                    <p class="member-role">영상디자인 · 영상감독</p>
+                </div>
+
+                <!-- 4. 최예원 -->
+                <div class="member reveal">
+                    <div class="member-img member-img--no-photo"></div>
+                    <h3 class="member-name">최예원</h3>
+                    <p class="member-role">조명디자인 · 조명감독</p>
+                </div>
+
+                <!-- 5. 유현수 -->
+                <div class="member reveal">
+                    <div class="member-img" style="background-image:url('images/member-yoo.jpg')"></div>
+                    <h3 class="member-name">유현수</h3>
+                    <p class="member-role">피리</p>
+                </div>
+
+                <!-- 6. 박재린 -->
+                <div class="member reveal">
+                    <div class="member-img" style="background-image:url('images/member-park.jpg')"></div>
+                    <h3 class="member-name">박재린</h3>
+                    <p class="member-role">바이올린</p>
+                </div>
+
+                <!-- 7. 박기흥 -->
+                <div class="member reveal">
+                    <div class="member-img" style="background-image:url('images/member-park1.jpg')"></div>
+                    <h3 class="member-name">박기흥</h3>
+                    <p class="member-role">첼로</p>
+                </div>
+
+                <!-- 8. Paul-Erik Söderqvist -->
+                <div class="member reveal">
+                    <div class="member-img" style="background-image:url('images/member-eki.jpg')"></div>
+                    <h3 class="member-name">Paul-Erik Söderqvist</h3>
+                    <p class="member-role"> 작곡 · 기타</p>
+                </div>
+
+                <!-- 9. 이미리 -->
+                <div class="member reveal">
+                    <div class="member-img member-img--no-photo"></div>
+                    <h3 class="member-name">이미리</h3>
+                    <p class="member-role">기획 · 프로듀서</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact">
+        <div class="wrap">
+            <p class="section-eyebrow reveal">Contact</p>
+            <h2 class="section-title reveal">함께<br>만들어요</h2>
+            <p class="contact-desc reveal">공연 기획, 협업, 또는 이야기가 나누고 싶으시면 편하게 연락해 주세요.</p>
+            <div class="contact-links reveal">
+                <a href="mailto:teammusicscape@gmail.com" class="contact-link">
+                    <span class="contact-icon">✉</span>
+                    teammusicscape@gmail.com
+                </a>
+                <a href="https://www.instagram.com/Team_Musicscape" target="_blank" class="contact-link">
+                    <span class="contact-icon">◻</span>
+                    Instagram @Team_Musicscape
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Team Musicscape</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
