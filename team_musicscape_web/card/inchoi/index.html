@@ -1,13 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>理쒖씤 쨌 In Choi | Team Musicscape</title>
-    <meta name="description" content="理쒖씤 (In Choi) ??Composer 쨌 Artistic Director at Team Musicscape.">
+    <title>최인 · In Choi | Team Musicscape</title>
+    <meta name="description" content="최인 (In Choi) — Composer · Artistic Director at Team Musicscape.">
     <meta name="robots" content="noindex">
-    <meta property="og:title" content="理쒖씤 쨌 In Choi | Team Musicscape">
-    <meta property="og:description" content="Composer 쨌 Artistic Director 쨌 Team Musicscape">
+    <meta property="og:title" content="최인 · In Choi | Team Musicscape">
+    <meta property="og:description" content="Composer · Artistic Director · Team Musicscape">
     <meta property="og:url" content="https://www.team-musicscape.kr/card/inchoi">
     <meta property="og:type" content="profile">
 
@@ -18,17 +18,17 @@
 
     <style>
         :root {
-            --bg:      #ffffff;
-            --surface: #f5f4f2;
-            --border:  #e8e6e1;
-            --text:    #111111;
-            --sub:     #6b6860;
-            --muted:   #a09d98;
-            --gold:    #8c6f3e;
+            --bg:         #ffffff;
+            --surface:    #f5f4f2;
+            --border:     #e8e6e1;
+            --text:       #111111;
+            --sub:        #6b6860;
+            --muted:      #a09d98;
+            --gold:       #8c6f3e;
             --gold-light: rgba(140,111,62,0.1);
-            --ease:    cubic-bezier(0.16,1,0.3,1);
-            --font-en: 'Space Grotesk', sans-serif;
-            --font-ko: 'Pretendard', 'Apple SD Gothic Neo', sans-serif;
+            --ease:       cubic-bezier(0.16,1,0.3,1);
+            --font-en:    'Space Grotesk', sans-serif;
+            --font-ko:    'Pretendard', 'Apple SD Gothic Neo', sans-serif;
         }
 
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -50,7 +50,6 @@
 
         a { text-decoration: none; color: inherit; }
 
-        /* ?? Card Shell ?? */
         .card {
             width: 100%;
             max-width: 420px;
@@ -63,15 +62,18 @@
             overflow: hidden;
             display: flex;
             flex-direction: column;
+            opacity: 0;
+            transform: translateY(18px);
+            animation: cardIn 0.6s var(--ease) 0.05s forwards;
         }
+        @keyframes cardIn { to { opacity: 1; transform: translateY(0); } }
 
-        /* ?? Top Logo Bar ?? */
+        /* Logo */
         .card-topbar {
-            padding: 1.6rem 1.8rem 0;
+            padding: 1.8rem 1.8rem 0;
             display: flex;
             justify-content: center;
         }
-
         .logo-link {
             display: flex;
             align-items: center;
@@ -79,13 +81,11 @@
             transition: opacity 0.25s;
         }
         .logo-link:hover { opacity: 0.65; }
-
         .logo-img {
             width: 260px;
             height: auto;
             display: block;
         }
-
         .logo-text {
             font-family: var(--font-en);
             font-size: 0.68rem;
@@ -95,16 +95,15 @@
             color: var(--sub);
         }
 
-        /* ?? Profile Section ?? */
+        /* Profile */
         .card-profile {
-            padding: 1.4rem 2rem 1.8rem;
+            padding: 1.6rem 2rem 1.8rem;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
             border-bottom: 1px solid var(--border);
         }
-
         .profile-name {
             font-family: var(--font-en);
             font-size: 1.55rem;
@@ -113,7 +112,6 @@
             color: var(--text);
             margin-bottom: 0.2rem;
         }
-
         .profile-name-ko {
             font-family: var(--font-ko);
             font-size: 0.8rem;
@@ -122,7 +120,6 @@
             letter-spacing: 2.5px;
             margin-bottom: 0.7rem;
         }
-
         .profile-role {
             display: inline-block;
             font-family: var(--font-en);
@@ -136,7 +133,7 @@
             border-radius: 100px;
         }
 
-        /* ?? Actions ?? */
+        /* Actions */
         .card-actions {
             padding: 1.4rem 1.5rem;
             display: flex;
@@ -144,7 +141,6 @@
             gap: 0.55rem;
             border-bottom: 1px solid var(--border);
         }
-
         .btn-save {
             display: flex;
             align-items: center;
@@ -173,7 +169,6 @@
             grid-template-columns: 1fr 1fr;
             gap: 0.55rem;
         }
-
         .btn-outline {
             display: flex;
             align-items: center;
@@ -194,21 +189,12 @@
             transition: all 0.25s var(--ease);
             -webkit-tap-highlight-color: transparent;
         }
-        .btn-outline:hover {
-            border-color: var(--text);
-            background: #fff;
-            transform: translateY(-1px);
-        }
+        .btn-outline:hover { border-color: var(--text); background: #fff; transform: translateY(-1px); }
         .btn-outline:active { transform: translateY(0); }
-
         .btn-icon { font-size: 0.95rem; line-height: 1; }
 
-        /* ?? Links ?? */
-        .card-links {
-            display: flex;
-            flex-direction: column;
-        }
-
+        /* Links */
+        .card-links { display: flex; flex-direction: column; }
         .link-row {
             display: flex;
             align-items: center;
@@ -241,7 +227,6 @@
             background: var(--gold-light);
             border-color: rgba(140,111,62,0.25);
         }
-
         .link-info { flex: 1; }
         .link-title {
             font-family: var(--font-en);
@@ -257,19 +242,15 @@
             color: var(--muted);
             letter-spacing: 0.3px;
         }
-
         .link-chevron {
             color: var(--muted);
             font-size: 1.1rem;
             transition: transform 0.2s, color 0.2s;
             flex-shrink: 0;
         }
-        .link-row:hover .link-chevron {
-            transform: translateX(3px);
-            color: var(--sub);
-        }
+        .link-row:hover .link-chevron { transform: translateX(3px); color: var(--sub); }
 
-        /* ?? Footer ?? */
+        /* Footer */
         .card-footer {
             padding: 1.2rem;
             text-align: center;
@@ -284,17 +265,7 @@
             color: var(--muted);
         }
 
-        /* ?? Entrance Animation ?? */
-        .card {
-            opacity: 0;
-            transform: translateY(18px);
-            animation: cardIn 0.6s var(--ease) 0.05s forwards;
-        }
-        @keyframes cardIn {
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ?? Toast ?? */
+        /* Toast */
         .toast {
             position: fixed;
             bottom: 1.5rem;
@@ -313,19 +284,16 @@
             white-space: nowrap;
             z-index: 999;
         }
-        .toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-        }
+        .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
     </style>
 </head>
 <body>
 
 <div class="card">
 
-    <!-- Logo -->
+    <!-- 로고 -->
     <div class="card-topbar">
-        <a href="https://www.team-musicscape.kr" class="logo-link" target="_blank" rel="noopener" aria-label="Team Musicscape ?덊럹?댁?">
+        <a href="https://www.team-musicscape.kr" class="logo-link" target="_blank" rel="noopener" aria-label="Team Musicscape 홈페이지">
             <img src="../../images/logo.png"
                  class="logo-img"
                  alt="Team Musicscape"
@@ -334,60 +302,62 @@
         </a>
     </div>
 
-    <!-- Profile -->
+    <!-- 프로필 -->
     <div class="card-profile">
         <h1 class="profile-name">In Choi</h1>
-        <p class="profile-name-ko">理쒖씤</p>
-        <span class="profile-role">Composer 쨌 Artistic Director</span>
+        <p class="profile-name-ko">최인</p>
+        <span class="profile-role">Composer · Artistic Director</span>
     </div>
 
-    <!-- Actions -->
+    <!-- 액션 버튼 -->
     <div class="card-actions">
         <button class="btn-save" id="save-inchoi" onclick="downloadVCard()">
-            <span class="btn-icon">??/span>
-            ?곕씫泥????        </button>
+            <span class="btn-icon">⊕</span>
+            연락처 저장
+        </button>
         <div class="btn-row">
             <a class="btn-outline" href="tel:01096992411" id="call-inchoi">
-                <span class="btn-icon">??/span>
-                ?꾪솕?섍린
+                <span class="btn-icon">✆</span>
+                전화하기
             </a>
             <a class="btn-outline" href="mailto:inchoiguitar@gmail.com" id="email-inchoi">
-                <span class="btn-icon">??/span>
-                ?대찓??            </a>
+                <span class="btn-icon">✉</span>
+                이메일
+            </a>
         </div>
     </div>
 
-    <!-- Links -->
+    <!-- 링크 -->
     <div class="card-links">
         <a class="link-row" href="https://www.instagram.com/inchoiguitar/" target="_blank" rel="noopener" id="ig-inchoi">
-            <div class="link-icon-wrap">??/div>
+            <div class="link-icon-wrap">◻</div>
             <div class="link-info">
                 <div class="link-title">Instagram</div>
                 <div class="link-sub">@inchoiguitar</div>
             </div>
-            <span class="link-chevron">??/span>
+            <span class="link-chevron">›</span>
         </a>
         <a class="link-row" href="https://www.instagram.com/team_musicscape/" target="_blank" rel="noopener" id="ig-team-inchoi">
-            <div class="link-icon-wrap">??/div>
+            <div class="link-icon-wrap">◻</div>
             <div class="link-info">
                 <div class="link-title">Team Musicscape Instagram</div>
                 <div class="link-sub">@team_musicscape</div>
             </div>
-            <span class="link-chevron">??/span>
+            <span class="link-chevron">›</span>
         </a>
         <a class="link-row" href="https://www.team-musicscape.kr" target="_blank" rel="noopener" id="web-inchoi">
-            <div class="link-icon-wrap">??/div>
+            <div class="link-icon-wrap">⊕</div>
             <div class="link-info">
                 <div class="link-title">Homepage</div>
                 <div class="link-sub">team-musicscape.kr</div>
             </div>
-            <span class="link-chevron">??/span>
+            <span class="link-chevron">›</span>
         </a>
     </div>
 
-    <!-- Footer -->
+    <!-- 푸터 -->
     <footer class="card-footer">
-        <p>짤 Team Musicscape</p>
+        <p>© Team Musicscape</p>
     </footer>
 
 </div>
@@ -419,7 +389,7 @@
         a.click();
         document.body.removeChild(a);
         setTimeout(function() { URL.revokeObjectURL(url); }, 1000);
-        showToast('?곕씫泥섍? ??λ릺?덉뒿?덈떎 ??);
+        showToast('연락처가 저장되었습니다 \u2713');
     }
 
     function showToast(msg) {
@@ -431,4 +401,3 @@
 </script>
 </body>
 </html>
-
