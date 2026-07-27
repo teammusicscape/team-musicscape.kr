@@ -329,7 +329,7 @@ img, video { display:block; max-width:100%; }
 .projects { background:var(--dark); }
 .projects-grid {
     display:grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:1fr 1fr;
     gap:2px;
 }
 .project-card {
@@ -451,10 +451,51 @@ img, video { display:block; max-width:100%; }
 }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
-/* Mobile */
+/* ─── Mobile 반응형 ───────────────────────────────── */
 @media (max-width:768px) {
     .section { padding:5rem 1.4rem; }
     .hero-arrow { display:none; }
+
+    /* Hero 높이 축소: 가로 사진·영상이 좌우로 더 많이 보이도록 */
+    .hero {
+        height: 340px;
+        min-height: 220px;
+    }
+
+    /* 영상 iframe 모바일 숨김 → 썸네일 이미지만 표시 */
+    .hero-video-frame {
+        display: none !important;
+    }
+    .slide-video-thumb {
+        opacity: 1 !important;
+        transition: none !important;
+    }
+
+    /* 영상 없으므로 사운드 버튼 숨김 */
+    .hero-sound-btn {
+        display: none !important;
+    }
+
+    /* 슬라이드 닷 위치 조정 */
+    .hero-dots {
+        bottom: 1rem;
+    }
+
+    /* View Work 버튼 위치 */
+    .hero-click-hint {
+        bottom: 2rem;
+        right: 1rem;
+        font-size: 0.55rem;
+        padding: 0.4rem 0.8rem;
+    }
+}
+
+/* 모바일 가로 모드: 100vh 유지 */
+@media (max-width:768px) and (orientation:landscape) {
+    .hero {
+        height: 100vh;
+        min-height: 200px;
+    }
 }
 
 /* ─── Works 모자이크: 12col dense 자동 배치 ───────────────
@@ -474,24 +515,14 @@ img, video { display:block; max-width:100%; }
 .work-tile {
     position: relative;
     overflow: hidden;
-    width: 100%;
-    height: 100%;
+    background-size: cover;
+    background-position: center;
     background-color: var(--surface);
     display: block;
     cursor: pointer;
     transition: transform 0.6s cubic-bezier(0.16,1,0.3,1);
 }
 .work-tile:hover { transform: scale(1.03); z-index: 1; }
-
-.work-bg-img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    pointer-events: none;
-}
 
 /* 크기 클래스 — 합계 192셀 = 12×16 */
 .work-tile.large  { grid-column: span 6; grid-row: span 4; }   /* 6×4=24 × 4tiles=96 */
