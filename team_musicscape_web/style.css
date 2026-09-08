@@ -1,5 +1,5 @@
-/* =============================================
-   TEAM MUSICSCAPE — Design System
+﻿/* =============================================
+   TEAM MUSICSCAPE ??Design System
    Fonts: Space Grotesk (EN) + Pretendard (KO)
    ============================================= */
 :root {
@@ -55,13 +55,13 @@ img, video { display:block; max-width:100%; }
     text-transform: uppercase;
     color: var(--text);
 }
-/* 오른쪽: 언어버튼 + 햄버거 */
+/* ?ㅻⅨ履? ?몄뼱踰꾪듉 + ?꾨쾭嫄?*/
 .nav-right {
     display: flex;
     align-items: center;
     gap: 1.2rem;
 }
-/* 언어 버튼 */
+/* ?몄뼱 踰꾪듉 */
 .lang-btns {
     display: flex;
     gap: 4px;
@@ -98,7 +98,7 @@ img, video { display:block; max-width:100%; }
     transition: transform 0.4s var(--ease), opacity 0.3s;
 }
 
-/* 오른쪽 슬라이드 메뉴 */
+/* ?ㅻⅨ履??щ씪?대뱶 硫붾돱 */
 .side-menu {
     position: fixed;
     top: 0; right: 0;
@@ -128,7 +128,7 @@ img, video { display:block; max-width:100%; }
 .sl-link {
     display: block;
     font-family: var(--font-en);
-    font-size: 0.78rem;          /* 글자 크기: 이전의 1/5 수준 */
+    font-size: 0.78rem;          /* 湲???ш린: ?댁쟾??1/5 ?섏? */
     font-weight: 300;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -138,7 +138,7 @@ img, video { display:block; max-width:100%; }
 }
 .sl-link:hover { color: var(--gold); padding-left: 6px; }
 
-/* 딕 배경 */
+/* ??諛곌꼍 */
 .side-backdrop {
     position: fixed; inset: 0;
     background: rgba(0,0,0,0.5);
@@ -166,7 +166,7 @@ img, video { display:block; max-width:100%; }
     background-position:center;
     opacity:0;
     transition: opacity 1.4s var(--ease);
-    /* 사진 없을 때 보이는 그라디언트 폴백 */
+    /* ?ъ쭊 ?놁쓣 ??蹂댁씠??洹몃씪?붿뼵???대갚 */
     background-color: var(--dark);
 }
 .slide:nth-child(1) { background-image: linear-gradient(135deg, #0d0d14 0%, #1a1520 100%); }
@@ -184,7 +184,7 @@ img, video { display:block; max-width:100%; }
     z-index:1;
 }
 
-/* 화살표 */
+/* ?붿궡??*/
 .hero-arrow {
     position:absolute; top:50%; z-index:2;
     transform: translateY(-50%);
@@ -198,7 +198,7 @@ img, video { display:block; max-width:100%; }
 .hero-arrow.left { left:2rem; }
 .hero-arrow.right { right:2rem; }
 
-/* 점(dot) 네비게이션 */
+/* ??dot) ?ㅻ퉬寃뚯씠??*/
 .hero-dots {
     position:absolute; bottom:2rem; left:50%;
     transform:translateX(-50%);
@@ -214,7 +214,7 @@ img, video { display:block; max-width:100%; }
 .dot.active { background:var(--gold); transform:scale(1.3); }
 
 /* =============================================
-   공통 섹션
+   怨듯넻 ?뱀뀡
    ============================================= */
 .section { padding: 9rem 2.5rem; }
 .wrap { max-width:1200px; margin:0 auto; }
@@ -251,7 +251,7 @@ img, video { display:block; max-width:100%; }
 .philosophy-body p { color:var(--muted); font-size:1rem; line-height:1.9; }
 
 /* =============================================
-   MANIFESTO — 5 hover cards
+   MANIFESTO ??5 hover cards
    ============================================= */
 .manifesto { background:var(--black); }
 .manifesto-grid {
@@ -268,7 +268,7 @@ img, video { display:block; max-width:100%; }
     background-color:var(--surface);
 }
 
-/* Front (기본): 제목만 */
+/* Front (湲곕낯): ?쒕ぉ留?*/
 .m-card-inner {
     position:absolute; inset:0;
     display:grid;
@@ -280,7 +280,7 @@ img, video { display:block; max-width:100%; }
     padding:2rem 1.5rem;
     transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
 }
-/* 앞면 배경 그라디언트 */
+/* ?욌㈃ 諛곌꼍 洹몃씪?붿뼵??*/
 .m-card-front::before,
 .m-card-back::before {
     content:'';
@@ -344,7 +344,7 @@ img, video { display:block; max-width:100%; }
 .project-img-inner {
     position:absolute; inset:0;
     background-size:cover; background-position:center;
-    background-color:#1a1a1a; /* 사진 없을 때 폴백 */
+    background-color:#1a1a1a; /* ?ъ쭊 ?놁쓣 ???대갚 */
     transition: transform 0.9s var(--ease);
 }
 .project-card:hover .project-img-inner { transform:scale(1.05); }
@@ -451,18 +451,18 @@ img, video { display:block; max-width:100%; }
 }
 .reveal.visible { opacity:1; transform:translateY(0); }
 
-/* ─── Mobile 반응형 ───────────────────────────────── */
+/* ??? Mobile 諛섏쓳??????????????????????????????????? */
 @media (max-width:768px) {
     .section { padding:5rem 1.4rem; }
     .hero-arrow { display:none; }
 
-    /* Hero 높이 축소: 가로 사진·영상이 좌우로 더 많이 보이도록 */
+    /* Hero ?믪씠 異뺤냼: 媛濡??ъ쭊쨌?곸긽??醫뚯슦濡???留롮씠 蹂댁씠?꾨줉 */
     .hero {
         height: 340px;
         min-height: 220px;
     }
 
-    /* 영상 iframe 모바일 숨김 → 썸네일 이미지만 표시 */
+    /* ?곸긽 iframe 紐⑤컮???④? ???몃꽕???대?吏留??쒖떆 */
     .hero-video-frame {
         display: none !important;
     }
@@ -471,17 +471,17 @@ img, video { display:block; max-width:100%; }
         transition: none !important;
     }
 
-    /* 영상 없으므로 사운드 버튼 숨김 */
+    /* ?곸긽 ?놁쑝誘濡??ъ슫??踰꾪듉 ?④? */
     .hero-sound-btn {
         display: none !important;
     }
 
-    /* 슬라이드 닷 위치 조정 */
+    /* ?щ씪?대뱶 ???꾩튂 議곗젙 */
     .hero-dots {
         bottom: 1rem;
     }
 
-    /* View Work 버튼 위치 */
+    /* View Work 踰꾪듉 ?꾩튂 */
     .hero-click-hint {
         bottom: 2rem;
         right: 1rem;
@@ -490,7 +490,7 @@ img, video { display:block; max-width:100%; }
     }
 }
 
-/* 모바일 가로 모드: 100vh 유지 */
+/* 紐⑤컮??媛濡?紐⑤뱶: 100vh ?좎? */
 @media (max-width:768px) and (orientation:landscape) {
     .hero {
         height: 100vh;
@@ -498,8 +498,8 @@ img, video { display:block; max-width:100%; }
     }
 }
 
-/* ─── Works 모자이크: 12col dense 자동 배치 ───────────────
-   타일 합계: 4L(6×4=24) + 5M(4×3=12) + 6S(3×2=6) = 192 = 12×16 ✓ */
+/* ??? Works 紐⑥옄?댄겕: 12col dense ?먮룞 諛곗튂 ???????????????
+   ????⑷퀎: 4L(6횞4=24) + 5M(4횞3=12) + 6S(3횞2=6) = 192 = 12횞16 ??*/
 .works-label { margin-top: 4rem; }
 
 .works-mosaic {
@@ -524,10 +524,10 @@ img, video { display:block; max-width:100%; }
 }
 .work-tile:hover { transform: scale(1.03); z-index: 1; }
 
-/* 크기 클래스 — 합계 192셀 = 12×16 */
-.work-tile.large  { grid-column: span 6; grid-row: span 4; }   /* 6×4=24 × 4tiles=96 */
-.work-tile.medium { grid-column: span 4; grid-row: span 3; }   /* 4×3=12 × 5tiles=60 */
-.work-tile.small  { grid-column: span 3; grid-row: span 2; }   /* 3×2= 6 × 6tiles=36 */
+/* ?ш린 ?대옒?????⑷퀎 192? = 12횞16 */
+.work-tile.large  { grid-column: span 6; grid-row: span 4; }   /* 6횞4=24 횞 4tiles=96 */
+.work-tile.medium { grid-column: span 4; grid-row: span 3; }   /* 4횞3=12 횞 5tiles=60 */
+.work-tile.small  { grid-column: span 3; grid-row: span 2; }   /* 3횞2= 6 횞 6tiles=36 */
 
 .work-overlay {
     position: absolute; inset: 0;
@@ -551,7 +551,7 @@ img, video { display:block; max-width:100%; }
     text-shadow: 0 1px 4px rgba(0,0,0,0.6);
 }
 
-/* 반응형 */
+/* 諛섏쓳??*/
 @media (max-width: 900px) {
     .works-mosaic { grid-template-columns: repeat(6, 1fr); }
     .work-tile.large  { grid-column: span 6; grid-row: span 3; }
@@ -567,10 +567,10 @@ img, video { display:block; max-width:100%; }
     .work-tile { grid-column: span 1 !important; grid-row: span 1 !important; }
 }
 
-/* ─── Hero 영상 슬라이드 ──────────────────────────── */
+/* ??? Hero ?곸긽 ?щ씪?대뱶 ???????????????????????????? */
 .slide-video { background: #000; cursor: pointer; }
 
-/* 썸네일: 영상이 로드될 때까지 보여줌 */
+/* ?몃꽕?? ?곸긽??濡쒕뱶???뚭퉴吏 蹂댁뿬以?*/
 .slide-video-thumb {
     position: absolute; inset: 0;
     background-size: cover; background-position: center;
@@ -578,23 +578,23 @@ img, video { display:block; max-width:100%; }
     transition: opacity 0.8s ease;
 }
 
-/* 유튜브 iframe: 풀스크린 배경 */
+/* ?좏뒠釉?iframe: ??ㅽ겕由?諛곌꼍 */
 .hero-video-frame {
     position: absolute;
     top: 50%; left: 50%;
-    width: 177.78vh;   /* 16:9 비율 유지 */
+    width: 177.78vh;   /* 16:9 鍮꾩쑉 ?좎? */
     min-width: 100%;
     height: 56.25vw;
     min-height: 100%;
     transform: translate(-50%, -50%);
     border: none;
-    pointer-events: none;  /* 클릭 통과 (컨트롤 숨김) */
+    pointer-events: none;  /* ?대┃ ?듦낵 (而⑦듃濡??④?) */
 }
 
-/* 클릭 가능한 슬라이드 커서 */
+/* ?대┃ 媛?ν븳 ?щ씪?대뱶 而ㅼ꽌 */
 .slides { cursor: pointer; }
 
-/* "View Work →" 힌트 레이블 */
+/* "View Work ?? ?뚰듃 ?덉씠釉?*/
 .hero-click-hint {
     position: absolute;
     bottom: 4rem; right: 2.5rem;
@@ -611,10 +611,10 @@ img, video { display:block; max-width:100%; }
     padding-bottom: 2px;
 }
 
-/* ─── 사운드 토글 버튼 ─────────────────────── */
+/* ??? ?ъ슫???좉? 踰꾪듉 ??????????????????????? */
 .hero-sound-btn {
     position: absolute;
-    top: 1.6rem; right: 7rem;   /* 햄버거 버튼 왼쪽 */
+    top: 1.6rem; right: 7rem;   /* ?꾨쾭嫄?踰꾪듉 ?쇱そ */
     z-index: 5;
     background: rgba(0,0,0,0.45);
     border: 1px solid rgba(255,255,255,0.2);
@@ -629,7 +629,7 @@ img, video { display:block; max-width:100%; }
 }
 .hero-sound-btn:hover { background: rgba(0,0,0,0.7); border-color: var(--gold); }
 
-/* ─── View Work 버튼 (hero-click-hint override) ── */
+/* ??? View Work 踰꾪듉 (hero-click-hint override) ?? */
 .hero-click-hint {
     position: absolute;
     bottom: 3.5rem; right: 2.5rem;
@@ -653,7 +653,7 @@ img, video { display:block; max-width:100%; }
     border-color: rgba(238,234,228,0.8);
 }
 
-/* ─── 사운드 버튼 위치 재조정 (좌측 하단) ─── */
+/* ??? ?ъ슫??踰꾪듉 ?꾩튂 ?ъ“??(醫뚯륫 ?섎떒) ??? */
 .hero-sound-btn {
     top: auto !important;
     right: auto !important;
@@ -662,7 +662,7 @@ img, video { display:block; max-width:100%; }
     z-index: 10 !important;
 }
 
-/* ─── 사진 없는 멤버 플레이스홀더 ─── */
+/* ??? ?ъ쭊 ?녿뒗 硫ㅻ쾭 ?뚮젅?댁뒪?????? */
 .member-img--no-photo {
     background: linear-gradient(135deg, #1a1a24 0%, #2a2535 100%);
     display: flex;
@@ -670,10 +670,11 @@ img, video { display:block; max-width:100%; }
     justify-content: center;
 }
 .member-img--no-photo::after {
-    content: '♪';
+    content: '??;
     font-size: 2rem;
     color: rgba(196,168,100,0.3);
 }
+
 
 /* ── ACC 공연 홍보 슬라이드 오버레이 ── */
 .acc-promo-overlay {
@@ -707,10 +708,6 @@ img, video { display:block; max-width:100%; }
 }
 
 /* ── Upcoming 프로젝트 카드 배지 ── */
-.project-img {
-    position: relative;
-}
-
 .project-upcoming-badge {
     position: absolute;
     top: 12px;
