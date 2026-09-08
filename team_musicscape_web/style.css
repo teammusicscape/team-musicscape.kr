@@ -674,3 +674,54 @@ img, video { display:block; max-width:100%; }
     font-size: 2rem;
     color: rgba(196,168,100,0.3);
 }
+
+/* ── ACC 공연 홍보 슬라이드 오버레이 ── */
+.acc-promo-overlay {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4;
+    pointer-events: none;
+    text-align: center;
+}
+
+.acc-promo-badge {
+    display: inline-block;
+    padding: 10px 24px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(200, 169, 110, 0.6);
+    border-radius: 9999px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: 0.04em;
+    backdrop-filter: blur(8px);
+    animation: accBadgePulse 2.8s ease-in-out infinite;
+    white-space: nowrap;
+}
+
+@keyframes accBadgePulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(200,169,110,0); }
+    50% { box-shadow: 0 0 16px 4px rgba(200,169,110,0.22); }
+}
+
+/* ── Upcoming 프로젝트 카드 배지 ── */
+.project-img {
+    position: relative;
+}
+
+.project-upcoming-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 4px 12px;
+    background: #c8a96e;
+    border-radius: 9999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #000;
+    z-index: 2;
+}
