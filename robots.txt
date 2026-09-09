@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# 네이버 검색 봇
+User-agent: Yeti
+Allow: /
+
+Sitemap: https://www.team-musicscape.kr/sitemap.xml

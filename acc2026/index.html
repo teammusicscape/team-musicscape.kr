@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="ko"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>치유의 밤 MUSICSCAPE — From Here to Everywhere... | ACC 아시아문화전당</title>
+  <meta name="description" content="뮤직스케이프의 ACC 공연 공식 페이지. 2026년 10월 30일 아시아문화전당 예술극장 극장2.">
+  <meta name="keywords" content="뮤직스케이프, Musicscape, ACC, 아시아문화전당, 치유의 밤, 최인, 유현수, 송지원, 피리, 바이올린, 입체음향, 광주">
+  <meta name="author" content="Team Musicscape">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.team-musicscape.kr/acc2026/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="치유의 밤 MUSICSCAPE — From Here to Everywhere... | ACC">
+  <meta property="og:description" content="음악, 공간음향, 미디어아트가 하나가 되는 몰입형 공연 — 2026.10.30 아시아문화전당 예술극장 극장2">
+  <meta property="og:image" content="https://www.team-musicscape.kr/acc2026/og.jpg">
+  <meta property="og:url" content="https://www.team-musicscape.kr/acc2026/">
+  <meta property="og:locale" content="ko_KR">
+  <meta name="twitter:card" content="summary_large_image">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"MusicEvent","name":"치유의 밤 MUSICSCAPE — From Here to Everywhere...","description":"음악, 공간음향, 미디어아트가 교차하는 뮤직스케이프의 몰입형 공연.","startDate":"2026-10-30T19:00:00+09:00","endDate":"2026-10-30T20:30:00+09:00","eventStatus":"https://schema.org/EventScheduled","eventAttendanceMode":"https://schema.org/OfflineEventAttendanceMode","location":{"@type":"Place","name":"아시아문화전당 예술극장 극장2","address":{"@type":"PostalAddress","addressLocality":"광주광역시 동구","streetAddress":"문화전당로 38","addressCountry":"KR"}},"organizer":{"@type":"Organization","name":"Team Musicscape","url":"https://www.team-musicscape.kr/"},"performer":[{"@type":"Person","name":"최인","instrument":"기타"},{"@type":"Person","name":"유현수","instrument":"피리"},{"@type":"Person","name":"송지원","instrument":"바이올린"}],"offers":[{"@type":"Offer","name":"R석","price":"70000","priceCurrency":"KRW"},{"@type":"Offer","name":"S석","price":"50000","priceCurrency":"KRW"},{"@type":"Offer","name":"A석","price":"30000","priceCurrency":"KRW"}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{--sans:"Pretendard","Inter",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Noto Sans KR",sans-serif;--serif:"Libre Baskerville","Times New Roman",Times,serif;--accent:#c8a96e;}
+    html,body{background:#000;color:#fff;font-family:var(--sans);scroll-behavior:smooth;}
+    .container{max-width:1160px;margin:0 auto;padding:0 20px;}
+    .nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(12px);background:rgba(0,0,0,.5);border-bottom:1px solid rgba(255,255,255,.08);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;}
+    .nav-brand{font-weight:700;font-size:15px;letter-spacing:.04em;color:#fff;}
+    .nav-links{display:flex;gap:28px;}
+    .nav-links a{font-size:13px;color:rgba(255,255,255,.72);transition:color .2s;}
+    .nav-links a:hover{color:#fff;}
+    @media(max-width:680px){.nav-links{display:none;}}
+    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+    .nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;}
+    @media(max-width:680px){.nav-hamburger{display:flex;}}
+    .menu-panel{position:fixed;top:0;left:0;height:100vh;width:min(82vw,320px);background:rgba(10,10,10,.97);border-right:1px solid rgba(255,255,255,.08);transform:translateX(-100%);transition:transform .28s ease;z-index:60;backdrop-filter:blur(8px);padding-top:64px;}
+    .menu-panel.open{transform:translateX(0);}
+    .menu-link{display:block;padding:14px 24px;font-weight:500;color:rgba(255,255,255,.85);border-bottom:1px solid rgba(255,255,255,.05);}
+    .menu-link:hover{background:rgba(255,255,255,.06);color:#fff;}
+    .menu-close{position:absolute;top:14px;right:16px;background:none;border:none;color:#fff;font-size:22px;cursor:pointer;}
+    .menu-backdrop{display:none;position:fixed;inset:0;z-index:55;background:rgba(0,0,0,.5);}
+    .menu-backdrop.open{display:block;}
+    .hero{position:relative;width:100%;height:100vh;overflow:hidden;background:#000;display:flex;align-items:center;justify-content:center;}
+    #hero-iframe-wrap{position:absolute;inset:0;pointer-events:none;}
+    #hero-iframe-wrap iframe{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;}
+    .hero-thumb{position:absolute;inset:0;background-image:url('../images/poster-2.jpg');background-size:cover;background-position:center;transition:opacity 1.2s ease;}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35) 0%,rgba(0,0,0,.1) 40%,rgba(0,0,0,.65) 100%);}
+    .hero-content{position:relative;z-index:2;text-align:center;padding:0 24px;}
+    .hero-eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+    .hero-title{font-size:clamp(28px,5vw,62px);font-weight:800;letter-spacing:.02em;line-height:1.12;text-transform:uppercase;margin-bottom:10px;}
+    .hero-sub{font-size:clamp(14px,2vw,20px);color:rgba(255,255,255,.82);letter-spacing:.06em;margin-bottom:10px;font-style:italic;}
+    .hero-date{font-size:clamp(13px,1.5vw,17px);color:rgba(255,255,255,.65);letter-spacing:.08em;margin-bottom:36px;}
+    .hero-btn{display:inline-block;padding:13px 36px;border:1px solid rgba(255,255,255,.5);border-radius:9999px;font-size:14px;font-weight:600;letter-spacing:.1em;color:#fff;transition:background .25s,border-color .25s;}
+    .hero-btn:hover{background:rgba(255,255,255,.15);border-color:#fff;}
+    #soundBtn{position:absolute;bottom:28px;right:24px;z-index:3;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+    .scroll-cue{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:3;display:flex;flex-direction:column;align-items:center;gap:6px;color:rgba(255,255,255,.4);font-size:10px;letter-spacing:.15em;}
+    .scroll-cue::after{content:'';display:block;width:1px;height:36px;background:linear-gradient(to bottom,rgba(255,255,255,.4),transparent);animation:scrollLine 1.8s ease-in-out infinite;}
+    @keyframes scrollLine{0%,100%{opacity:.3}50%{opacity:1}}
+    .section{padding:96px 0;}
+    .eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+    .section-title{font-size:clamp(26px,4vw,42px);font-weight:700;line-height:1.2;}
+    .muted{color:rgba(255,255,255,.68);}
+    .poster-img{width:100%;aspect-ratio:2/3;border-radius:16px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;}
+    .statement-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;}
+    @media(min-width:900px){.statement-grid{grid-template-columns:1fr 1fr;}}
+    .statement-frame{position:relative;width:100%;aspect-ratio:4/3;border-radius:16px;background:#000;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.4);}
+    .statement__slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s ease-in-out;}
+    .statement__slide.is-active{opacity:1;}
+    .reveal-line{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.36,1);transition-delay:var(--d,0s);}
+    .reveal-line.show{opacity:1;transform:translateY(0);}
+    .prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-top:40px;}
+    .prog-card{position:relative;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);cursor:pointer;}
+    .prog-card .thumb{width:100%;aspect-ratio:1/1;background:#111;overflow:hidden;}
+    .prog-card .thumb img{width:100%;height:100%;object-fit:cover;}
+    .prog-card .card-title{padding:12px 14px 14px;font-size:14px;font-weight:600;text-align:center;line-height:1.4;}
+    .prog-card .overlay{position:absolute;inset:0;background:rgba(0,0,0,.88);color:#fff;padding:16px;opacity:0;pointer-events:none;transition:opacity .22s ease;overflow:auto;display:flex;flex-direction:column;justify-content:center;gap:8px;}
+    .prog-card.open .overlay{opacity:1;pointer-events:auto;}
+    @media(hover:hover){.prog-card:hover .overlay{opacity:1;pointer-events:auto;}}
+    .overlay-title{font-size:15px;font-weight:700;margin-bottom:4px;}
+    .overlay-body{font-size:12px;line-height:1.6;color:rgba(255,255,255,.78);}
+    .overlay-close{position:absolute;right:10px;top:10px;width:28px;height:28px;border-radius:50%;background:rgba(0,0,0,.5);border:1px solid rgba(255,255,255,.2);color:#fff;font-size:15px;line-height:28px;text-align:center;cursor:pointer;}
+    #artists .artist-card{display:grid;grid-template-columns:1fr;gap:32px;align-items:start;padding:48px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+    @media(min-width:860px){#artists .artist-card{grid-template-columns:300px 1fr;}#artists .artist-card.reverse{grid-template-columns:1fr 300px;}#artists .artist-card.reverse .artist-photo-wrap{order:2;}#artists .artist-card.reverse .artist-info{order:1;}}
+    .artist-photo-wrap{width:100%;max-width:300px;}
+    .artist-photo{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:#111;}
+    .artist-name{font-size:clamp(22px,3vw,32px);font-weight:700;margin-bottom:4px;}
+    .artist-role{font-size:13px;color:var(--accent);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;}
+    .artist-bio{font-size:15px;line-height:1.85;color:rgba(255,255,255,.72);}
+    .artist-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
+    .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);font-size:13px;color:#fff;transition:background .2s;}
+    .pill:hover{background:rgba(255,255,255,.1);}
+    .team-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:32px;}
+    @media(min-width:640px){.team-grid{grid-template-columns:1fr 1fr;}}
+    .team-row{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);}
+    .team-role-label{color:rgba(255,255,255,.5);font-size:12px;}
+    .team-name-label{color:rgba(255,255,255,.85);font-weight:600;font-size:14px;}
+    .ticket-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
+    @media(max-width:580px){.ticket-grid{grid-template-columns:1fr;}}
+    .ticket-card{padding:28px 20px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);text-align:center;}
+    .ticket-card.featured{border-color:var(--accent);background:rgba(200,169,110,.06);}
+    .ticket-grade{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px;}
+    .ticket-price{font-size:28px;font-weight:800;margin-bottom:4px;}
+    .btn-booking{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:9999px;font-size:14px;font-weight:700;}
+    .btn-nol{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;}
+    .btn-naver{background:linear-gradient(135deg,#03c75a,#02a34c);color:#fff;}
+    .btn-disabled{opacity:.4;cursor:not-allowed;pointer-events:none;}
+    .notice-box{margin-top:32px;padding:20px;border-radius:14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);}
+    .notice-box li{font-size:13px;color:rgba(255,255,255,.5);margin:6px 0;line-height:1.6;}
+    .discount-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;}
+    @media(max-width:560px){.discount-grid{grid-template-columns:1fr;}}
+    .discount-card{padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);}
+    .discount-name{font-weight:700;font-size:14px;margin-bottom:4px;}
+    .discount-desc{font-size:12px;color:rgba(255,255,255,.5);}
+    .v-block{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:flex-start;padding:18px;border-radius:16px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);margin-bottom:12px;}
+    .v-icon{width:42px;height:42px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
+    .v-title{font-weight:700;font-size:15px;margin-bottom:4px;}
+    .v-body{font-size:14px;color:rgba(255,255,255,.62);line-height:1.7;}
+    footer{padding:48px 20px;border-top:1px solid rgba(255,255,255,.06);text-align:center;}
+    footer p{font-size:13px;color:rgba(255,255,255,.35);margin:4px 0;}
+    footer a{color:rgba(255,255,255,.55);}
+    footer a:hover{color:#fff;}
+    .btn3d{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9999px;padding:11px 20px;font-size:14px;font-weight:700;color:#0b0b0b;background:linear-gradient(#fafafa,#e2e2e2);border:1px solid #ccc;box-shadow:0 6px 18px rgba(0,0,0,.25),inset 0 1px 0 #fff;}
+    @media(prefers-reduced-motion:reduce){.reveal-line,.statement__slide{transition:none;opacity:1;transform:none;}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <a href="https://www.team-musicscape.kr/" class="nav-brand">Team Musicscape</a>
+    <div class="nav-links">
+      <a href="#feature">공연 소개</a>
+      <a href="#program">프로그램</a>
+      <a href="#artists">출연진</a>
+      <a href="#tickets">예매</a>
+      <a href="#venue">오시는 길</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="menu-backdrop" id="menuBackdrop"></div>
+  <div class="menu-panel" id="menuPanel">
+    <button class="menu-close" id="menuClose">✕</button>
+    <a href="#feature" class="menu-link">공연 소개</a>
+    <a href="#program" class="menu-link">프로그램</a>
+    <a href="#artists" class="menu-link">출연진</a>
+    <a href="#tickets" class="menu-link">예매</a>
+    <a href="#venue" class="menu-link">오시는 길</a>
+    <a href="https://www.team-musicscape.kr/" class="menu-link" style="color:rgba(255,255,255,.4);">← Team Musicscape</a>
+  </div>
+  <section class="hero" id="hero">
+    <div id="hero-iframe-wrap"></div>
+    <div class="hero-thumb" id="heroThumb" style="background-image:url('../images/acc-poster.jpg')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow reveal-line" style="--d:.2s">2026 · ACC 아시아문화전당 예술극장 극장2</p>
+      <h1 class="hero-title reveal-line" style="--d:.4s">치유의 밤<br><span style="font-weight:300;letter-spacing:.2em;font-size:.58em;">MUSICSCAPE</span></h1>
+      <p class="hero-sub reveal-line" style="--d:.6s">From Here to Everywhere...</p>
+      <p class="hero-date reveal-line" style="--d:.76s">2026년 10월 30일 (금) 오후 7시</p>
+      <a href="#tickets" class="hero-btn reveal-line" style="--d:.9s">예매 안내 →</a>
+    </div>
+    <button id="soundBtn" aria-label="소리 켜기/끄기">🔇</button>
+    <div class="scroll-cue">SCROLL</div>
+  </section>
+  <section class="section" id="poster" style="padding-top:80px;padding-bottom:56px;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:20px;">
+        <p class="eyebrow">Poster</p>
+      </div>
+      <div style="max-width:460px;margin:0 auto;">
+        <div class="poster-img" id="posterImg" style="aspect-ratio:auto;border-radius:16px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.08);">
+          <img src="../images/acc-poster.jpg" alt="치유의 밤 MUSICSCAPE 공연 포스터 — 2026.10.30 ACC 아시아문화전당" style="width:100%;height:auto;display:block;" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="feature" style="background:rgba(255,255,255,.014);padding-top:72px;padding-bottom:72px;">
+    <div class="container">
+      <div class="statement-grid">
+        <div class="statement-frame">
+          <img class="statement__slide is-active" src="../images/hero-1.jpg" alt="Musicscape 공연" loading="lazy">
+          <img class="statement__slide" src="../images/hero-3.jpg" alt="Musicscape 공연" loading="lazy">
+          <img class="statement__slide" src="../images/hero-6.jpg" alt="Musicscape 공연" loading="lazy">
+          <img class="statement__slide" src="../images/hero-8.jpg" alt="Musicscape 공연" loading="lazy">
+        </div>
+        <div class="statement-copy">
+          <p class="eyebrow reveal-line">Concert Statement</p>
+          <h2 class="section-title reveal-line" style="--d:.15s;margin-bottom:28px;">치유의 밤,<br>음악이<br>풍경이 되다</h2>
+          <p class="reveal-line muted" style="--d:.3s;font-size:16px;line-height:1.95;margin-bottom:18px;">뮤직스케이프의 공연은 음악회가 아닌 <em>경험</em>입니다.<br>기타, 피리, 바이올린의 소리가 공간음향과 미디어아트 속에 녹아들어 하나의 감각적 풍경을 만들어냅니다.</p>
+          <p class="reveal-line muted" style="--d:.45s;font-size:15px;line-height:1.9;margin-bottom:18px;">이번 <strong style="color:#fff;">치유의 밤</strong>은 일상의 소음을 잠시 내려놓고, 음악이 건네는 고요하고 깊은 위로를 온몸으로 받아들이는 시간입니다.</p>
+          <p class="reveal-line muted" style="--d:.6s;font-size:15px;line-height:1.9;">여기서 저 너머로 — <em>From Here to Everywhere...</em><br>이 음악이 당신 안 어딘가 이미 존재하는 풍경을 깨워줄 것입니다.</p>
+          <div class="reveal-line" style="--d:.75s;margin-top:32px;display:flex;gap:20px;flex-wrap:wrap;">
+            <div>
+              <p style="font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;">Date</p>
+              <p style="font-size:15px;font-weight:600;">2026년 10월 30일 (금) 19:00</p>
+            </div>
+            <div style="width:1px;background:rgba(255,255,255,.1);"></div>
+            <div>
+              <p style="font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;">Venue</p>
+              <p style="font-size:15px;font-weight:600;">아시아문화전당<br><span style="font-size:13px;color:rgba(255,255,255,.6);">예술극장 극장2</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="program">
+    <div class="container">
+      <p class="eyebrow">Program</p>
+      <h2 class="section-title" style="margin-bottom:8px;">공연 프로그램</h2>
+      <p class="muted" style="font-size:14px;">카드를 클릭 또는 탭하면 작품 설명을 볼 수 있습니다</p>
+      <div class="prog-grid">
+        <div class="prog-card" tabindex="0">
+          <div class="thumb"><img src="../images/work-4.jpg" alt="가던길" loading="lazy"></div>
+          <div class="card-title">가던길<br><span style="font-size:12px;color:rgba(255,255,255,.45);">The Way</span></div>
+          <div class="overlay"><div class="overlay-title">가던길 — The Way</div><div class="overlay-body">지나온 길, 그리고 앞으로 가야 할 길. 기타의 선율이 여정의 기억을 더듬으며 시간 속에 남겨진 발자국을 소환합니다.</div><span class="overlay-close">✕</span></div>
+        </div>
+        <div class="prog-card" tabindex="0">
+          <div class="thumb"><img src="../images/work-2.jpg" alt="숲" loading="lazy"></div>
+          <div class="card-title">숲<br><span style="font-size:12px;color:rgba(255,255,255,.45);">Forest</span></div>
+          <div class="overlay"><div class="overlay-title">숲 — Forest</div><div class="overlay-body">바람, 새소리, 이파리가 스치는 소리 — 자연의 소리가 음악으로 재구성됩니다. 피리의 숨결이 숲의 공기를 담아냅니다.</div><span class="overlay-close">✕</span></div>
+        </div>
+        <div class="prog-card" tabindex="0">
+          <div class="thumb"><img src="../images/work-9.jpg" alt="바다" loading="lazy"></div>
+          <div class="card-title">바다<br><span style="font-size:12px;color:rgba(255,255,255,.45);">Sea</span></div>
+          <div class="overlay"><div class="overlay-title">바다 — Sea</div><div class="overlay-body">파도의 리듬과 침묵 사이. 바이올린의 선율이 수평선 너머로 이어지며 끝없이 확장되는 공간을 그려냅니다.</div><span class="overlay-close">✕</span></div>
+        </div>
+        <div class="prog-card" tabindex="0">
+          <div class="thumb"><img src="../images/work-5.jpg" alt="Prayer" loading="lazy"></div>
+          <div class="card-title">Prayer</div>
+          <div class="overlay"><div class="overlay-title">Prayer</div><div class="overlay-body">간절함과 고요함이 공존하는 기도. 세 악기의 소리가 하나가 되어 보이지 않는 것들을 향해 손을 내밉니다.</div><span class="overlay-close">✕</span></div>
+        </div>
+        <div class="prog-card" tabindex="0">
+          <div class="thumb"><img src="../images/work-13.webp" alt="Bluehour" loading="lazy"></div>
+          <div class="card-title">Bluehour</div>
+          <div class="overlay"><div class="overlay-title">Bluehour</div><div class="overlay-body">해 지고 어둠이 오기 직전의 그 찰나 — 세상이 가장 파랗게 빛나는 순간. 시간이 멈춘 듯한 공간 속에 음악이 흐릅니다.</div><span class="overlay-close">✕</span></div>
+        </div>
+        <div class="prog-card" tabindex="0">
+          <div class="thumb"><img src="../images/work-15.webp" alt="From Here to Everywhere" loading="lazy"></div>
+          <div class="card-title">From Here<br><span style="font-size:12px;color:rgba(255,255,255,.45);">to Everywhere...</span></div>
+          <div class="overlay"><div class="overlay-title">From Here to Everywhere...</div><div class="overlay-body">이 공간에서 시작되어, 음악은 어디로든 닿을 수 있습니다. 세 연주자와 공간음향이 만들어내는 몰입의 절정.</div><span class="overlay-close">✕</span></div>
+        </div>
+      </div>
+      <p class="muted" style="font-size:12px;margin-top:20px;text-align:right;">* 프로그램은 사정에 따라 변경될 수 있습니다.</p>
+    </div>
+  </section>
+  <section class="section" id="artists" style="background:rgba(255,255,255,.012);">
+    <div class="container">
+      <p class="eyebrow">Artists</p>
+      <h2 class="section-title" style="margin-bottom:60px;">출연진</h2>
+      <div class="artist-card">
+        <div class="artist-photo-wrap"><img class="artist-photo" src="../images/member-choi.jpg" alt="최인 기타리스트" loading="lazy"></div>
+        <div class="artist-info">
+          <h3 class="artist-name">최인</h3>
+          <p class="artist-role">Guitar · 작곡 · 음악감독</p>
+          <p class="artist-bio">작곡가이자 기타리스트 최인은 공간음향, 미디어아트, 전통음악과 현대음악이 교차하는 실험적 공연을 이끌어 왔습니다. Team Musicscape의 대표이자 음악감독으로서, 음악과 기술, 공간이 하나가 되는 새로운 공연 언어를 탐구합니다. 입체음향과 프로젝션 맵핑을 결합한 독자적인 창작 방식으로 국내외 무대에서 주목받고 있습니다.</p>
+          <div class="artist-links">
+            <a href="https://www.inchoi.kr/" class="pill" target="_blank">🌐 inchoi.kr</a>
+            <a href="https://instagram.com/inchoiguitar" class="pill" target="_blank">◻ @inchoiguitar</a>
+          </div>
+        </div>
+      </div>
+      <div class="artist-card reverse">
+        <div class="artist-photo-wrap"><img class="artist-photo" src="../images/member-yoo.jpg" alt="유현수 피리" loading="lazy"></div>
+        <div class="artist-info">
+          <h3 class="artist-name">유현수</h3>
+          <p class="artist-role">Piri · 피리</p>
+          <p class="artist-bio">국악기 피리의 경계를 확장해온 연주자 유현수는 전통음악의 깊이와 현대적 감각을 함께 아우릅니다. 뮤직스케이프의 공연에서 피리의 소리는 단순한 악기 음색을 넘어, 공간 전체를 채우는 숨결이 됩니다. 동양과 서양, 전통과 실험의 경계에서 새로운 음악적 언어를 만들어갑니다.</p>
+          <div class="artist-links">
+            <a href="https://instagram.com/Team_Musicscape" class="pill" target="_blank">◻ @Team_Musicscape</a>
+          </div>
+        </div>
+      </div>
+      <div class="artist-card">
+        <div class="artist-photo-wrap"><img class="artist-photo" src="../images/member-song.jpg" alt="송지원 바이올리니스트" loading="lazy"></div>
+        <div class="artist-info">
+          <h3 class="artist-name">송지원</h3>
+          <p class="artist-role">Violin · 바이올린</p>
+          <p class="artist-bio">바이올리니스트 송지원은 국내외 유수의 콩쿠르 입상과 오케스트라 협연을 통해 폭넓은 음악적 역량을 인정받은 연주자입니다. KBS 교향악단을 비롯한 국내 주요 오케스트라와 협연하였으며, The Canetti International Violin Competition, Lions-Music International Competition in Hessen 등 국제 무대에서 수상하였습니다. Pablo Casals Festival, Tibor Varga International Music Academy 등 유럽의 주요 음악 페스티벌에 참가하였으며, 한국, 일본, 핀란드, 독일, 오스트리아 등 다양한 나라에서 독주 및 실내악 활동을 이어오고 있습니다.</p>
+          <div class="artist-links">
+            <a href="https://instagram.com/Team_Musicscape" class="pill" target="_blank">◻ @Team_Musicscape</a>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:64px;">
+        <p class="eyebrow" style="margin-bottom:20px;">Creative Team</p>
+        <div class="team-grid">
+          <div class="team-row"><span class="team-role-label">음향디자인 · 음향감독</span><span class="team-name-label">이수용</span></div>
+          <div class="team-row"><span class="team-role-label">영상디자인 · 영상감독</span><span class="team-name-label">이뿌리</span></div>
+          <div class="team-row"><span class="team-role-label">조명디자인 · 조명감독</span><span class="team-name-label">최예원</span></div>
+          <div class="team-row"><span class="team-role-label">기획 · 프로듀서</span><span class="team-name-label">이미리</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="tickets">
+    <div class="container">
+      <p class="eyebrow">Tickets</p>
+      <h2 class="section-title" style="margin-bottom:10px;">예매 안내</h2>
+      <p class="muted" style="font-size:14px;">티켓 오픈 일정이 확정되면 예매 링크를 안내드립니다.</p>
+      <div class="ticket-grid">
+        <div class="ticket-card">
+          <p class="ticket-grade">A석</p>
+          <p class="ticket-price">30,000<span style="font-size:16px;font-weight:400;">원</span></p>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);">일반</p>
+        </div>
+        <div class="ticket-card featured">
+          <p class="ticket-grade" style="color:var(--accent);">S석</p>
+          <p class="ticket-price" style="color:var(--accent);">50,000<span style="font-size:16px;font-weight:400;">원</span></p>
+          <p style="font-size:12px;color:rgba(255,255,255,.5);">추천</p>
+        </div>
+        <div class="ticket-card">
+          <p class="ticket-grade">R석</p>
+          <p class="ticket-price">70,000<span style="font-size:16px;font-weight:400;">원</span></p>
+          <p style="font-size:12px;color:rgba(255,255,255,.4);">프리미엄</p>
+        </div>
+      </div>
+      <div style="margin-top:36px;padding:24px;border-radius:16px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);text-align:center;">
+        <p style="font-size:12px;letter-spacing:.12em;color:rgba(255,255,255,.38);text-transform:uppercase;margin-bottom:16px;">예매처</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+          <a class="btn-booking btn-nol btn-disabled" href="#" aria-disabled="true">🎫 NOL 예매</a>
+          <a class="btn-booking btn-naver btn-disabled" href="#" aria-disabled="true">🟢 NAVER 예매</a>
+        </div>
+        <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.38);">티켓 오픈 시 SNS를 통해 안내드립니다 — <a href="https://instagram.com/Team_Musicscape" target="_blank" style="color:rgba(255,255,255,.55);">@Team_Musicscape</a></p>
+      </div>
+      <div style="margin-top:36px;">
+        <p style="font-size:12px;color:rgba(255,255,255,.38);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;">할인 안내</p>
+        <div class="discount-grid">
+          <div class="discount-card"><p class="discount-name">🎓 학생 할인</p><p class="discount-desc">대학(원)생 신분증 지참 시 S석 이하 10% 할인</p></div>
+          <div class="discount-card"><p class="discount-name">👥 단체 할인</p><p class="discount-desc">10인 이상 단체 예매 시 별도 문의</p></div>
+          <div class="discount-card"><p class="discount-name">♿ 장애인 할인</p><p class="discount-desc">장애인증명서 지참 시 50% 할인 (동반 1인 포함)</p></div>
+          <div class="discount-card"><p class="discount-name">🌟 조기 예매</p><p class="discount-desc">티켓 오픈 후 1주일 내 조기 예매 특가 제공</p></div>
+        </div>
+      </div>
+      <div class="notice-box">
+        <p style="font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-bottom:12px;">유의사항</p>
+        <ul style="padding-left:18px;">
+          <li>공연 시작 후 입장은 악장 사이에만 가능합니다.</li>
+          <li>공연 중 사진 및 영상 촬영은 금지됩니다.</li>
+          <li>예매 취소 및 환불은 공연일 3일 전까지 가능합니다.</li>
+          <li>만 7세 미만 어린이 입장 불가입니다.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="venue" style="background:rgba(255,255,255,.012);">
+    <div class="container">
+      <p class="eyebrow">Venue</p>
+      <h2 class="section-title" style="margin-bottom:40px;">오시는 길</h2>
+      <div class="v-block"><div class="v-icon">🏛️</div><div><p class="v-title">아시아문화전당 예술극장 극장2</p><p class="v-body">광주광역시 동구 문화전당로 38<br>ACC 예술극장 내 극장2</p></div></div>
+      <div class="v-block"><div class="v-icon">🚇</div><div><p class="v-title">지하철</p><p class="v-body">광주 도시철도 1호선 <strong style="color:#fff;">문화전당역</strong> 1번 출구 도보 약 1분</p></div></div>
+      <div class="v-block"><div class="v-icon">🚌</div><div><p class="v-title">버스</p><p class="v-body">금남로4가 또는 문화전당 정류장 하차<br>시내버스 다수 노선 운행</p></div></div>
+      <div class="v-block"><div class="v-icon">🚗</div><div><p class="v-title">자가용 / 주차</p><p class="v-body">아시아문화전당 지하 주차장 이용 가능<br>공연 관람객 주차 할인 적용 (2시간)</p></div></div>
+      <div style="margin-top:28px;text-align:center;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
+        <a href="https://map.naver.com/v5/search/%EC%95%84%EC%8B%9C%EC%95%84%EB%AC%B8%ED%99%94%EC%A0%84%EB%8B%B9" target="_blank" class="btn3d">📍 네이버 지도</a>
+        <a href="https://map.kakao.com/?q=%EC%95%84%EC%8B%9C%EC%95%84%EB%AC%B8%ED%99%94%EC%A0%84%EB%8B%B9" target="_blank" class="btn3d">🗺️ 카카오 지도</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p style="font-size:16px;font-weight:700;color:rgba(255,255,255,.65);margin-bottom:12px;">Team Musicscape</p>
+      <p>📧 <a href="mailto:teammusicscape@gmail.com">teammusicscape@gmail.com</a></p>
+      <p>◻ <a href="https://instagram.com/Team_Musicscape" target="_blank">@Team_Musicscape</a></p>
+      <p style="margin-top:20px;">© 2026 Team Musicscape. All rights reserved.</p>
+      <p style="margin-top:6px;"><a href="https://www.team-musicscape.kr/">← team-musicscape.kr</a></p>
+    </div>
+  </footer>
+  <script>
+    const hamburger=document.getElementById('hamburger'),menuPanel=document.getElementById('menuPanel'),menuClose=document.getElementById('menuClose'),menuBackdrop=document.getElementById('menuBackdrop');
+    function openMenu(){menuPanel.classList.add('open');menuBackdrop.classList.add('open');}
+    function closeMenu(){menuPanel.classList.remove('open');menuBackdrop.classList.remove('open');}
+    hamburger.addEventListener('click',openMenu);
+    menuClose.addEventListener('click',closeMenu);
+    menuBackdrop.addEventListener('click',closeMenu);
+    document.querySelectorAll('.menu-link').forEach(l=>l.addEventListener('click',closeMenu));
+    const YT_ID='th6geK1TU7o';
+    function loadHeroVideo(){
+      const wrap=document.getElementById('hero-iframe-wrap');
+      const iframe=document.createElement('iframe');
+      iframe.allow='autoplay;encrypted-media';
+      iframe.style.cssText='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;';
+      iframe.src='https://www.youtube.com/embed/'+YT_ID+'?autoplay=1&mute=1&loop=1&playlist='+YT_ID+'&controls=0&showinfo=0&rel=0&iv_load_policy=3&playsinline=1';
+      wrap.appendChild(iframe);
+      iframe.addEventListener('load',()=>setTimeout(()=>{const t=document.getElementById('heroThumb');if(t)t.style.opacity='0';},1800));
+    }
+    window.addEventListener('load',()=>setTimeout(loadHeroVideo,500));
+    document.getElementById('soundBtn').addEventListener('click',function(){this.textContent=this.textContent==='🔇'?'🔊':'🔇';});
+    (function(){
+      const slides=document.querySelectorAll('.statement__slide');let cur=0;
+      if(slides.length<2)return;
+      setInterval(()=>{slides[cur].classList.remove('is-active');cur=(cur+1)%slides.length;slides[cur].classList.add('is-active');},3800);
+    })();
+    (function(){
+      const els=document.querySelectorAll('.reveal-line');
+      const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:0.12});
+      els.forEach(el=>io.observe(el));
+      document.querySelectorAll('.hero-content .reveal-line').forEach((el,i)=>setTimeout(()=>el.classList.add('show'),80+i*160));
+    })();
+    document.querySelectorAll('.prog-card').forEach(card=>{
+      card.addEventListener('click',function(e){
+        if(e.target.classList.contains('overlay-close')){this.classList.remove('open');return;}
+        if(window.matchMedia('(hover:none)').matches||window.innerWidth<768){
+          document.querySelectorAll('.prog-card').forEach(c=>{if(c!==this)c.classList.remove('open');});
+          this.classList.toggle('open');
+        }
+      });
+      card.addEventListener('keydown',function(e){
+        if(e.key==='Enter'||e.key===' '){e.preventDefault();this.classList.toggle('open');}
+        if(e.key==='Escape')this.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
