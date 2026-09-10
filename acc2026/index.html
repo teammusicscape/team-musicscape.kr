@@ -70,8 +70,8 @@
     .poster-shell{width:min(100%,820px);margin:0 auto;}
     .poster-img{width:100%;border-radius:16px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.08);}
     .poster-img img{display:block;width:100%;height:auto;}
-    .statement-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;}
-    @media(min-width:900px){.statement-grid{grid-template-columns:1fr 1fr;}}
+    .statement-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;width:min(100%,960px);margin:0 auto;}
+    .statement-copy{width:100%;max-width:800px;margin:0 auto;}
     .statement-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;background:#000;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.4);}
     .statement__slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s ease-in-out;}
     .statement__slide.is-active{opacity:1;}
@@ -262,7 +262,7 @@
       </div>
     </div>
   </section>
-  <section class="section" id="feature" style="background:rgba(255,255,255,.014);padding-top:72px;padding-bottom:72px;">
+  <section class="section" id="feature" style="background:#000;padding-top:72px;padding-bottom:72px;">
     <div class="container">
       <div class="statement-grid">
         <div class="statement-frame">
