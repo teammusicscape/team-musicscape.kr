@@ -48,11 +48,15 @@
     #hero-iframe-wrap iframe{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;}
     .hero-thumb{position:absolute;inset:0;background-image:url('../images/poster-2.jpg');background-size:cover;background-position:center;transition:opacity 1.2s ease;}
     .hero-overlay{position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.35) 0%,rgba(0,0,0,.1) 40%,rgba(0,0,0,.65) 100%);}
-    .hero-content{position:relative;z-index:2;text-align:center;padding:0 24px;}
-    .hero-eyebrow{font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
-    .hero-title{font-size:clamp(28px,5vw,62px);font-weight:800;letter-spacing:.02em;line-height:1.12;text-transform:uppercase;margin-bottom:10px;}
-    .hero-sub{font-size:clamp(14px,2vw,20px);color:rgba(255,255,255,.82);letter-spacing:.06em;margin-bottom:10px;font-style:italic;}
-    .hero-date{font-size:clamp(13px,1.5vw,17px);color:rgba(255,255,255,.65);letter-spacing:.08em;margin-bottom:36px;}
+    .hero-content{position:relative;z-index:2;width:min(960px,100%);text-align:center;padding:0 24px;}
+    .hero-eyebrow{font-family:'Pretendard',sans-serif;font-size:clamp(12px,1.15vw,15px);font-weight:400;letter-spacing:.12em;color:rgba(255,255,255,.76);margin-bottom:26px;}
+    .hero-title{font-family:'Inter','Pretendard',sans-serif;font-size:clamp(54px,9vw,112px);font-weight:300;letter-spacing:-.065em;line-height:.92;margin-bottom:22px;}
+    .hero-korean{display:block;font-family:'Pretendard',sans-serif;font-size:.25em;font-weight:300;letter-spacing:.16em;line-height:1.3;margin:0 0 .72em .16em;color:rgba(255,255,255,.88);}
+    .hero-wordmark{display:block;font-weight:300;white-space:nowrap;}
+    .hero-sub{position:relative;display:inline-block;font-family:'Inter',sans-serif;font-size:clamp(20px,3.2vw,38px);font-weight:300;color:rgba(255,255,255,.9);letter-spacing:-.045em;margin-bottom:20px;padding-bottom:14px;font-style:normal;}
+    .hero-sub::after{content:'';position:absolute;left:0;right:0;bottom:0;height:1px;background:rgba(255,255,255,.62);}
+    .hero-date{font-family:'Pretendard',sans-serif;font-size:clamp(13px,1.4vw,16px);font-weight:400;color:rgba(255,255,255,.74);letter-spacing:.025em;margin-bottom:36px;}
+    @media(max-width:560px){.hero-title{font-size:clamp(45px,15vw,72px)}.hero-sub{font-size:clamp(17px,6.2vw,25px)}.hero-eyebrow{line-height:1.6;margin-bottom:22px}.hero-korean{font-size:.3em}}
     .hero-btn{display:inline-block;padding:13px 36px;border:1px solid rgba(255,255,255,.5);border-radius:9999px;font-size:14px;font-weight:600;letter-spacing:.1em;color:#fff;transition:background .25s,border-color .25s;}
     .hero-btn:hover{background:rgba(255,255,255,.15);border-color:#fff;}
     #soundBtn{position:absolute;bottom:28px;right:24px;z-index:3;width:44px;height:44px;border-radius:50%;background:rgba(0,0,0,.45);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:18px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
@@ -63,19 +67,27 @@
     .eyebrow{font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
     .section-title{font-size:clamp(26px,4vw,42px);font-weight:700;line-height:1.2;}
     .muted{color:rgba(255,255,255,.68);}
-    .poster-img{width:100%;aspect-ratio:2/3;border-radius:16px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;}
+    .poster-shell{width:min(100%,820px);margin:0 auto;}
+    .poster-img{width:100%;border-radius:16px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.08);}
+    .poster-img img{display:block;width:100%;height:auto;}
     .statement-grid{display:grid;grid-template-columns:1fr;gap:48px;align-items:center;}
     @media(min-width:900px){.statement-grid{grid-template-columns:1fr 1fr;}}
-    .statement-frame{position:relative;width:100%;aspect-ratio:4/3;border-radius:16px;background:#000;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.4);}
+    .statement-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:16px;background:#000;overflow:hidden;box-shadow:0 16px 48px rgba(0,0,0,.4);}
     .statement__slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.4s ease-in-out;}
     .statement__slide.is-active{opacity:1;}
+    .statement-partners{position:relative;margin-top:30px;padding:22px 24px 22px 26px;border-radius:2px 14px 14px 2px;border-left:2px solid var(--accent);background:linear-gradient(105deg,rgba(200,169,110,.095),rgba(255,255,255,.025));}
+    .statement-partners-label{font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;color:var(--accent);margin-bottom:11px;}
+    .statement-partners-copy{font-size:15px;line-height:1.9;color:rgba(255,255,255,.68);word-break:keep-all;}
+    .statement-partners-copy strong{color:rgba(255,255,255,.94);font-weight:650;}
     .reveal-line{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.22,.61,.36,1);transition-delay:var(--d,0s);}
     .reveal-line.show{opacity:1;transform:translateY(0);}
     .prog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px;margin-top:40px;}
     .prog-card{position:relative;border-radius:14px;overflow:hidden;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);cursor:pointer;}
     .prog-card .thumb{width:100%;aspect-ratio:1/1;background:#111;overflow:hidden;}
     .prog-card .thumb img{width:100%;height:100%;object-fit:cover;}
-    .prog-card .card-title{padding:12px 14px 14px;font-size:14px;font-weight:600;text-align:center;line-height:1.4;}
+    .prog-card .card-title{padding:14px 14px 5px;font-size:16px;font-weight:700;text-align:center;line-height:1.4;}
+    .program-number{position:absolute;top:10px;left:10px;z-index:2;display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:rgba(0,0,0,.72);border:1px solid rgba(255,255,255,.3);font-size:12px;font-weight:700;color:var(--accent);backdrop-filter:blur(6px);}
+    .program-credit{padding:0 12px 14px;text-align:center;font-size:12px;color:rgba(255,255,255,.5);line-height:1.45;}
     .prog-card .overlay{position:absolute;inset:0;background:rgba(0,0,0,.88);color:#fff;padding:16px;opacity:0;pointer-events:none;transition:opacity .22s ease;overflow:auto;display:flex;flex-direction:column;justify-content:center;gap:8px;}
     .prog-card.open .overlay{opacity:1;pointer-events:auto;}
     @media(hover:hover){.prog-card:hover .overlay{opacity:1;pointer-events:auto;}}
@@ -92,28 +104,79 @@
     .artist-links{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px;}
     .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 14px;border-radius:9999px;border:1px solid rgba(255,255,255,.25);font-size:13px;color:#fff;transition:background .2s;}
     .pill:hover{background:rgba(255,255,255,.1);}
+    .pill svg,.team-link svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex-shrink:0;}
+    .youtube-icon rect{fill:currentColor;stroke:none;}
+    .youtube-icon path{fill:#0a0a0a;stroke:none;}
     .team-grid{display:grid;grid-template-columns:1fr;gap:8px;margin-top:32px;}
     @media(min-width:640px){.team-grid{grid-template-columns:1fr 1fr;}}
     .team-row{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:baseline;padding:10px 14px;border-radius:12px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);}
     .team-role-label{color:rgba(255,255,255,.5);font-size:12px;}
     .team-name-label{color:rgba(255,255,255,.85);font-weight:600;font-size:14px;}
+    .team-name-wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-width:0;}
+    .team-link-list{display:inline-flex;align-items:center;gap:6px;flex-shrink:0;}
+    .team-link{width:30px;height:30px;border-radius:50%;display:grid;place-items:center;color:rgba(255,255,255,.62);border:1px solid rgba(255,255,255,.14);transition:color .2s,background .2s,border-color .2s;}
+    .team-link:hover,.team-link:focus-visible{color:#fff;background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.35);outline:none;}
+    .credits-list{display:grid;grid-template-columns:1fr;gap:8px;margin-top:32px;}
+    @media(min-width:700px){.credits-list{grid-template-columns:1fr 1fr;}}
+    .credits-list .team-row{grid-template-columns:minmax(132px,.75fr) 1.25fr;}
+    .sponsor-heading{margin-top:72px;text-align:center;}
+    .sponsor-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-top:28px;}
+    @media(min-width:760px){.sponsor-grid{grid-template-columns:repeat(3,minmax(0,1fr));}}
+    .sponsor-card{min-height:132px;padding:22px;border-radius:14px;background:#fff;border:1px solid rgba(255,255,255,.14);display:flex;align-items:center;justify-content:center;color:#111;text-align:center;transition:transform .2s ease,box-shadow .2s ease;}
+    a.sponsor-card:hover,a.sponsor-card:focus-visible{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.32);outline:none;}
+    .sponsor-card img{display:block;max-width:100%;max-height:78px;width:auto;height:auto;object-fit:contain;}
+    .sponsor-card img.sponsor-logo-tall{max-height:92px;}
+    .sponsor-card.social-card{flex-direction:column;gap:14px;}
+    .sponsor-wordmark{display:flex;flex-direction:column;align-items:center;color:#111;line-height:1;}
+    .sponsor-wordmark.guitar{font-family:'Libre Baskerville','Pretendard',serif;}
+    .wordmark-kicker{font-family:'Inter',sans-serif;font-size:8px;font-weight:700;letter-spacing:.26em;color:#777;margin:0 0 8px .26em;}
+    .wordmark-main{position:relative;font-size:clamp(20px,2.25vw,28px);font-weight:700;letter-spacing:-.055em;padding-bottom:10px;}
+    .wordmark-main::after{content:'';position:absolute;left:8%;right:8%;bottom:0;height:1px;background:#111;}
+    .sponsor-wordmark.heei{display:inline-block;white-space:nowrap;font-family:'Inter',sans-serif;font-size:clamp(24px,2.8vw,36px);font-weight:800;letter-spacing:.12em;margin-left:.12em;}
+    .sponsor-socials{display:flex;align-items:center;gap:8px;}
+    .sponsor-social{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;color:#333;border:1px solid #d9d9d9;background:#fff;transition:transform .2s ease,border-color .2s ease,color .2s ease;}
+    .sponsor-social:hover,.sponsor-social:focus-visible{transform:translateY(-2px);border-color:#888;outline:none;}
+    .sponsor-social.youtube{color:#f00;}
+    .sponsor-social svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+    .sponsor-social.youtube .youtube-icon path{fill:#fff;}
+    @media(max-width:480px){.sponsor-card{min-height:112px;padding:16px}.sponsor-card img{max-height:62px}.sponsor-card img.sponsor-logo-tall{max-height:76px}}
     .ticket-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px;}
     @media(max-width:580px){.ticket-grid{grid-template-columns:1fr;}}
-    .ticket-card{padding:28px 20px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);text-align:center;}
-    .ticket-card.featured{border-color:var(--accent);background:rgba(200,169,110,.06);}
-    .ticket-grade{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:10px;}
-    .ticket-price{font-size:28px;font-weight:800;margin-bottom:4px;}
+    .ticket-card{position:relative;padding:28px 20px;border-radius:16px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.02);text-align:center;}
+    .ticket-grade{font-size:clamp(26px,3.2vw,36px);letter-spacing:-.035em;color:#fff;font-weight:800;margin-bottom:12px;}
+    .ticket-price{font-size:22px;font-weight:700;margin-bottom:4px;}
+    .ticket-status{display:inline-flex;align-items:center;justify-content:center;margin-top:12px;padding:5px 12px;border-radius:9999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.16);font-size:12px;font-weight:700;letter-spacing:.08em;color:rgba(255,255,255,.72);}
     .btn-booking{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:9999px;font-size:14px;font-weight:700;}
     .btn-nol{background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;}
     .btn-naver{background:linear-gradient(135deg,#03c75a,#02a34c);color:#fff;}
+    .btn-inquiry{background:linear-gradient(135deg,#d1b477,#9a7540);color:#090909;}
     .btn-disabled{opacity:.4;cursor:not-allowed;pointer-events:none;}
-    .notice-box{margin-top:32px;padding:20px;border-radius:14px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);}
-    .notice-box li{font-size:13px;color:rgba(255,255,255,.5);margin:6px 0;line-height:1.6;}
     .discount-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:28px;}
     @media(max-width:560px){.discount-grid{grid-template-columns:1fr;}}
-    .discount-card{padding:14px 16px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);}
+    .discount-card{display:flex;align-items:center;gap:14px;padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);}
+    .discount-rate{display:flex;align-items:center;justify-content:center;width:52px;height:52px;flex:0 0 52px;border-radius:14px;background:rgba(255,255,255,.07);font-size:15px;font-weight:800;color:#fff;}
     .discount-name{font-weight:700;font-size:14px;margin-bottom:4px;}
-    .discount-desc{font-size:12px;color:rgba(255,255,255,.5);}
+    .discount-desc{font-size:12px;color:rgba(255,255,255,.52);line-height:1.55;}
+    .proof-note{margin-top:12px;padding:16px 18px;border-radius:14px;background:rgba(255,255,255,.035);border-left:3px solid rgba(255,255,255,.38);font-size:13px;color:rgba(255,255,255,.62);line-height:1.7;}
+    .booking-guide{margin-top:46px;}
+    .guide-heading{font-size:22px;font-weight:800;letter-spacing:-.02em;margin-bottom:10px;}
+    .guide-intro{font-size:13px;color:rgba(255,255,255,.52);line-height:1.7;margin-bottom:18px;}
+    .guide-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
+    .guide-highlight{padding:18px;border-radius:15px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.09);}
+    .guide-highlight strong{display:block;font-size:14px;margin-bottom:6px;}
+    .guide-highlight span{display:block;font-size:12px;line-height:1.6;color:rgba(255,255,255,.55);}
+    .guide-highlight.scent{border-color:rgba(235,190,120,.3);background:rgba(235,190,120,.055);}
+    .guide-panel{border-bottom:1px solid rgba(255,255,255,.09);}
+    .guide-panel:first-of-type{border-top:1px solid rgba(255,255,255,.09);}
+    .guide-panel summary{position:relative;padding:18px 38px 18px 2px;list-style:none;cursor:pointer;font-size:14px;font-weight:700;line-height:1.5;}
+    .guide-panel summary::-webkit-details-marker{display:none;}
+    .guide-panel summary::after{content:'+';position:absolute;right:6px;top:50%;transform:translateY(-50%);font-size:22px;font-weight:300;color:rgba(255,255,255,.5);}
+    .guide-panel[open] summary::after{content:'−';}
+    .guide-content{padding:0 34px 18px 20px;}
+    .guide-content ul{padding-left:18px;}
+    .guide-content li{font-size:13px;color:rgba(255,255,255,.58);margin:7px 0;line-height:1.7;}
+    .guide-content strong{color:rgba(255,255,255,.86);}
+    @media(max-width:680px){.guide-highlights{grid-template-columns:1fr;}.guide-heading{font-size:19px;}.guide-content{padding-left:4px;padding-right:10px;}}
     .v-block{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:flex-start;padding:18px;border-radius:16px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);margin-bottom:12px;}
     .v-icon{width:42px;height:42px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;}
     .v-title{font-weight:700;font-size:15px;margin-bottom:4px;}
@@ -123,6 +186,29 @@
     footer a{color:rgba(255,255,255,.55);}
     footer a:hover{color:#fff;}
     .btn3d{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:9999px;padding:11px 20px;font-size:14px;font-weight:700;color:#0b0b0b;background:linear-gradient(#fafafa,#e2e2e2);border:1px solid #ccc;box-shadow:0 6px 18px rgba(0,0,0,.25),inset 0 1px 0 #fff;}
+    @media(max-width:680px){
+      .container{padding-left:16px;padding-right:16px;}
+      .section{padding-top:70px;padding-bottom:70px;}
+      #poster{padding-top:56px!important;padding-bottom:40px!important;}
+      .poster-img{border-radius:12px;}
+      .statement-grid{gap:32px;}
+      .statement-frame{border-radius:12px;}
+      .statement-partners{padding:20px 18px 20px 20px;}
+      .prog-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:28px;}
+      #artists .artist-card{gap:24px;padding:38px 0;}
+      .artist-photo-wrap{margin:0 auto;}
+      .artist-info{min-width:0;}
+      .ticket-grid{gap:10px;margin-top:30px;}
+      .ticket-card{padding:24px 16px;}
+      .booking-guide{margin-top:38px;}
+    }
+    @media(max-width:480px){
+      .credits-list .team-row{grid-template-columns:1fr;gap:7px;}
+      .team-name-wrap{width:100%;}
+      .sponsor-grid{gap:8px;}
+      .sponsor-card{padding:14px;}
+      .btn-booking{width:100%;justify-content:center;}
+    }
     @media(prefers-reduced-motion:reduce){.reveal-line,.statement__slide{transition:none;opacity:1;transform:none;}}
   </style>
 </head>
@@ -135,6 +221,7 @@
       <a href="#artists">출연진</a>
       <a href="#tickets">예매</a>
       <a href="#venue">오시는 길</a>
+      <a href="#credits">크레딧·후원</a>
     </div>
     <button class="nav-hamburger" id="hamburger" aria-label="메뉴 열기"><span></span><span></span><span></span></button>
   </nav>
@@ -146,6 +233,7 @@
     <a href="#artists" class="menu-link">출연진</a>
     <a href="#tickets" class="menu-link">예매</a>
     <a href="#venue" class="menu-link">오시는 길</a>
+    <a href="#credits" class="menu-link">크레딧·후원</a>
     <a href="https://www.team-musicscape.kr/" class="menu-link" style="color:rgba(255,255,255,.4);">← Team Musicscape</a>
   </div>
   <section class="hero" id="hero">
@@ -154,7 +242,7 @@
     <div class="hero-overlay"></div>
     <div class="hero-content">
       <p class="hero-eyebrow reveal-line" style="--d:.2s">2026 · ACC 아시아문화전당 예술극장 극장2</p>
-      <h1 class="hero-title reveal-line" style="--d:.4s">치유의 밤<br><span style="font-weight:300;letter-spacing:.2em;font-size:.58em;">MUSICSCAPE</span></h1>
+      <h1 class="hero-title reveal-line" style="--d:.4s"><span class="hero-korean">치유의 밤</span><span class="hero-wordmark">Musicscape</span></h1>
       <p class="hero-sub reveal-line" style="--d:.6s">From Here to Everywhere...</p>
       <p class="hero-date reveal-line" style="--d:.76s">2026년 10월 30일 (금) 오후 7시</p>
       <a href="#tickets" class="hero-btn reveal-line" style="--d:.9s">예매 안내 →</a>
@@ -167,9 +255,9 @@
       <div style="text-align:center;margin-bottom:20px;">
         <p class="eyebrow">Poster</p>
       </div>
-      <div style="max-width:460px;margin:0 auto;">
-        <div class="poster-img" id="posterImg" style="aspect-ratio:auto;border-radius:16px;overflow:hidden;background:#111;border:1px solid rgba(255,255,255,.08);">
-          <img src="../images/acc-poster.jpg" alt="치유의 밤 MUSICSCAPE 공연 포스터 — 2026.10.30 ACC 아시아문화전당" style="width:100%;height:auto;display:block;" loading="eager">
+      <div class="poster-shell">
+        <div class="poster-img" id="posterImg">
+          <img src="../images/acc-poster.jpg" alt="치유의 밤 MUSICSCAPE 공연 포스터 — 2026.10.30 ACC 아시아문화전당" loading="eager">
         </div>
       </div>
     </div>
@@ -178,17 +266,22 @@
     <div class="container">
       <div class="statement-grid">
         <div class="statement-frame">
-          <img class="statement__slide is-active" src="../images/hero-1.jpg" alt="Musicscape 공연" loading="lazy">
-          <img class="statement__slide" src="../images/hero-3.jpg" alt="Musicscape 공연" loading="lazy">
-          <img class="statement__slide" src="../images/hero-6.jpg" alt="Musicscape 공연" loading="lazy">
-          <img class="statement__slide" src="../images/hero-8.jpg" alt="Musicscape 공연" loading="lazy">
+          <img class="statement__slide is-active" src="./assets/archive-2025/performance-01.webp" alt="스테인드글라스 영상과 함께 연주하는 기타리스트 최인" loading="lazy">
+          <img class="statement__slide" src="./assets/archive-2025/performance-02.webp" alt="파도 영상 앞에서 펼쳐지는 기타와 피리 이중주" loading="lazy">
+          <img class="statement__slide" src="./assets/archive-2025/performance-03.webp" alt="숲 영상과 함께 연주하는 기타와 바이올린 이중주" loading="lazy">
+          <img class="statement__slide" src="./assets/archive-2025/performance-04.webp" alt="별빛과 산 풍경으로 채워진 Musicscape 공연 무대" loading="lazy">
         </div>
         <div class="statement-copy">
           <p class="eyebrow reveal-line">Concert Statement</p>
-          <h2 class="section-title reveal-line" style="--d:.15s;margin-bottom:28px;">치유의 밤,<br>음악이<br>풍경이 되다</h2>
-          <p class="reveal-line muted" style="--d:.3s;font-size:16px;line-height:1.95;margin-bottom:18px;">뮤직스케이프의 공연은 음악회가 아닌 <em>경험</em>입니다.<br>기타, 피리, 바이올린의 소리가 공간음향과 미디어아트 속에 녹아들어 하나의 감각적 풍경을 만들어냅니다.</p>
-          <p class="reveal-line muted" style="--d:.45s;font-size:15px;line-height:1.9;margin-bottom:18px;">이번 <strong style="color:#fff;">치유의 밤</strong>은 일상의 소음을 잠시 내려놓고, 음악이 건네는 고요하고 깊은 위로를 온몸으로 받아들이는 시간입니다.</p>
-          <p class="reveal-line muted" style="--d:.6s;font-size:15px;line-height:1.9;">여기서 저 너머로 — <em>From Here to Everywhere...</em><br>이 음악이 당신 안 어딘가 이미 존재하는 풍경을 깨워줄 것입니다.</p>
+          <h2 class="section-title reveal-line" style="--d:.15s;margin-bottom:28px;">지금, 이곳에서부터<br>피어난 울림이<br>당신의 세계를 채웁니다</h2>
+          <p class="reveal-line muted" style="--d:.3s;font-size:16px;line-height:1.95;margin-bottom:18px;">작곡가이자 기타리스트 최인이 직접 써내려간 선율은 프로젝션 맵핑과 다차원 입체음향을 만나 무대 위에서 하나의 깊은 서사로 확장됩니다. 바이올린과 기타, 피리와 기타가 빚어내는 창작 이중주를 비롯해 동양과 서양, 전통과 현대의 결이 경계 없이 어우러지는 특별한 레퍼토리가 펼쳐집니다.</p>
+          <p class="reveal-line muted" style="--d:.45s;font-size:15px;line-height:1.9;margin-bottom:18px;">대형 스크린과 매쉬 스크린 위로는 숲과 바다, 붓끝의 먹향처럼 피어나는 서예와 한국화가 살아 움직이며 감각적인 미디어아트로 구현되고, 공간을 입체적으로 감싸 안는 사운드와 장면에 맞춰 은은하게 스며드는 향기는 관객의 오감을 일깨워 음악 속 풍경의 한가운데로 조용히 이끕니다.</p>
+          <p class="reveal-line muted" style="--d:.6s;font-size:15px;line-height:1.9;margin-bottom:18px;"><strong style="color:#fff;">혼자가 아닌 우리가 함께 나누는 회복과 희망의 메시지.</strong></p>
+          <p class="reveal-line muted" style="--d:.68s;font-size:15px;line-height:1.9;">빛과 소리, 그리고 향기가 함께 직조해낸 감각의 시공간 속에서 지친 일상을 지나온 여러분의 마음이 잠시 무거운 짐을 내려놓고 온전히 쉬어갈 수 있기를 바랍니다. 객석을 채우는 따뜻한 공감과 음악의 온기가 오늘 밤, 당신의 삶을 다시금 나아가게 할 깊은 위로와 희망의 풍경으로 남기를 소망합니다.</p>
+          <div class="statement-partners reveal-line" style="--d:.72s;">
+            <p class="statement-partners-label">WITH OUR PARTNERS</p>
+            <p class="statement-partners-copy">이 공연은 <strong>광주현대병원</strong>, <strong>재단법인 최명숙 생명숲</strong>, <strong>한국문화예술위원회</strong>, <strong>이용한 기타</strong>의 뜻깊은 후원으로 제작됩니다. <strong>FORMLESS</strong>는 공간에 향의 결을 더하고, <strong>HEE : I</strong>는 공연의 기억을 오래 간직할 굿즈 제작으로 함께합니다. 서로 다른 분야의 감각과 마음이 모여, 음악 너머까지 이어지는 하나의 풍경을 함께 만들어갑니다.</p>
+          </div>
           <div class="reveal-line" style="--d:.75s;margin-top:32px;display:flex;gap:20px;flex-wrap:wrap;">
             <div>
               <p style="font-size:11px;color:rgba(255,255,255,.38);letter-spacing:.12em;text-transform:uppercase;margin-bottom:4px;">Date</p>
@@ -211,34 +304,74 @@
       <p class="muted" style="font-size:14px;">카드를 클릭 또는 탭하면 작품 설명을 볼 수 있습니다</p>
       <div class="prog-grid">
         <div class="prog-card" tabindex="0">
-          <div class="thumb"><img src="../images/work-4.jpg" alt="가던길" loading="lazy"></div>
-          <div class="card-title">가던길<br><span style="font-size:12px;color:rgba(255,255,255,.45);">The Way</span></div>
-          <div class="overlay"><div class="overlay-title">가던길 — The Way</div><div class="overlay-body">지나온 길, 그리고 앞으로 가야 할 길. 기타의 선율이 여정의 기억을 더듬으며 시간 속에 남겨진 발자국을 소환합니다.</div><span class="overlay-close">✕</span></div>
-        </div>
-        <div class="prog-card" tabindex="0">
+          <span class="program-number">01</span>
           <div class="thumb"><img src="../images/work-2.jpg" alt="숲" loading="lazy"></div>
-          <div class="card-title">숲<br><span style="font-size:12px;color:rgba(255,255,255,.45);">Forest</span></div>
-          <div class="overlay"><div class="overlay-title">숲 — Forest</div><div class="overlay-body">바람, 새소리, 이파리가 스치는 소리 — 자연의 소리가 음악으로 재구성됩니다. 피리의 숨결이 숲의 공기를 담아냅니다.</div><span class="overlay-close">✕</span></div>
+          <div class="card-title">숲</div>
+          <div class="program-credit">gt. 최인 · vn. 송지원</div>
+          <div class="overlay"><div class="overlay-title">숲</div><div class="overlay-body">빛과 바람, 솔향기 가득한 숲의 풍경을 담은 곡으로, 각자의 자리에서 묵묵히 삶을 지켜내는 이들에게 감사의 마음을 전한다.</div><span class="overlay-close">✕</span></div>
         </div>
         <div class="prog-card" tabindex="0">
+          <span class="program-number">02</span>
           <div class="thumb"><img src="../images/work-9.jpg" alt="바다" loading="lazy"></div>
-          <div class="card-title">바다<br><span style="font-size:12px;color:rgba(255,255,255,.45);">Sea</span></div>
-          <div class="overlay"><div class="overlay-title">바다 — Sea</div><div class="overlay-body">파도의 리듬과 침묵 사이. 바이올린의 선율이 수평선 너머로 이어지며 끝없이 확장되는 공간을 그려냅니다.</div><span class="overlay-close">✕</span></div>
+          <div class="card-title">바다</div>
+          <div class="program-credit">gt. 최인</div>
+          <div class="overlay"><div class="overlay-title">바다</div><div class="overlay-body">끝없이 반복되는 파도의 리듬 속 따뜻한 위로. 다가오고 물러서는 파도의 숨결은 변치 않는 답처럼 우리를 다독인다.</div><span class="overlay-close">✕</span></div>
         </div>
         <div class="prog-card" tabindex="0">
+          <span class="program-number">03</span>
+          <div class="thumb"><img src="../images/work-12.webp" alt="산" loading="lazy"></div>
+          <div class="card-title">산</div>
+          <div class="program-credit">gt. 최인</div>
+          <div class="overlay"><div class="overlay-title">산</div><div class="overlay-body">오르막과 내리막 끝에 마주하는 정상의 빛. 삶의 굴곡 끝에 피어나는 성취와 희망.</div><span class="overlay-close">✕</span></div>
+        </div>
+        <div class="prog-card" tabindex="0">
+          <span class="program-number">04</span>
+          <div class="thumb"><img src="../images/work-6.jpg" alt="서(書)" loading="lazy"></div>
+          <div class="card-title">서(書)</div>
+          <div class="program-credit">gt. 최인</div>
+          <div class="overlay"><div class="overlay-title">서(書)</div><div class="overlay-body">서예의 호흡과 정신에서 영감을 받아, 붓의 획과 기세를 기타의 울림으로 옮긴 곡이다. 우리 전통문화의 깊은 정신성을 음악에 담았다.</div><span class="overlay-close">✕</span></div>
+        </div>
+        <div class="prog-card" tabindex="0">
+          <span class="program-number">05</span>
+          <div class="thumb"><img src="../images/work-4.jpg" alt="가던길" loading="lazy"></div>
+          <div class="card-title">가던길</div>
+          <div class="program-credit">gt. 최인 · 피리. 유현수</div>
+          <div class="overlay"><div class="overlay-title">가던길</div><div class="overlay-body">나그네의 여정을 따라 만남과 이별, 삶의 희로애락을 담았다. 메나리조 선율 속에서 피리와 기타가 서로 이야기하듯 주고받으며 삶의 길을 노래한다.</div><span class="overlay-close">✕</span></div>
+        </div>
+        <div class="prog-card" tabindex="0">
+          <span class="program-number">06</span>
+          <div class="thumb"><img src="../images/work-14.webp" alt="감포 앞 바다에서" loading="lazy"></div>
+          <div class="card-title">감포 앞 바다에서</div>
+          <div class="program-credit">gt. 최인 · 피리. 유현수</div>
+          <div class="overlay"><div class="overlay-title">감포 앞 바다에서</div><div class="overlay-body">문무대왕의 평화 정신과 파도를 잠재우는 만파식적의 설화에서 영감을 얻은 곡. 혼란의 시대 속에서, 평화와 안녕을 기원한다.</div><span class="overlay-close">✕</span></div>
+        </div>
+        <div class="prog-card" tabindex="0">
+          <span class="program-number">07</span>
+          <div class="thumb"><img src="../images/work-7.webp" alt="석풍수" loading="lazy"></div>
+          <div class="card-title">석풍수</div>
+          <div class="program-credit">gt. 최인</div>
+          <div class="overlay"><div class="overlay-title">석풍수</div><div class="overlay-body">제주의 자연과 건축가 유동룡의 건축 작품 〈수풍석〉에서 영감을 받아 쓰인 곡이다. 바람과 돌, 물의 감각을 기타의 다양한 주법에 담았다. 자연과 인간, 그리고 사람을 귀하게 여기는 따뜻한 마음이 하나의 서정적 풍경으로 펼쳐진다.</div><span class="overlay-close">✕</span></div>
+        </div>
+        <div class="prog-card" tabindex="0">
+          <span class="program-number">08</span>
           <div class="thumb"><img src="../images/work-5.jpg" alt="Prayer" loading="lazy"></div>
           <div class="card-title">Prayer</div>
-          <div class="overlay"><div class="overlay-title">Prayer</div><div class="overlay-body">간절함과 고요함이 공존하는 기도. 세 악기의 소리가 하나가 되어 보이지 않는 것들을 향해 손을 내밉니다.</div><span class="overlay-close">✕</span></div>
+          <div class="program-credit">gt. 최인 · vn. 박재린</div>
+          <div class="overlay"><div class="overlay-title">Prayer</div><div class="overlay-body">혼란한 현실 속에서 살아가는 모두를 위한 기도를 담은 곡이다. 고요한 선율 속에 간절한 바람을 담아, 작은 울림이 희망의 불씨가 되기를 바란다.</div><span class="overlay-close">✕</span></div>
         </div>
         <div class="prog-card" tabindex="0">
-          <div class="thumb"><img src="../images/work-13.webp" alt="Bluehour" loading="lazy"></div>
-          <div class="card-title">Bluehour</div>
-          <div class="overlay"><div class="overlay-title">Bluehour</div><div class="overlay-body">해 지고 어둠이 오기 직전의 그 찰나 — 세상이 가장 파랗게 빛나는 순간. 시간이 멈춘 듯한 공간 속에 음악이 흐릅니다.</div><span class="overlay-close">✕</span></div>
+          <span class="program-number">09</span>
+          <div class="thumb"><img src="../images/work-8.webp" alt="섬" loading="lazy"></div>
+          <div class="card-title">섬</div>
+          <div class="program-credit">gt. 최인 · vn. 박재린</div>
+          <div class="overlay"><div class="overlay-title">섬</div><div class="overlay-body">외딴 섬을 바라보며 느낀 두려움과 낯섦을 넘어, 숨겨진 아름다움을 발견해 가는 여정. 그렇게 우리도 서로에게 한걸음 더 다가가 보자.</div><span class="overlay-close">✕</span></div>
         </div>
         <div class="prog-card" tabindex="0">
-          <div class="thumb"><img src="../images/work-15.webp" alt="From Here to Everywhere" loading="lazy"></div>
-          <div class="card-title">From Here<br><span style="font-size:12px;color:rgba(255,255,255,.45);">to Everywhere...</span></div>
-          <div class="overlay"><div class="overlay-title">From Here to Everywhere...</div><div class="overlay-body">이 공간에서 시작되어, 음악은 어디로든 닿을 수 있습니다. 세 연주자와 공간음향이 만들어내는 몰입의 절정.</div><span class="overlay-close">✕</span></div>
+          <span class="program-number">10</span>
+          <div class="thumb"><img src="../images/work-15.webp" alt="From here to everywhere" loading="lazy"></div>
+          <div class="card-title">From here to everywhere</div>
+          <div class="program-credit">gt. 최인 · vn. 박재린</div>
+          <div class="overlay"><div class="overlay-title">From here to everywhere</div><div class="overlay-body">산길에서 마주한 한 송이 민들레와 산비탈 가득한 군락에서 영감을 얻은 곡이다. 작은 씨앗이 바람을 타고 멀리 퍼져나가듯, 기타와 바이올린은 개인의 소망이 세상으로 확장되는 순간을 노래한다.</div><span class="overlay-close">✕</span></div>
         </div>
       </div>
       <p class="muted" style="font-size:12px;margin-top:20px;text-align:right;">* 프로그램은 사정에 따라 변경될 수 있습니다.</p>
@@ -252,11 +385,12 @@
         <div class="artist-photo-wrap"><img class="artist-photo" src="../images/member-choi.jpg" alt="최인 기타리스트" loading="lazy"></div>
         <div class="artist-info">
           <h3 class="artist-name">최인</h3>
-          <p class="artist-role">Guitar · 작곡 · 음악감독</p>
-          <p class="artist-bio">작곡가이자 기타리스트 최인은 공간음향, 미디어아트, 전통음악과 현대음악이 교차하는 실험적 공연을 이끌어 왔습니다. Team Musicscape의 대표이자 음악감독으로서, 음악과 기술, 공간이 하나가 되는 새로운 공연 언어를 탐구합니다. 입체음향과 프로젝션 맵핑을 결합한 독자적인 창작 방식으로 국내외 무대에서 주목받고 있습니다.</p>
+          <p class="artist-role">Composer, Guitarist</p>
+          <p class="artist-bio">기타리스트 겸 작곡가 최인은 한국에서 다수의 콩쿨에서 입상하며 주목을 받기 시작하였으며, 서울대학교 음악대학 기악과를 졸업하고 벨기에로 유학, 레멘스인스튜트(Lemmensinstituut)에서 석사학위를 그리고 독일 로스톡 국립음대(Hochschule für Musik und Theater, Rostock)에서 콘체르트엑자멘 과정을 만점으로 졸업하였다.<br><br>독일을 중심으로 다양한 실내악과 독주활동을 펼쳐왔으며 서울대 현악합주, 원주시향, 부천신포니에타, 인천시향과의 협연 및 다수의 독주회, 라디오 출연, 드라마 OST 작곡 및 연주, 피에스타 기타 앙상블, 기타 쿼텟 Imagine, 듀오 카프리치오소의 리더로 활동해왔다. 또한 세종솔로이스츠와 서울시향의 객원 연주자로 무대에 오르며 활발한 연주 활동을 이어왔다.<br><br>다양한 레퍼토리와 학구적이고 감성적인 그의 연주는 유럽과 한국에서 많은 호평을 받은 바 있다. 현재 팀뮤직스케이프의 총 감독으로 다양한 동시대적 주제들을 가지고 꾸준히 기타 독주와 실내악곡들을 창작·연주해 가고 있으며, 영상·인터랙티브 그래픽·프로젝션 맵핑 등을 활용하여 음악과 표현의 영역을 더욱 확장해가고 있다.</p>
           <div class="artist-links">
-            <a href="https://www.inchoi.kr/" class="pill" target="_blank">🌐 inchoi.kr</a>
-            <a href="https://instagram.com/inchoiguitar" class="pill" target="_blank">◻ @inchoiguitar</a>
+            <a href="https://www.inchoi.kr/" class="pill" target="_blank" rel="noopener noreferrer">🌐 inchoi.kr</a>
+            <a href="https://instagram.com/inchoiguitar" class="pill" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"></circle></svg>@inchoiguitar</a>
+            <a href="https://www.youtube.com/@inchoi2041" class="pill" target="_blank" rel="noopener noreferrer"><svg class="youtube-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"></rect><path d="m10 9 5 3-5 3Z"></path></svg>YouTube</a>
           </div>
         </div>
       </div>
@@ -264,10 +398,10 @@
         <div class="artist-photo-wrap"><img class="artist-photo" src="../images/member-yoo.jpg" alt="유현수 피리" loading="lazy"></div>
         <div class="artist-info">
           <h3 class="artist-name">유현수</h3>
-          <p class="artist-role">Piri · 피리</p>
-          <p class="artist-bio">국악기 피리의 경계를 확장해온 연주자 유현수는 전통음악의 깊이와 현대적 감각을 함께 아우릅니다. 뮤직스케이프의 공연에서 피리의 소리는 단순한 악기 음색을 넘어, 공간 전체를 채우는 숨결이 됩니다. 동양과 서양, 전통과 실험의 경계에서 새로운 음악적 언어를 만들어갑니다.</p>
+          <p class="artist-role">피리</p>
+          <p class="artist-bio">국립국악고등학교를 졸업하고 서울대학교에서 학사·석사·박사 과정을 모두 마쳤다. 국가무형문화재 ‘피리정악 및 대취타’ 이수자이자 ‘종묘제례악’ 전수자로, 전통음악의 품격을 전승하는 동시에 현대적 감각으로 관객의 마음을 울린다. 제68회 조선일보 신인음악회를 시작으로 국내 주요 무대와 오스트리아, 헝가리, 독일, 카메룬, 일본 등에서 초청 공연을 통해 피리의 존재감을 세계에 알렸으며, 현재 수원대학교 국악과 겸임교수로 재직 중이다.</p>
           <div class="artist-links">
-            <a href="https://instagram.com/Team_Musicscape" class="pill" target="_blank">◻ @Team_Musicscape</a>
+            <a href="https://www.instagram.com/piri.hyunsoo_you/?hl=ko" class="pill" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"></circle></svg>@piri.hyunsoo_you</a>
           </div>
         </div>
       </div>
@@ -275,20 +409,11 @@
         <div class="artist-photo-wrap"><img class="artist-photo" src="../images/member-song.jpg" alt="송지원 바이올리니스트" loading="lazy"></div>
         <div class="artist-info">
           <h3 class="artist-name">송지원</h3>
-          <p class="artist-role">Violin · 바이올린</p>
-          <p class="artist-bio">바이올리니스트 송지원은 국내외 유수의 콩쿠르 입상과 오케스트라 협연을 통해 폭넓은 음악적 역량을 인정받은 연주자입니다. KBS 교향악단을 비롯한 국내 주요 오케스트라와 협연하였으며, The Canetti International Violin Competition, Lions-Music International Competition in Hessen 등 국제 무대에서 수상하였습니다. Pablo Casals Festival, Tibor Varga International Music Academy 등 유럽의 주요 음악 페스티벌에 참가하였으며, 한국, 일본, 핀란드, 독일, 오스트리아 등 다양한 나라에서 독주 및 실내악 활동을 이어오고 있습니다.</p>
+          <p class="artist-role">Violin</p>
+          <p class="artist-bio">서울대학교 음악대학 학사,석사,독일 쾰른 국립음대 최고연주자과정 졸업<br><br>세계일보 콩쿠르 대상, 조선일보, 부산MBC, KBS한전콩쿠르, The Canetti International Violin Competition 등 국내외 주요콩쿨 입상<br><br>KBS교향악단, 프라임 필하모닉, 코리안 챔버 오케스트라, 대전시향, 군산시향, 포항시향, 서울대학교 음악대학 오케스트라, Saima Sinfonietta, 몰도바 방송 교향악단, 쾰른 챔버 오케스트라 등 국내외 오케스트라와 협연<br><br>독일 함부르크 심포니, 뒤셀도르프 심포니 오케스트라 수석 역임<br>현)숙명여대, 예원, 서울예고, 선화예중∙고, 부산예중 출강, 함신익과 Symphony S.O.N.G악장, 대전챔버 악장</p>
           <div class="artist-links">
-            <a href="https://instagram.com/Team_Musicscape" class="pill" target="_blank">◻ @Team_Musicscape</a>
+            <a href="https://instagram.com/Team_Musicscape" class="pill" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"></circle></svg>@Team_Musicscape</a>
           </div>
-        </div>
-      </div>
-      <div style="margin-top:64px;">
-        <p class="eyebrow" style="margin-bottom:20px;">Creative Team</p>
-        <div class="team-grid">
-          <div class="team-row"><span class="team-role-label">음향디자인 · 음향감독</span><span class="team-name-label">이수용</span></div>
-          <div class="team-row"><span class="team-role-label">영상디자인 · 영상감독</span><span class="team-name-label">이뿌리</span></div>
-          <div class="team-row"><span class="team-role-label">조명디자인 · 조명감독</span><span class="team-name-label">최예원</span></div>
-          <div class="team-row"><span class="team-role-label">기획 · 프로듀서</span><span class="team-name-label">이미리</span></div>
         </div>
       </div>
     </div>
@@ -297,22 +422,20 @@
     <div class="container">
       <p class="eyebrow">Tickets</p>
       <h2 class="section-title" style="margin-bottom:10px;">예매 안내</h2>
-      <p class="muted" style="font-size:14px;">티켓 오픈 일정이 확정되면 예매 링크를 안내드립니다.</p>
       <div class="ticket-grid">
         <div class="ticket-card">
-          <p class="ticket-grade">A석</p>
-          <p class="ticket-price">30,000<span style="font-size:16px;font-weight:400;">원</span></p>
-          <p style="font-size:12px;color:rgba(255,255,255,.4);">일반</p>
-        </div>
-        <div class="ticket-card featured">
-          <p class="ticket-grade" style="color:var(--accent);">S석</p>
-          <p class="ticket-price" style="color:var(--accent);">50,000<span style="font-size:16px;font-weight:400;">원</span></p>
-          <p style="font-size:12px;color:rgba(255,255,255,.5);">추천</p>
+          <p class="ticket-grade">R석</p>
+          <p class="ticket-price">70,000<span style="font-size:14px;font-weight:400;">원</span></p>
+          <span class="ticket-status">매진</span>
         </div>
         <div class="ticket-card">
-          <p class="ticket-grade">R석</p>
-          <p class="ticket-price">70,000<span style="font-size:16px;font-weight:400;">원</span></p>
-          <p style="font-size:12px;color:rgba(255,255,255,.4);">프리미엄</p>
+          <p class="ticket-grade">S석</p>
+          <p class="ticket-price">50,000<span style="font-size:14px;font-weight:400;">원</span></p>
+          <span class="ticket-status">매진</span>
+        </div>
+        <div class="ticket-card">
+          <p class="ticket-grade">A석</p>
+          <p class="ticket-price">30,000<span style="font-size:14px;font-weight:400;">원</span></p>
         </div>
       </div>
       <div style="margin-top:36px;padding:24px;border-radius:16px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);text-align:center;">
@@ -320,26 +443,91 @@
         <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
           <a class="btn-booking btn-nol btn-disabled" href="#" aria-disabled="true">🎫 NOL 예매</a>
           <a class="btn-booking btn-naver btn-disabled" href="#" aria-disabled="true">🟢 NAVER 예매</a>
+          <a class="btn-booking btn-inquiry" href="tel:07042203287" aria-label="기획사에 티켓 문의 전화하기">☎ 기획사 티켓 문의</a>
         </div>
-        <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.38);">티켓 오픈 시 SNS를 통해 안내드립니다 — <a href="https://instagram.com/Team_Musicscape" target="_blank" style="color:rgba(255,255,255,.55);">@Team_Musicscape</a></p>
+        <p style="margin-top:14px;font-size:13px;color:rgba(255,255,255,.48);">뮤직스케이프랩 · <a href="tel:07042203287" style="color:rgba(255,255,255,.72);text-decoration:underline;text-underline-offset:3px;">070-4220-3287</a></p>
       </div>
       <div style="margin-top:36px;">
         <p style="font-size:12px;color:rgba(255,255,255,.38);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px;">할인 안내</p>
         <div class="discount-grid">
-          <div class="discount-card"><p class="discount-name">🎓 학생 할인</p><p class="discount-desc">대학(원)생 신분증 지참 시 S석 이하 10% 할인</p></div>
-          <div class="discount-card"><p class="discount-name">👥 단체 할인</p><p class="discount-desc">10인 이상 단체 예매 시 별도 문의</p></div>
-          <div class="discount-card"><p class="discount-name">♿ 장애인 할인</p><p class="discount-desc">장애인증명서 지참 시 50% 할인 (동반 1인 포함)</p></div>
-          <div class="discount-card"><p class="discount-name">🌟 조기 예매</p><p class="discount-desc">티켓 오픈 후 1주일 내 조기 예매 특가 제공</p></div>
+          <div class="discount-card"><span class="discount-rate">50%</span><div><p class="discount-name">문화패스</p><p class="discount-desc">만 7세~만 24세</p></div></div>
+          <div class="discount-card"><span class="discount-rate">50%</span><div><p class="discount-name">예술인패스 할인</p><p class="discount-desc">예술인 본인 · 예술인패스 또는 카드 신청 내역 지참</p></div></div>
+          <div class="discount-card"><span class="discount-rate">50%</span><div><p class="discount-name">경로 할인</p><p class="discount-desc">만 64세 이상 본인</p></div></div>
+          <div class="discount-card"><span class="discount-rate">50%</span><div><p class="discount-name">장애인 할인</p><p class="discount-desc">복지카드 소지자 · 1인 2매까지</p></div></div>
+          <div class="discount-card"><span class="discount-rate">50%</span><div><p class="discount-name">의사상자 할인</p><p class="discount-desc">의상자증 및 의사자 유족증 소지자 · 1인 2매까지</p></div></div>
+          <div class="discount-card"><span class="discount-rate">20%</span><div><p class="discount-name">다자녀 우대카드</p><p class="discount-desc">다자녀 우대카드 소지자 · 1인 2매까지</p></div></div>
         </div>
+        <p class="proof-note"><strong>할인 증빙을 꼭 지참해 주세요.</strong> 모든 할인은 실 관람자 기준이며 중복 할인은 불가합니다. 관람 당사자가 해당 증빙자료를 현장 매표소에 제시하지 못할 경우 정가 기준 차액을 지불해야 티켓을 수령할 수 있습니다.</p>
       </div>
-      <div class="notice-box">
-        <p style="font-size:11px;letter-spacing:.12em;color:rgba(255,255,255,.3);text-transform:uppercase;margin-bottom:12px;">유의사항</p>
-        <ul style="padding-left:18px;">
-          <li>공연 시작 후 입장은 악장 사이에만 가능합니다.</li>
-          <li>공연 중 사진 및 영상 촬영은 금지됩니다.</li>
-          <li>예매 취소 및 환불은 공연일 3일 전까지 가능합니다.</li>
-          <li>만 7세 미만 어린이 입장 불가입니다.</li>
-        </ul>
+      <div class="booking-guide">
+        <p class="eyebrow" style="margin-bottom:10px;">NOL Ticket Notice</p>
+        <h3 class="guide-heading">공연 예매 및 관람 안내</h3>
+        <p class="guide-intro">원활한 예매와 쾌적한 관람을 위해 아래 안내사항을 반드시 확인해 주세요. 안내 미숙지로 인한 불이익에 대해 주최·주관 및 예매처는 책임지지 않습니다.</p>
+        <div class="guide-highlights">
+          <div class="guide-highlight scent"><strong>향기 연출 안내</strong><span>장면에 맞춘 특수 발향이 포함됩니다. 특정 향료에 민감하거나 호흡기 알레르기가 있는 관객은 예매 및 관람에 유의해 주세요.</span></div>
+          <div class="guide-highlight"><strong>관람 연령</strong><span>초등학생(만 7세) 이상 관람가<br>미취학 아동 입장 불가</span></div>
+          <div class="guide-highlight"><strong>러닝타임</strong><span>약 100분<br>인터미션 포함</span></div>
+        </div>
+        <details class="guide-panel" open>
+          <summary>1. 공연 관람 및 특수 연출 안내</summary>
+          <div class="guide-content"><ul>
+            <li>본 공연은 클래식·국악 라이브 연주와 함께 프로젝션 맵핑 미디어아트, 서라운드 다차원 입체음향, 그리고 장면에 맞춘 무대 특수 발향(후각 연출)이 결합된 오감 체험형 공연입니다.</li>
+            <li>특정 향료에 매우 민감하시거나 호흡기 알레르기가 있으신 관객께서는 예매 및 관람에 유의해 주시기 바랍니다.</li>
+            <li>본 공연은 <strong>초등학생(만 7세) 이상 관람가</strong>입니다. 미취학 아동은 티켓 소지 여부와 관계없이 입장이 제한됩니다.</li>
+            <li>러닝타임은 <strong>약 100분(인터미션 포함)</strong>입니다.</li>
+          </ul></div>
+        </details>
+        <details class="guide-panel">
+          <summary>2. 티켓 수령 및 현장 매표소 운영</summary>
+          <div class="guide-content"><ul>
+            <li>현장 매표소는 공연 시작 <strong>1시간 전</strong>부터 운영됩니다.</li>
+            <li>예매 티켓 수령 시 예매내역서(NOL 티켓 모바일 예매 내역) 및 예매자 본인의 <strong>실물 신분증</strong>을 반드시 지참하셔야 합니다. 캡처본은 인정되지 않습니다.</li>
+            <li>본 공연은 전석 지정좌석제로 운영되며, 지정된 본인 좌석 외 이동은 불가합니다.</li>
+            <li>불법 양도 및 재판매된 티켓은 사전 통보 없이 무효 처리될 수 있습니다.</li>
+          </ul></div>
+        </details>
+        <details class="guide-panel">
+          <summary>3. 할인 증빙 확인 필수 규정</summary>
+          <div class="guide-content"><ul>
+            <li>할인 권종을 선택하여 예매하신 경우, 반드시 관람 당사자가 직접 해당 증빙자료(실물 신분증, 복지카드, 유공자증, 학생증, 예술인패스 등)를 매표소에 제시하셔야 합니다.</li>
+            <li>증빙서류 미지참 시 현장에서 정가 기준의 차액을 지불하셔야 티켓 수령이 가능합니다.</li>
+            <li>모든 할인은 실 관람자 기준으로 적용되며, 중복 할인은 불가합니다.</li>
+            <li>증빙 미지참으로 인한 현장 환불 및 당일 취소는 불가합니다.</li>
+          </ul></div>
+        </details>
+        <details class="guide-panel">
+          <summary>4. 객석 입장 및 공연장 이용 안내</summary>
+          <div class="guide-content"><ul>
+            <li>객석 입장은 공연 시작 <strong>30분 전</strong>부터 가능하며, 쾌적한 관람을 위해 공연 시작 10분 전까지 착석을 완료해 주시기 바랍니다.</li>
+            <li>공연이 시작된 후에는 암전, 미디어아트 맵핑 및 입체음향 연출의 특성상 즉시 입장이 엄격히 제한됩니다.</li>
+            <li>늦게 도착하신 관객은 연출 흐름상 지정된 지연 관객 입장 유도 시간에 한해 안내원의 유도에 따라 입장하실 수 있으며, 예매하신 본인 좌석이 아닌 별도 지연 관객석으로 안내받으실 수 있습니다.</li>
+            <li>객석 내 뚜껑이 있는 생수를 제외한 모든 음료, 음식물 및 꽃다발 반입은 금지됩니다.</li>
+            <li>커튼콜을 제외한 공연 중 사전 협의되지 않은 사진·영상 촬영 및 음원 녹음은 엄격히 금지됩니다.</li>
+          </ul></div>
+        </details>
+        <details class="guide-panel">
+          <summary>5. 공연장 위치 및 주차 안내</summary>
+          <div class="guide-content"><ul>
+            <li>장소: 국립아시아문화전당(ACC) 예술극장 극장2 (광주광역시 동구 문화전당로 38)</li>
+            <li>국립아시아문화전당 주차장을 이용할 수 있으며, 공연 관람객 대상 주차 할인 적용 기준은 ACC 운영 정책을 따릅니다.</li>
+            <li>공연 당일 주변 교통 및 주차장이 매우 혼잡할 수 있으니 가급적 대중교통 이용을 권장합니다.</li>
+          </ul></div>
+        </details>
+        <details class="guide-panel">
+          <summary>6. 취소 및 환불 규정</summary>
+          <div class="guide-content"><ul>
+            <li><strong>공연 전일과 공연 당일에는 취소, 변경, 환불이 불가합니다.</strong></li>
+            <li>예매 취소 및 환불 수수료는 NOL 티켓 예매 규정에 따라 부과됩니다.</li>
+          </ul></div>
+        </details>
+        <details class="guide-panel">
+          <summary>7. 온라인 예매 마감 및 문의</summary>
+          <div class="guide-content"><ul>
+            <li>온라인 예매는 <strong>공연 전일인 10월 29일(목) 오전 11시</strong>에 마감됩니다.</li>
+            <li>온라인 예매 마감 이후 잔여석 예매 및 티켓 관련 문의는 뮤직스케이프랩(<a href="tel:07042203287" style="color:#fff;text-decoration:underline;text-underline-offset:3px;">070-4220-3287</a>)으로 연락해 주세요.</li>
+            <li>잔여석이 남아 있을 경우에 한해 공연 당일 현장 매표소에서 공연 시작 1시간 전부터 현장 구매가 가능합니다.</li>
+          </ul></div>
+        </details>
       </div>
     </div>
   </section>
@@ -350,10 +538,52 @@
       <div class="v-block"><div class="v-icon">🏛️</div><div><p class="v-title">아시아문화전당 예술극장 극장2</p><p class="v-body">광주광역시 동구 문화전당로 38<br>ACC 예술극장 내 극장2</p></div></div>
       <div class="v-block"><div class="v-icon">🚇</div><div><p class="v-title">지하철</p><p class="v-body">광주 도시철도 1호선 <strong style="color:#fff;">문화전당역</strong> 1번 출구 도보 약 1분</p></div></div>
       <div class="v-block"><div class="v-icon">🚌</div><div><p class="v-title">버스</p><p class="v-body">금남로4가 또는 문화전당 정류장 하차<br>시내버스 다수 노선 운행</p></div></div>
-      <div class="v-block"><div class="v-icon">🚗</div><div><p class="v-title">자가용 / 주차</p><p class="v-body">아시아문화전당 지하 주차장 이용 가능<br>공연 관람객 주차 할인 적용 (2시간)</p></div></div>
+      <div class="v-block"><div class="v-icon">🚗</div><div><p class="v-title">자가용 / 주차</p><p class="v-body">국립아시아문화전당 주차장 이용 가능<br>공연 관람객 대상 주차 할인 적용 기준은 ACC 운영 정책을 따릅니다.<br>공연 당일은 혼잡할 수 있으니 가급적 대중교통을 이용해 주세요.</p></div></div>
       <div style="margin-top:28px;text-align:center;display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
         <a href="https://map.naver.com/v5/search/%EC%95%84%EC%8B%9C%EC%95%84%EB%AC%B8%ED%99%94%EC%A0%84%EB%8B%B9" target="_blank" class="btn3d">📍 네이버 지도</a>
         <a href="https://map.kakao.com/?q=%EC%95%84%EC%8B%9C%EC%95%84%EB%AC%B8%ED%99%94%EC%A0%84%EB%8B%B9" target="_blank" class="btn3d">🗺️ 카카오 지도</a>
+      </div>
+    </div>
+  </section>
+  <section class="section" id="credits">
+    <div class="container">
+      <p class="eyebrow">Creative Team</p>
+      <h2 class="section-title">크리에이티브 팀</h2>
+      <div class="credits-list">
+        <div class="team-row"><span class="team-role-label">연출, 음악감독</span><span class="team-name-wrap"><span class="team-name-label">최인</span><span class="team-link-list"><a class="team-link" href="https://www.inchoi.kr/" target="_blank" rel="noopener noreferrer" aria-label="최인 웹사이트"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.5 3.7 5.5 3.7 9s-1.3 6.5-3.7 9c-2.4-2.5-3.7-5.5-3.7-9S9.6 5.5 12 3Z"></path></svg></a><a class="team-link" href="https://instagram.com/inchoiguitar" target="_blank" rel="noopener noreferrer" aria-label="최인 인스타그램"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"></circle></svg></a><a class="team-link" href="https://www.youtube.com/@inchoi2041" target="_blank" rel="noopener noreferrer" aria-label="최인 유튜브"><svg class="youtube-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"></rect><path d="m10 9 5 3-5 3Z"></path></svg></a></span></span></div>
+        <div class="team-row"><span class="team-role-label">무대감독</span><span class="team-name-wrap"><span class="team-name-label">이미리</span><span class="team-link-list"><a class="team-link" href="https://www.team-musicscape.kr/card/miri/" target="_blank" rel="noopener noreferrer" aria-label="이미리 프로필"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.5 3.7 5.5 3.7 9s-1.3 6.5-3.7 9c-2.4-2.5-3.7-5.5-3.7-9S9.6 5.5 12 3Z"></path></svg></a><a class="team-link" href="https://www.instagram.com/im2mm/" target="_blank" rel="noopener noreferrer" aria-label="이미리 인스타그램"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"></circle></svg></a></span></span></div>
+        <div class="team-row"><span class="team-role-label">음향디자인, 음향감독</span><span class="team-name-wrap"><span class="team-name-label">이수용</span><span class="team-link-list"><a class="team-link" href="https://www.instagram.com/vincentseyes/?hl=ko" target="_blank" rel="noopener noreferrer" aria-label="이수용 인스타그램"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"></circle></svg></a></span></span></div>
+        <div class="team-row"><span class="team-role-label">영상디자인, 영상감독</span><span class="team-name-wrap"><span class="team-name-label">이뿌리</span><span class="team-link-list"><a class="team-link" href="https://www.instagram.com/leeroot_ooomok/?hl=ko" target="_blank" rel="noopener noreferrer" aria-label="이뿌리 인스타그램"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"></circle></svg></a></span></span></div>
+        <div class="team-row"><span class="team-role-label">조명디자인, 조명감독</span><span class="team-name-wrap"><span class="team-name-label">최예원</span><span class="team-link-list"><a class="team-link" href="https://www.instagram.com/cprophecy_/?hl=ko" target="_blank" rel="noopener noreferrer" aria-label="최예원 인스타그램"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"></circle></svg></a></span></span></div>
+        <div class="team-row"><span class="team-role-label">공간향디자인 감독</span><span class="team-name-wrap"><span class="team-name-label">천민주 (FORMLESS)</span><span class="team-link-list"><a class="team-link" href="https://formless.kr/" target="_blank" rel="noopener noreferrer" aria-label="FORMLESS 웹사이트"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.5 3.7 5.5 3.7 9s-1.3 6.5-3.7 9c-2.4-2.5-3.7-5.5-3.7-9S9.6 5.5 12 3Z"></path></svg></a><a class="team-link" href="https://www.instagram.com/formless_kr/?hl=ko" target="_blank" rel="noopener noreferrer" aria-label="FORMLESS 인스타그램"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"></circle></svg></a></span></span></div>
+        <div class="team-row"><span class="team-role-label">기획</span><span class="team-name-wrap"><span class="team-name-label">팀뮤직스케이프</span><span class="team-link-list"><a class="team-link" href="https://www.team-musicscape.kr/" target="_blank" rel="noopener noreferrer" aria-label="팀뮤직스케이프 웹사이트"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M3 12h18M12 3c2.4 2.5 3.7 5.5 3.7 9s-1.3 6.5-3.7 9c-2.4-2.5-3.7-5.5-3.7-9S9.6 5.5 12 3Z"></path></svg></a><a class="team-link" href="https://www.instagram.com/team_musicscape/" target="_blank" rel="noopener noreferrer" aria-label="팀뮤직스케이프 인스타그램"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"></circle></svg></a></span></span></div>
+        <div class="team-row"><span class="team-role-label">제작 홍보</span><span class="team-name-label">뮤직스케이프랩</span></div>
+      </div>
+      <div class="sponsor-heading">
+        <p class="eyebrow">Sponsors</p>
+        <h3 class="section-title" style="font-size:clamp(22px,3vw,32px);">후원</h3>
+      </div>
+      <div class="sponsor-grid">
+        <a class="sponsor-card" href="http://www.hyundae-hosp.co.kr/apps/" target="_blank" rel="noopener noreferrer" aria-label="광주현대병원 홈페이지 새 창에서 열기">
+          <img src="assets/sponsors/gwangju-hyundae-hospital.png" alt="광주현대병원">
+        </a>
+        <a class="sponsor-card" href="https://lifeforest.co.kr/" target="_blank" rel="noopener noreferrer" aria-label="재단법인 최명숙 생명숲 홈페이지 새 창에서 열기">
+          <img class="sponsor-logo-tall" src="assets/sponsors/choi-myungsook-life-forest.svg" alt="재단법인 최명숙 생명숲">
+        </a>
+        <a class="sponsor-card" href="https://formless.kr/" target="_blank" rel="noopener noreferrer" aria-label="FORMLESS 홈페이지 새 창에서 열기">
+          <img src="assets/sponsors/formless.png" alt="FORMLESS">
+        </a>
+        <div class="sponsor-card social-card" aria-label="이용한 기타공방">
+          <span class="sponsor-wordmark guitar"><span class="wordmark-kicker">GUITAR WORKSHOP</span><span class="wordmark-main">이용한 기타</span></span>
+          <span class="sponsor-socials">
+            <a class="sponsor-social" href="https://www.instagram.com/leeyonghan_guitar/" target="_blank" rel="noopener noreferrer" aria-label="이용한 기타공방 인스타그램"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r=".8" fill="currentColor" stroke="none"></circle></svg></a>
+            <a class="sponsor-social youtube" href="https://www.youtube.com/channel/UCaY7glP16mvh509i_o_WU4Q" target="_blank" rel="noopener noreferrer" aria-label="이용한 기타공방 유튜브"><svg class="youtube-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="4"></rect><path d="m10 9 5 3-5 3Z"></path></svg></a>
+          </span>
+        </div>
+        <div class="sponsor-card"><span class="sponsor-wordmark heei">HEE&nbsp;:&nbsp;I</span></div>
+        <a class="sponsor-card" href="https://www.arko.or.kr/" target="_blank" rel="noopener noreferrer" aria-label="한국문화예술위원회 홈페이지 새 창에서 열기">
+          <img src="assets/sponsors/arko-color.png" alt="한국문화예술위원회">
+        </a>
       </div>
     </div>
   </section>
