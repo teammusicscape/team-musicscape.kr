@@ -247,7 +247,7 @@
       <p class="hero-date reveal-line" style="--d:.76s">2026년 10월 30일 (금) 오후 7시</p>
       <a href="#tickets" class="hero-btn reveal-line" style="--d:.9s">예매 안내 →</a>
     </div>
-    <button id="soundBtn" aria-label="소리 켜기/끄기">🔇</button>
+    <button id="soundBtn" aria-label="영상 소리 켜기" aria-pressed="false">🔇</button>
     <div class="scroll-cue">SCROLL</div>
   </section>
   <section class="section" id="poster" style="padding-top:80px;padding-bottom:56px;">
@@ -605,17 +605,35 @@
     menuBackdrop.addEventListener('click',closeMenu);
     document.querySelectorAll('.menu-link').forEach(l=>l.addEventListener('click',closeMenu));
     const YT_ID='DNbatqrq1KY';
+    const soundBtn=document.getElementById('soundBtn');
+    let heroMuted=true;
     function loadHeroVideo(){
       const wrap=document.getElementById('hero-iframe-wrap');
       const iframe=document.createElement('iframe');
+      iframe.id='heroVideo';
+      iframe.title='From here to everywhere 인천공연 하이라이트';
       iframe.allow='autoplay;encrypted-media';
       iframe.style.cssText='position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:177.78vh;height:56.25vw;min-width:100%;min-height:100%;';
-      iframe.src='https://www.youtube.com/embed/'+YT_ID+'?autoplay=1&mute=1&loop=1&playlist='+YT_ID+'&controls=0&showinfo=0&rel=0&iv_load_policy=3&playsinline=1';
+      iframe.src='https://www.youtube.com/embed/'+YT_ID+'?autoplay=1&mute=1&loop=1&playlist='+YT_ID+'&controls=0&showinfo=0&rel=0&iv_load_policy=3&playsinline=1&enablejsapi=1&origin='+encodeURIComponent(window.location.origin);
       wrap.appendChild(iframe);
       iframe.addEventListener('load',()=>setTimeout(()=>{const t=document.getElementById('heroThumb');if(t)t.style.opacity='0';},1800));
     }
     window.addEventListener('load',()=>setTimeout(loadHeroVideo,500));
-    document.getElementById('soundBtn').addEventListener('click',function(){this.textContent=this.textContent==='🔇'?'🔊':'🔇';});
+    function sendHeroCommand(func,args=[]){
+      const iframe=document.getElementById('heroVideo');
+      if(!iframe||!iframe.contentWindow)return false;
+      iframe.contentWindow.postMessage(JSON.stringify({event:'command',func,args}),'https://www.youtube.com');
+      return true;
+    }
+    soundBtn.addEventListener('click',function(){
+      const nextMuted=!heroMuted;
+      if(!sendHeroCommand(nextMuted?'mute':'unMute'))return;
+      if(!nextMuted)sendHeroCommand('setVolume',[100]);
+      heroMuted=nextMuted;
+      this.textContent=heroMuted?'🔇':'🔊';
+      this.setAttribute('aria-pressed',String(!heroMuted));
+      this.setAttribute('aria-label',heroMuted?'영상 소리 켜기':'영상 소리 끄기');
+    });
     (function(){
       const slides=document.querySelectorAll('.statement__slide');let cur=0;
       if(slides.length<2)return;
