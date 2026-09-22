@@ -5,9 +5,17 @@
   <!-- 메인 페이지 -->
   <url>
     <loc>https://www.team-musicscape.kr/</loc>
-    <lastmod>2026-07-10</lastmod>
+    <lastmod>2026-09-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+
+  <!-- 최신 공연 공식 페이지 -->
+  <url>
+    <loc>https://www.team-musicscape.kr/acc2026/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- 작품 페이지 -->
