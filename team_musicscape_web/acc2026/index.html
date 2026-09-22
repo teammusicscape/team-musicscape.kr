@@ -665,8 +665,8 @@
     (function(){
       const els=document.querySelectorAll('.reveal-line');
       const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:0.12});
-      els.forEach(el=>io.observe(el));
-      document.querySelectorAll('.hero-content .reveal-line').forEach((el,i)=>setTimeout(()=>el.classList.add('show'),80+i*160));
+      els.forEach(el=>{if(!el.closest('.hero-content'))io.observe(el);});
+      setTimeout(()=>document.querySelectorAll('.hero-content .reveal-line').forEach(el=>el.classList.add('show')),5800);
     })();
     document.querySelectorAll('.prog-card').forEach(card=>{
       card.addEventListener('click',function(e){
