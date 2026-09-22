@@ -361,14 +361,14 @@
           <span class="program-number">08</span>
           <div class="thumb"><img src="../images/work-5.jpg" alt="Prayer" loading="lazy"></div>
           <div class="card-title">Prayer</div>
-          <div class="program-credit">gt. 최인 · vn. 송지원</div>
+          <div class="program-credit">gt. 최인</div>
           <div class="overlay"><div class="overlay-title">Prayer</div><div class="overlay-body">혼란한 현실 속에서 살아가는 모두를 위한 기도를 담은 곡이다. 고요한 선율 속에 간절한 바람을 담아, 작은 울림이 희망의 불씨가 되기를 바란다.</div><span class="overlay-close">✕</span></div>
         </div>
         <div class="prog-card" tabindex="0">
           <span class="program-number">09</span>
           <div class="thumb"><img src="../images/work-8.webp" alt="섬" loading="lazy"></div>
           <div class="card-title">섬</div>
-          <div class="program-credit">gt. 최인 · vn. 송지원</div>
+          <div class="program-credit">gt. 최인</div>
           <div class="overlay"><div class="overlay-title">섬</div><div class="overlay-body">외딴 섬을 바라보며 느낀 두려움과 낯섦을 넘어, 숨겨진 아름다움을 발견해 가는 여정. 그렇게 우리도 서로에게 한걸음 더 다가가 보자.</div><span class="overlay-close">✕</span></div>
         </div>
         <div class="prog-card" tabindex="0">
@@ -666,7 +666,7 @@
       const els=document.querySelectorAll('.reveal-line');
       const io=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});},{threshold:0.12});
       els.forEach(el=>{if(!el.closest('.hero-content'))io.observe(el);});
-      setTimeout(()=>document.querySelectorAll('.hero-content .reveal-line').forEach(el=>el.classList.add('show')),5800);
+      setTimeout(()=>document.querySelectorAll('.hero-content .reveal-line').forEach(el=>el.classList.add('show')),7800);
     })();
     document.querySelectorAll('.prog-card').forEach(card=>{
       card.addEventListener('click',function(e){
