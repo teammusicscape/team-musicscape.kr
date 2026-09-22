@@ -110,4 +110,30 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- 2025 공연 홍보 및 아카이브 -->
+  <url>
+    <loc>https://www.team-musicscape.kr/projects/2025-incheon/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.team-musicscape.kr/projects/2025-incheon/archive/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.team-musicscape.kr/projects/2025-sac/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.team-musicscape.kr/projects/2025-sac/archive/</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
 </urlset>
