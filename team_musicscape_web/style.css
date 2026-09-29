@@ -462,18 +462,10 @@ img, video { display:block; max-width:100%; }
         min-height: 220px;
     }
 
-    /* ?곸긽 iframe 紐⑤컮???④? ???몃꽕???대?吏留??쒖떆 */
+    /* Mobile: show hero video too (16:9 cover inside 340px hero) */
     .hero-video-frame {
-        display: none !important;
-    }
-    .slide-video-thumb {
-        opacity: 1 !important;
-        transition: none !important;
-    }
-
-    /* ?곸긽 ?놁쑝誘濡??ъ슫??踰꾪듉 ?④? */
-    .hero-sound-btn {
-        display: none !important;
+        width: max(100%, 604.44px);
+        height: max(100%, 56.25vw);
     }
 
     /* ?щ씪?대뱶 ???꾩튂 議곗젙 */

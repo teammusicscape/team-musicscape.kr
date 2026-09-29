@@ -85,8 +85,14 @@ function activateVideoSlide(slide) {
             onReady(e) {
                 e.target.playVideo();
                 if (!isMuted) e.target.unMute();
-                const thumb = slide.querySelector('.slide-video-thumb');
-                if (thumb) setTimeout(() => { thumb.style.opacity = '0'; }, 800);
+            },
+            // Hide the thumbnail only once the video is actually playing
+            // (on phones that block autoplay, the photo stays instead of a black box)
+            onStateChange(e) {
+                if (e.data === 1) {
+                    const thumb = slide.querySelector('.slide-video-thumb');
+                    if (thumb) setTimeout(() => { thumb.style.opacity = '0'; }, 300);
+                }
             }
         }
     });
