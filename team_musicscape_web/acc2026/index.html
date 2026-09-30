@@ -29,16 +29,14 @@
     .container{max-width:1160px;margin:0 auto;padding:0 20px;}
     .nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(12px);background:rgba(0,0,0,.5);border-bottom:1px solid rgba(255,255,255,.08);height:56px;display:flex;align-items:center;justify-content:space-between;padding:0 20px;}
     .nav-brand{font-weight:700;font-size:15px;letter-spacing:.04em;color:#fff;}
-    .nav-links{display:flex;gap:28px;}
+    .nav-links{display:none;}
     .nav-links a{font-size:13px;color:rgba(255,255,255,.72);transition:color .2s;}
     .nav-links a:hover{color:#fff;}
-    @media(max-width:680px){.nav-links{display:none;}}
     .nav-actions{display:flex;align-items:center;gap:12px;}
     .nav-press-link{display:inline-flex;align-items:center;justify-content:center;min-height:32px;padding:0 13px;border:1px solid rgba(200,169,110,.72);border-radius:999px;color:#fff;font-family:'Inter',sans-serif;font-size:11px;font-weight:700;letter-spacing:.14em;background:rgba(200,169,110,.09);transition:background .2s,border-color .2s,transform .2s;}
     .nav-press-link:hover,.nav-press-link:focus-visible{background:rgba(200,169,110,.2);border-color:var(--accent);transform:translateY(-1px);outline:none;}
-    .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
+    .nav-hamburger{display:flex;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px;}
     .nav-hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;}
-    @media(max-width:680px){.nav-hamburger{display:flex;}}
     .menu-panel{position:fixed;top:0;left:0;height:100vh;width:min(82vw,320px);background:rgba(10,10,10,.97);border-right:1px solid rgba(255,255,255,.08);transform:translateX(-100%);transition:transform .28s ease;z-index:60;backdrop-filter:blur(8px);padding-top:64px;}
     .menu-panel.open{transform:translateX(0);}
     .menu-link{display:block;padding:14px 24px;font-weight:500;color:rgba(255,255,255,.85);border-bottom:1px solid rgba(255,255,255,.05);}
