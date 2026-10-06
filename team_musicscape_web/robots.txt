@@ -5,4 +5,10 @@ Allow: /
 User-agent: Yeti
 Allow: /
 
+# 다음 검색 봇
+User-agent: Daum
+Allow: /
+
 Sitemap: https://www.team-musicscape.kr/sitemap.xml
+
+#DaumWebMasterTool:fe236a7f61520c42035962edf6f7973b53ec51969d95de8ed51d0871a2ee089d:n2D93vW3XW4Kmae1+d0oZQ==
