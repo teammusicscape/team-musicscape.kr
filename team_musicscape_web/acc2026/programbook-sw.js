@@ -1,7 +1,7 @@
 /* Offline cache for the online programbook (/acc2026/programbook).
    Lives one level up so its scope can cover the slash-less page URL.
    Bump VERSION whenever page images or the page itself change. */
-var VERSION = 'programbook-v4';
+var VERSION = 'programbook-v5';
 var BASE = '/acc2026/programbook/';
 var PAGE = '/acc2026/programbook';
 
