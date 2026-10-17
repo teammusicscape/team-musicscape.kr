@@ -59,6 +59,13 @@
   }
   .book { width: 100%; height: 100%; transition: transform .6s cubic-bezier(.3,.7,.2,1); }
   .page { background: #fff; }
+  .stage.portrait-mode .page { background: var(--bg); }
+  .sheet {
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+  }
+  .stage.portrait-mode .sheet { box-shadow: 0 2px 14px rgba(0,0,0,.35); }
   .hot {
     position: absolute; z-index: 3; display: block;
     border-radius: 4px; cursor: pointer;
@@ -120,6 +127,7 @@
     border: 0; border-radius: 8px;
     background: var(--btn); color: var(--text);
     font: inherit; font-size: 13px; cursor: pointer; text-decoration: none;
+    white-space: nowrap; flex-shrink: 0;
     transition: background .15s;
   }
   .ib:hover { background: var(--btn-hover); }
@@ -130,6 +138,12 @@
     font-variant-numeric: tabular-nums; letter-spacing: .02em;
   }
   .counter small { color: var(--muted); }
+  .saved {
+    display: inline-flex; align-items: center; gap: 4px;
+    color: #8fd19e; font-size: 12px; padding: 0 6px; white-space: nowrap;
+  }
+  .saved[hidden] { display: none; }
+  .saved svg { width: 14px; height: 14px; }
   .survey { background: var(--text); color: var(--bg); font-weight: 600; }
   .survey:hover { background: #fff; }
 
@@ -172,6 +186,11 @@
     .nav { width: 40px; height: 72px; background: rgba(0,0,0,.25); border-radius: 8px; }
     .nav.prev { left: 4px; } .nav.next { right: 4px; }
   }
+  @media (max-width: 420px) {
+    .saved > span { display: none; }
+    .bar { gap: 6px; padding: 0 10px env(safe-area-inset-bottom); }
+    .counter { min-width: 52px; }
+  }
   @media (prefers-reduced-motion: reduce) {
     .zoom-layer.animating, .toast { transition: none; }
   }
@@ -207,7 +226,15 @@
       <button class="ib hide-sm" id="fs" aria-label="전체 화면" title="전체 화면" hidden>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
       </button>
-      <a class="ib survey" href="/acc2026/survey">설문<span class="hide-sm">&nbsp;참여</span></a>
+      <span class="saved" id="saved" hidden title="인터넷이 없어도 볼 수 있어요">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5 9-10"/></svg>
+        <span>오프라인<span class="hide-sm"> 저장됨</span></span>
+      </span>
+      <a class="ib" id="pdf" href="/acc2026/programbook/musicscape-2026-programbook.pdf" download="치유의밤_MUSICSCAPE_프로그램북.pdf" title="PDF로 저장">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+        <span>PDF</span>
+      </a>
+      <a class="ib survey" href="/acc2026/survey">만족도 조사<span class="hide-sm">&nbsp;참여하기</span></a>
     </div>
   </div>
 </div>
@@ -218,22 +245,35 @@
   'use strict';
 
   var BASE = '/acc2026/programbook/';   // absolute: the page is served without a trailing slash
-  var TOTAL = 8;
   var PW = 1748, PH = 2480;              // page image size, used for link areas
   // Clickable QR areas (pixel boxes on the page images).
   // Own-site QRs (cover → /acc2026, Team Musicscape homepage) are left out on purpose:
   // the site pages carry video/sound and the book is read during the concert.
   var LINKS = {
-    8: [
-      { x: 140,  y: 1463, w: 1480, h: 390, href: '/acc2026/survey', label: '공연 만족도 설문 참여', same: true },
+    '8': [
+      { x: 140,  y: 1463, w: 1480, h: 390, href: '/acc2026/survey', label: '공연 만족도 조사 참여하기', same: true },
       { x: 100,  y: 1930, w: 300,  h: 440, href: 'http://www.forestoflife.kr/', label: '재단법인 최명숙·생명숲' },
       { x: 411,  y: 1930, w: 300,  h: 440, href: 'http://www.gjhosp.com/', label: '광주현대병원' },
       { x: 1036, y: 1930, w: 300,  h: 440, href: 'https://formless.kr/', label: 'FORMLESS' },
       { x: 1348, y: 1930, w: 300,  h: 440, href: 'https://www.arko.or.kr/content/448', label: '한국문화예술위원회' }
     ]
   };
-  var RATIO = 1748 / 2480;          // A4 page aspect (w/h)
   var MAX_SCALE = 4;
+
+  // Sheets that can be shown. '23' is pages 2–3 joined into one spread
+  // (used in portrait so the photo running across both pages isn't cut).
+  var SHEETS = {
+    '1': { r: PW / PH, label: '1' }, '2': { r: PW / PH, label: '2' }, '3': { r: PW / PH, label: '3' },
+    '23': { r: 2 * PW / PH, label: '2–3' },
+    '4': { r: PW / PH, label: '4' }, '5': { r: PW / PH, label: '5' }, '6': { r: PW / PH, label: '6' },
+    '7': { r: PW / PH, label: '7' }, '8': { r: PW / PH, label: '8' }
+  };
+  var ORDER = {
+    landscape: ['1', '2', '3', '4', '5', '6', '7', '8'],   // shown as 1 | 2–3 | 4–5 | 6–7 | 8
+    portrait:  ['1', '23', '4', '5', '6', '7', '8']        // one sheet at a time, 2–3 kept together
+  };
+  // first book page (0-based) of each sheet, to keep the reader's place across modes
+  var FIRST_PAGE = { '1': 0, '2': 1, '3': 2, '23': 1, '4': 3, '5': 4, '6': 5, '7': 6, '8': 7 };
 
   var stage = document.getElementById('stage');
   var layer = document.getElementById('zoomLayer');
@@ -244,32 +284,46 @@
   var toastEl = document.getElementById('toast');
 
   /* ---------- full-res image cache (swap small → full when ready) ---------- */
-  var fullReady = {};
-  function loadFull(i) {
-    if (fullReady[i] !== undefined) return;
-    fullReady[i] = false;
+  // Full-size images are decoded off-screen first and only then swapped in,
+  // so a page never goes blank while the sharper image loads. The decoded
+  // Image objects are kept so the browser doesn't throw them away between flips.
+  var fullReady = {}, keep = [];
+  function loadFull(key) {
+    if (fullReady[key] !== undefined) return;
+    fullReady[key] = false;
     var im = new Image();
-    im.onload = function () {
-      fullReady[i] = true;
-      var nodes = document.querySelectorAll('img[data-p="' + i + '"]');
+    im.decoding = 'async';
+    im.src = BASE + 'pages/p' + key + '.webp';
+    keep.push(im);
+    var done = function () {
+      fullReady[key] = true;
+      var nodes = document.querySelectorAll('img[data-p="' + key + '"]');
       for (var k = 0; k < nodes.length; k++) nodes[k].src = im.src;
     };
-    im.src = BASE + 'pages/p' + i + '.webp';
+    (im.decode ? im.decode() : new Promise(function (r) { im.onload = r; })).then(done, function () {
+      im.onload = done;
+    });
   }
 
-  function buildPages() {
-    var frag = [];
-    for (var i = 1; i <= TOTAL; i++) {
+  function buildPages(list) {
+    return list.map(function (key, idx) {
+      var sh = SHEETS[key];
       var d = document.createElement('div');
       d.className = 'page';
-      if (i === 1 || i === TOTAL) d.setAttribute('data-density', 'hard');
+      if (idx === 0 || idx === list.length - 1) d.setAttribute('data-density', 'hard');
+      // the sheet keeps the image's own proportions inside the page slot
+      var sheet = document.createElement('div');
+      sheet.className = 'sheet';
+      sheet.style.aspectRatio = String(sh.r);
+      sheet.style.width = 'min(var(--pw), calc(var(--ph) * ' + sh.r + '))';
       var img = document.createElement('img');
-      img.setAttribute('data-p', i);
-      img.alt = '프로그램북 ' + i + '쪽';
+      img.setAttribute('data-p', key);
+      img.alt = '프로그램북 ' + sh.label + '쪽';
       img.draggable = false;
-      img.src = BASE + (fullReady[i] ? 'pages/p' + i + '.webp' : 'pages/p' + i + '-s.webp');
-      d.appendChild(img);
-      (LINKS[i] || []).forEach(function (L) {
+      img.decoding = 'sync';           // paint the page together with its image (no blank flash)
+      img.src = BASE + (fullReady[key] ? 'pages/p' + key + '.webp' : 'pages/p' + key + '-s.webp');
+      sheet.appendChild(img);
+      (LINKS[key] || []).forEach(function (L) {
         var a = document.createElement('a');
         a.className = 'hot';
         a.href = L.href;
@@ -280,26 +334,41 @@
         a.style.top = (L.y / PH * 100) + '%';
         a.style.width = (L.w / PW * 100) + '%';
         a.style.height = (L.h / PH * 100) + '%';
-        d.appendChild(a);
+        sheet.appendChild(a);
       });
-      frag.push(d);
-    }
-    return frag;
+      d.appendChild(sheet);
+      return d;
+    });
   }
 
   /* ---------- book ---------- */
-  var pf = null, bookEl = null, mode = null, currentIndex = 0;
+  var pf = null, bookEl = null, mode = null, list = ORDER.landscape;
+  var curPage = 0;          // 0-based book page the reader is on (mode-independent)
+  var holderSize = '';
 
   function isPortraitView() {
     var r = stage.getBoundingClientRect();
     return r.width < r.height * 0.95;
   }
 
+  function indexForPage(pg) {          // sheet index in the current list for a book page
+    var best = 0;
+    for (var i = 0; i < list.length; i++) if (FIRST_PAGE[list[i]] <= pg) best = i;
+    return best;
+  }
+
   function initBook() {
     var portrait = isPortraitView();
     var newMode = portrait ? 'portrait' : 'landscape';
-    if (pf && newMode === mode) { pf.update(); updateUI(); return; }
-    mode = newMode;
+    var W = holder.clientWidth, H = holder.clientHeight;
+    var size = W + 'x' + H;
+    // landscape keeps one fixed page ratio, so a plain update is enough there
+    if (pf && newMode === mode && (newMode === 'landscape' || size === holderSize)) {
+      pf.update(); updateUI(); return;
+    }
+    mode = newMode; holderSize = size;
+    list = ORDER[mode];
+    stage.classList.toggle('portrait-mode', portrait);
 
     if (pf) { try { pf.destroy(); } catch (e) {} pf = null; }
     holder.innerHTML = '';
@@ -307,36 +376,47 @@
     bookEl.className = 'book';
     holder.appendChild(bookEl);
 
+    // portrait: each page slot fills the screen area and the sheet sits centred in it
+    var pw = portrait ? W : 1748, ph = portrait ? H : 2480;
     pf = new St.PageFlip(bookEl, {
-      width: 1748, height: 2480,
+      width: pw, height: ph,
       size: 'stretch',
-      minWidth: portrait ? Math.ceil(holder.clientWidth / 2) + 1 : 80,  // portrait → single page
-      maxWidth: 2000, minHeight: 100, maxHeight: 3000,
+      minWidth: portrait ? Math.ceil(W / 2) + 1 : 80,   // portrait → one sheet at a time
+      maxWidth: 4000, minHeight: 100, maxHeight: 4000,
       showCover: true,
       usePortrait: true,
       drawShadow: true,
-      maxShadowOpacity: 0.35,
+      maxShadowOpacity: portrait ? 0.2 : 0.35,
       flippingTime: 750,
       mobileScrollSupport: false,
       disableFlipByClick: true,              // taps are used for double-tap zoom
       swipeDistance: 24,
-      startPage: currentIndex,
+      startPage: indexForPage(curPage),
       autoSize: true
     });
-    pf.loadFromHTML(buildPages());
-    pf.on('flip', function (e) { currentIndex = e.data; updateUI(); preloadAround(); });
-    pf.on('changeOrientation', updateUI);
+    pf.loadFromHTML(buildPages(list));
+    pf.on('flip', function () { updateUI(); preloadAround(); });
+    pf.on('changeOrientation', function () { sizeSheets(); });
     pf.on('changeState', function (e) {
       // while a page is moving, keep the book centred as an open spread
       if (e.data === 'flipping' || e.data === 'user_fold') centerBook(true);
       else if (e.data === 'read') centerBook(false);
     });
+    sizeSheets();
     updateUI();
     preloadAround();
     bookEl.style.transition = 'none';
     centerBook(false);
     bookEl.offsetWidth;
     bookEl.style.transition = '';
+  }
+
+  // page slot size → CSS vars the sheets use to fit themselves
+  function sizeSheets() {
+    if (!pf) return;
+    var r = pf.getBoundsRect();
+    bookEl.style.setProperty('--pw', r.pageWidth + 'px');
+    bookEl.style.setProperty('--ph', r.height + 'px');
   }
 
   // A closed book (front or back cover) sits on one half of the spread;
@@ -348,32 +428,35 @@
       var i = pf.getCurrentPageIndex();
       var w = pf.getBoundsRect().pageWidth;
       if (i === 0) shift = -w / 2;
-      else if (i === TOTAL - 1) shift = w / 2;
+      else if (i === list.length - 1) shift = w / 2;
     }
     bookEl.style.transform = shift ? 'translateX(' + shift + 'px)' : '';
   }
 
   function preloadAround() {
-    for (var i = currentIndex - 1; i <= currentIndex + 3; i++) {
-      if (i >= 0 && i < TOTAL) loadFull(i + 1);
-    }
+    var c = pf ? pf.getCurrentPageIndex() : 0;
+    for (var i = c - 1; i <= c + 3; i++) if (i >= 0 && i < list.length) loadFull(list[i]);
   }
+  function loadAllVisible() { list.forEach(loadFull); }
 
   function updateUI() {
-    if (!pf) return;
+    if (!pf || pf.getOrientation() !== mode) return;
     var i = pf.getCurrentPageIndex();
-    currentIndex = i;
+    var last = list.length - 1;
     var label;
-    if (pf.getOrientation() === 'landscape' && i > 0 && i < TOTAL - 1) {
+    var spread = mode === 'landscape' && pf.getOrientation() === 'landscape';
+    if (spread && i > 0 && i < last) {
       var left = (i % 2 === 1) ? i : i - 1;
       label = (left + 1) + '–' + (left + 2);
+      curPage = left;
     } else {
-      label = String(i + 1);
+      label = SHEETS[list[i]].label;
+      curPage = FIRST_PAGE[list[i]];
     }
-    stage.classList.toggle('single', pf.getOrientation() !== 'landscape' || i === 0 || i === TOTAL - 1);
-    counter.innerHTML = label + ' <small>/ ' + TOTAL + '</small>';
+    stage.classList.toggle('single', !spread || i === 0 || i === last);
+    counter.innerHTML = label + ' <small>/ 8</small>';
     prevBtn.disabled = i <= 0;
-    nextBtn.disabled = i >= TOTAL - 1;
+    nextBtn.disabled = i >= last;
   }
 
   function go(dir) {
@@ -411,7 +494,7 @@
     layer.classList.toggle('animating', !!animate);
     layer.style.transform = scale === 1 ? '' : 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')';
     stage.classList.toggle('zoomed', scale > 1.01);
-    if (scale > 1.01) for (var i = 1; i <= TOTAL; i++) loadFull(i);
+    if (scale > 1.01) loadAllVisible();
   }
   function zoomAt(newScale, cx, cy, animate) {
     newScale = Math.max(1, Math.min(MAX_SCALE, newScale));
@@ -617,6 +700,32 @@
   window.addEventListener('resize', onResize);
   window.addEventListener('orientationchange', onResize);
 
+  /* ---------- offline: cache everything so the book opens without internet ---------- */
+  var savedEl = document.getElementById('saved');
+  function markSaved(announce) {
+    if (!savedEl.hidden) return;
+    savedEl.hidden = false;
+    if (announce) setTimeout(function () { toast('인터넷이 없어도 볼 수 있도록 저장됐어요', 3600); }, 4200);
+  }
+  function checkSaved(announce) {
+    if (!window.caches) return;
+    caches.keys().then(function (keys) {
+      var k = keys.filter(function (n) { return n.indexOf('programbook-') === 0; })[0];
+      if (!k) return;
+      return caches.open(k).then(function (c) { return c.keys(); }).then(function (reqs) {
+        if (reqs.length >= 2 + 9 * 2) markSaved(announce);
+      });
+    }).catch(function () {});
+  }
+  if ('serviceWorker' in navigator && location.protocol === 'https:' || location.hostname === 'localhost') {
+    if ('serviceWorker' in navigator) {
+      var firstInstall = !navigator.serviceWorker.controller;
+      navigator.serviceWorker.register('/acc2026/programbook-sw.js', { scope: '/acc2026/programbook' })
+        .catch(function () {});
+      navigator.serviceWorker.ready.then(function () { checkSaved(firstInstall); });
+    }
+  }
+
   /* ---------- start ---------- */
   function start() {
     var first = new Image();
@@ -624,6 +733,7 @@
       fullReady[1] = true;
       initBook();
       setTimeout(hint, 600);
+      setTimeout(loadAllVisible, 300);
     };
     first.src = BASE + 'pages/p1.webp';
   }
