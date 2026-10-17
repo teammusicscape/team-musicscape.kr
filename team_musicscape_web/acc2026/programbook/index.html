@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>온라인 프로그램북 | 치유의 밤 MUSICSCAPE — From Here to Everywhere...</title>
+<meta name="description" content="2026 치유의 밤 MUSICSCAPE 온라인 프로그램북. 2026년 10월 30일 국립아시아문화전당 예술극장 극장2.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="치유의 밤 MUSICSCAPE 온라인 프로그램북">
+<meta property="og:description" content="From Here to Everywhere... | 2026.10.30 국립아시아문화전당 예술극장 극장2">
+<meta property="og:url" content="https://team-musicscape.kr/acc2026/programbook">
+<meta property="og:image" content="https://team-musicscape.kr/acc2026/programbook/og.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#1b1c1e">
+<link rel="preload" as="image" href="pages/p1.webp">
+<style>
+  :root {
+    --bg: #1b1c1e;
+    --bg-2: #26282b;
+    --text: #ecebe7;
+    --muted: #9c9a94;
+    --line: rgba(255,255,255,.12);
+    --btn: rgba(255,255,255,.08);
+    --btn-hover: rgba(255,255,255,.16);
+    --bar-h: 52px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; background: var(--bg); color: var(--text); }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    overflow: hidden;
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior: none;
+  }
+  .app {
+    position: fixed; inset: 0;
+    display: flex; flex-direction: column;
+    padding: env(safe-area-inset-top) env(safe-area-inset-right) 0 env(safe-area-inset-left);
+    background: radial-gradient(120% 90% at 50% 40%, var(--bg-2) 0%, var(--bg) 70%);
+  }
+
+  /* ---------- stage ---------- */
+  .stage {
+    position: relative; flex: 1; min-height: 0;
+    overflow: hidden;
+    touch-action: none;
+    user-select: none; -webkit-user-select: none;
+  }
+  .zoom-layer {
+    position: absolute; inset: 0;
+    transform-origin: 0 0;
+    z-index: 1;
+  }
+  .zoom-layer.animating { transition: transform .28s cubic-bezier(.2,.7,.2,1); }
+  .book-holder {
+    position: absolute;
+    top: 16px; bottom: 12px; left: 64px; right: 64px;
+  }
+  .book { width: 100%; height: 100%; transition: transform .6s cubic-bezier(.3,.7,.2,1); }
+  .page { background: #fff; }
+  .page img {
+    display: block; width: 100%; height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+    -webkit-user-drag: none;
+  }
+  .page::after {
+    content: ""; position: absolute; top: 0; bottom: 0; width: 28px;
+    pointer-events: none; opacity: 0;
+  }
+  .page.--left::after  { right: 0; opacity: 1; background: linear-gradient(to left, rgba(0,0,0,.16), rgba(0,0,0,0)); }
+  .page.--right::after { left: 0;  opacity: 1; background: linear-gradient(to right, rgba(0,0,0,.16), rgba(0,0,0,0)); }
+  .stage.single .page::after { opacity: 0; }
+
+  /* side arrows */
+  .nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 48px; height: 96px;
+    display: grid; place-items: center;
+    background: none; border: 0; color: var(--text);
+    cursor: pointer; opacity: .75; z-index: 5;
+    transition: opacity .2s;
+  }
+  .nav:hover { opacity: 1; }
+  .nav:disabled { opacity: .15; cursor: default; }
+  .nav svg { width: 28px; height: 28px; }
+  .nav.prev { left: 8px; }
+  .nav.next { right: 8px; }
+
+  /* ---------- bottom bar ---------- */
+  .bar {
+    height: calc(var(--bar-h) + env(safe-area-inset-bottom));
+    padding: 0 16px env(safe-area-inset-bottom);
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    flex-shrink: 0;
+  }
+  .bar .title {
+    color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+    flex: 1; min-width: 0;
+  }
+  .bar .title b { color: var(--text); font-weight: 600; }
+  .bar .title a { color: inherit; text-decoration: none; }
+  .group { display: flex; align-items: center; gap: 4px; }
+  .center { flex: 0 0 auto; }
+  .right { flex: 1; justify-content: flex-end; }
+  .ib {
+    height: 34px; min-width: 34px; padding: 0 10px;
+    display: inline-flex; align-items: center; justify-content: center; gap: 6px;
+    border: 0; border-radius: 8px;
+    background: var(--btn); color: var(--text);
+    font: inherit; font-size: 13px; cursor: pointer; text-decoration: none;
+    transition: background .15s;
+  }
+  .ib:hover { background: var(--btn-hover); }
+  .ib:disabled { opacity: .3; cursor: default; }
+  .ib svg { width: 16px; height: 16px; flex-shrink: 0; }
+  .counter {
+    min-width: 72px; text-align: center;
+    font-variant-numeric: tabular-nums; letter-spacing: .02em;
+  }
+  .counter small { color: var(--muted); }
+  .survey { background: var(--text); color: var(--bg); font-weight: 600; }
+  .survey:hover { background: #fff; }
+
+  /* ---------- hints ---------- */
+  .toast {
+    position: absolute; left: 50%; bottom: 16px; transform: translate(-50%, 8px);
+    background: rgba(20,20,22,.88); color: var(--text);
+    border: 1px solid var(--line); border-radius: 999px;
+    padding: 9px 16px; font-size: 13px; white-space: nowrap;
+    opacity: 0; pointer-events: none; z-index: 10;
+    transition: opacity .3s, transform .3s;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+  }
+  .toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  .loading {
+    position: absolute; inset: 0; display: grid; place-items: center;
+    color: var(--muted); font-size: 13px; letter-spacing: .1em;
+  }
+
+  /* ---------- responsive ---------- */
+  @media (max-width: 720px) {
+    .bar .title { display: none; }
+    .center { flex: 1; justify-content: flex-start; }
+    .hide-sm { display: none !important; }
+  }
+  /* phone landscape: maximise page area */
+  @media (max-height: 500px) {
+    :root { --bar-h: 40px; }
+    .book-holder { top: 6px; bottom: 6px; left: 48px; right: 48px; }
+    .nav { width: 40px; }
+    .nav.prev { left: 4px; } .nav.next { right: 4px; }
+    .ib { height: 30px; min-width: 30px; }
+    .bar .title { display: none; }
+    .center { flex: 1; justify-content: flex-start; }
+  }
+  /* portrait phone: single page, arrows overlay */
+  @media (max-width: 560px) and (orientation: portrait) {
+    .book-holder { left: 12px; right: 12px; top: 12px; }
+    .nav { width: 40px; height: 72px; background: rgba(0,0,0,.25); border-radius: 8px; }
+    .nav.prev { left: 4px; } .nav.next { right: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .zoom-layer.animating, .toast { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="stage" id="stage">
+    <div class="zoom-layer" id="zoomLayer">
+      <div class="book-holder" id="holder">
+        <div class="loading" id="loading">LOADING</div>
+      </div>
+    </div>
+
+    <button class="nav prev" id="prev" aria-label="이전 페이지">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <button class="nav next" id="next" aria-label="다음 페이지">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+
+    <div class="toast" id="toast"></div>
+  </div>
+
+  <div class="bar">
+    <div class="title"><a href="/acc2026"><b>치유의 밤 MUSICSCAPE</b> · 온라인 프로그램북</a></div>
+
+    <div class="group center">
+      <a class="ib" href="/acc2026" aria-label="공연 페이지로 돌아가기" title="공연 페이지">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
+      </a>
+      <span class="counter" id="counter">1 <small>/ 8</small></span>
+    </div>
+
+    <div class="group right">
+      <button class="ib" id="zoomOut" aria-label="축소" title="축소">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M8 11h6M20 20l-4-4"/></svg>
+      </button>
+      <button class="ib" id="zoomIn" aria-label="확대" title="확대">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M8 11h6M11 8v6M20 20l-4-4"/></svg>
+      </button>
+      <button class="ib hide-sm" id="fs" aria-label="전체 화면" title="전체 화면" hidden>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
+      </button>
+      <a class="ib survey" href="/acc2026/survey">설문<span class="hide-sm">&nbsp;참여</span></a>
+    </div>
+  </div>
+</div>
+
+<script src="page-flip.browser.js"></script>
+<script>
+(function () {
+  'use strict';
+
+  var TOTAL = 8;
+  var RATIO = 1748 / 2480;          // A4 page aspect (w/h)
+  var MAX_SCALE = 4;
+
+  var stage = document.getElementById('stage');
+  var layer = document.getElementById('zoomLayer');
+  var holder = document.getElementById('holder');
+  var prevBtn = document.getElementById('prev');
+  var nextBtn = document.getElementById('next');
+  var counter = document.getElementById('counter');
+  var toastEl = document.getElementById('toast');
+
+  /* ---------- full-res image cache (swap small → full when ready) ---------- */
+  var fullReady = {};
+  function loadFull(i) {
+    if (fullReady[i] !== undefined) return;
+    fullReady[i] = false;
+    var im = new Image();
+    im.onload = function () {
+      fullReady[i] = true;
+      var nodes = document.querySelectorAll('img[data-p="' + i + '"]');
+      for (var k = 0; k < nodes.length; k++) nodes[k].src = im.src;
+    };
+    im.src = 'pages/p' + i + '.webp';
+  }
+
+  function buildPages() {
+    var frag = [];
+    for (var i = 1; i <= TOTAL; i++) {
+      var d = document.createElement('div');
+      d.className = 'page';
+      if (i === 1 || i === TOTAL) d.setAttribute('data-density', 'hard');
+      var img = document.createElement('img');
+      img.setAttribute('data-p', i);
+      img.alt = '프로그램북 ' + i + '쪽';
+      img.draggable = false;
+      img.src = fullReady[i] ? 'pages/p' + i + '.webp' : 'pages/p' + i + '-s.webp';
+      d.appendChild(img);
+      frag.push(d);
+    }
+    return frag;
+  }
+
+  /* ---------- book ---------- */
+  var pf = null, bookEl = null, mode = null, currentIndex = 0;
+
+  function isPortraitView() {
+    var r = stage.getBoundingClientRect();
+    return r.width < r.height * 0.95;
+  }
+
+  function initBook() {
+    var portrait = isPortraitView();
+    var newMode = portrait ? 'portrait' : 'landscape';
+    if (pf && newMode === mode) { pf.update(); updateUI(); return; }
+    mode = newMode;
+
+    if (pf) { try { pf.destroy(); } catch (e) {} pf = null; }
+    holder.innerHTML = '';
+    bookEl = document.createElement('div');
+    bookEl.className = 'book';
+    holder.appendChild(bookEl);
+
+    pf = new St.PageFlip(bookEl, {
+      width: 1748, height: 2480,
+      size: 'stretch',
+      minWidth: portrait ? Math.ceil(holder.clientWidth / 2) + 1 : 80,  // portrait → single page
+      maxWidth: 2000, minHeight: 100, maxHeight: 3000,
+      showCover: true,
+      usePortrait: true,
+      drawShadow: true,
+      maxShadowOpacity: 0.35,
+      flippingTime: 750,
+      mobileScrollSupport: false,
+      disableFlipByClick: true,              // taps are used for double-tap zoom
+      swipeDistance: 24,
+      startPage: currentIndex,
+      autoSize: true
+    });
+    pf.loadFromHTML(buildPages());
+    pf.on('flip', function (e) { currentIndex = e.data; updateUI(); preloadAround(); });
+    pf.on('changeOrientation', updateUI);
+    pf.on('changeState', function (e) {
+      // while a page is moving, keep the book centred as an open spread
+      if (e.data === 'flipping' || e.data === 'user_fold') centerBook(true);
+      else if (e.data === 'read') centerBook(false);
+    });
+    updateUI();
+    preloadAround();
+    bookEl.style.transition = 'none';
+    centerBook(false);
+    bookEl.offsetWidth;
+    bookEl.style.transition = '';
+  }
+
+  // A closed book (front or back cover) sits on one half of the spread;
+  // slide it to the middle of the screen.
+  function centerBook(asSpread) {
+    if (!pf || !bookEl) return;
+    var shift = 0;
+    if (!asSpread && pf.getOrientation() === 'landscape') {
+      var i = pf.getCurrentPageIndex();
+      var w = pf.getBoundsRect().pageWidth;
+      if (i === 0) shift = -w / 2;
+      else if (i === TOTAL - 1) shift = w / 2;
+    }
+    bookEl.style.transform = shift ? 'translateX(' + shift + 'px)' : '';
+  }
+
+  function preloadAround() {
+    for (var i = currentIndex - 1; i <= currentIndex + 3; i++) {
+      if (i >= 0 && i < TOTAL) loadFull(i + 1);
+    }
+  }
+
+  function updateUI() {
+    if (!pf) return;
+    var i = pf.getCurrentPageIndex();
+    currentIndex = i;
+    var label;
+    if (pf.getOrientation() === 'landscape' && i > 0 && i < TOTAL - 1) {
+      var left = (i % 2 === 1) ? i : i - 1;
+      label = (left + 1) + '–' + (left + 2);
+    } else {
+      label = String(i + 1);
+    }
+    stage.classList.toggle('single', pf.getOrientation() !== 'landscape' || i === 0 || i === TOTAL - 1);
+    counter.innerHTML = label + ' <small>/ ' + TOTAL + '</small>';
+    prevBtn.disabled = i <= 0;
+    nextBtn.disabled = i >= TOTAL - 1;
+  }
+
+  function go(dir) {
+    if (!pf) return;
+    if (scale > 1.01) { resetZoom(true); }
+    // flipNext/flipPrev are blocked by disableFlipByClick in portrait mode,
+    // so lift it just for this programmatic flip.
+    var st = pf.getSettings();
+    st.disableFlipByClick = false;
+    if (dir > 0) pf.flipNext(); else pf.flipPrev();
+    st.disableFlipByClick = true;
+  }
+  prevBtn.addEventListener('click', function () { go(-1); });
+  nextBtn.addEventListener('click', function () { go(1); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown') { go(1); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { go(-1); e.preventDefault(); }
+    else if (e.key === '+' || e.key === '=') { zoomBy(1.5); }
+    else if (e.key === '-') { zoomBy(1 / 1.5); }
+    else if (e.key === 'Escape' || e.key === '0') { resetZoom(true); }
+  });
+
+  /* ---------- zoom & pan ---------- */
+  var scale = 1, tx = 0, ty = 0;
+
+  function clamp() {
+    var w = stage.clientWidth, h = stage.clientHeight;
+    if (scale <= 1) { scale = 1; tx = 0; ty = 0; return; }
+    var minX = w - w * scale, minY = h - h * scale;
+    tx = Math.min(0, Math.max(minX, tx));
+    ty = Math.min(0, Math.max(minY, ty));
+  }
+  function apply(animate) {
+    clamp();
+    layer.classList.toggle('animating', !!animate);
+    layer.style.transform = scale === 1 ? '' : 'translate(' + tx + 'px,' + ty + 'px) scale(' + scale + ')';
+    stage.classList.toggle('zoomed', scale > 1.01);
+    if (scale > 1.01) for (var i = 1; i <= TOTAL; i++) loadFull(i);
+  }
+  function zoomAt(newScale, cx, cy, animate) {
+    newScale = Math.max(1, Math.min(MAX_SCALE, newScale));
+    // keep point (cx,cy) in stage coords fixed
+    var px = (cx - tx) / scale, py = (cy - ty) / scale;
+    scale = newScale;
+    tx = cx - px * scale;
+    ty = cy - py * scale;
+    apply(animate);
+  }
+  function zoomBy(f) {
+    zoomAt(scale * f, stage.clientWidth / 2, stage.clientHeight / 2, true);
+  }
+  function resetZoom(animate) { scale = 1; tx = 0; ty = 0; apply(animate); }
+
+  document.getElementById('zoomIn').addEventListener('click', function () { zoomBy(1.6); });
+  document.getElementById('zoomOut').addEventListener('click', function () { zoomBy(1 / 1.6); });
+
+  function local(e) {
+    var r = stage.getBoundingClientRect();
+    return { x: e.clientX - r.left, y: e.clientY - r.top };
+  }
+  function isUI(t) { return t && t.closest && t.closest('button, a'); }
+
+  // --- touch: pinch, pan when zoomed, double-tap ---
+  var pinch = null, pan = null, lastTap = 0, lastTapPos = null, tapStart = null;
+
+  stage.addEventListener('touchstart', function (e) {
+    if (isUI(e.target)) return;
+    if (e.touches.length === 2) {
+      var a = local(e.touches[0]), b = local(e.touches[1]);
+      pinch = {
+        d: Math.hypot(a.x - b.x, a.y - b.y),
+        s: scale,
+        cx: (a.x + b.x) / 2, cy: (a.y + b.y) / 2,
+        tx: tx, ty: ty
+      };
+      pan = null;
+      layer.classList.remove('animating');
+      e.stopPropagation(); e.preventDefault();
+      return;
+    }
+    if (e.touches.length === 1) {
+      var p = local(e.touches[0]);
+      tapStart = { x: p.x, y: p.y, t: Date.now() };
+      if (scale > 1.01) {
+        pan = { x: p.x, y: p.y, tx: tx, ty: ty };
+        layer.classList.remove('animating');
+        e.stopPropagation(); e.preventDefault();
+      }
+    }
+  }, { capture: true, passive: false });
+
+  stage.addEventListener('touchmove', function (e) {
+    if (pinch && e.touches.length >= 2) {
+      var a = local(e.touches[0]), b = local(e.touches[1]);
+      var d = Math.hypot(a.x - b.x, a.y - b.y);
+      var cx = (a.x + b.x) / 2, cy = (a.y + b.y) / 2;
+      var ns = Math.max(1, Math.min(MAX_SCALE, pinch.s * d / pinch.d));
+      // content point under the initial pinch centre stays under the moving centre
+      var px = (pinch.cx - pinch.tx) / pinch.s, py = (pinch.cy - pinch.ty) / pinch.s;
+      scale = ns; tx = cx - px * ns; ty = cy - py * ns;
+      apply(false);
+      e.stopPropagation(); e.preventDefault();
+      return;
+    }
+    if (pan && e.touches.length === 1) {
+      var p = local(e.touches[0]);
+      tx = pan.tx + (p.x - pan.x); ty = pan.ty + (p.y - pan.y);
+      apply(false);
+      e.stopPropagation(); e.preventDefault();
+    }
+  }, { capture: true, passive: false });
+
+  stage.addEventListener('touchend', function (e) {
+    if (isUI(e.target)) return;
+    var wasGesture = !!pinch || !!pan;
+    if (pinch && e.touches.length < 2) {
+      pinch = null;
+      if (scale < 1.08) resetZoom(true);
+      // continue as pan with the remaining finger
+      if (e.touches.length === 1 && scale > 1.01) {
+        var p0 = local(e.touches[0]);
+        pan = { x: p0.x, y: p0.y, tx: tx, ty: ty };
+      }
+      e.stopPropagation();
+      return;
+    }
+    if (pan && e.touches.length === 0) pan = null;
+
+    // double-tap detection
+    if (e.changedTouches.length === 1 && tapStart && e.touches.length === 0) {
+      var p = local(e.changedTouches[0]);
+      var moved = Math.hypot(p.x - tapStart.x, p.y - tapStart.y);
+      var quick = Date.now() - tapStart.t < 280;
+      if (moved < 12 && quick) {
+        var now = Date.now();
+        if (now - lastTap < 320 && lastTapPos && Math.hypot(p.x - lastTapPos.x, p.y - lastTapPos.y) < 40) {
+          if (scale > 1.01) resetZoom(true); else zoomAt(2.5, p.x, p.y, true);
+          lastTap = 0;
+          e.stopPropagation(); e.preventDefault();
+          return;
+        }
+        lastTap = now; lastTapPos = p;
+      }
+    }
+    if (wasGesture) e.stopPropagation();
+  }, { capture: true, passive: false });
+
+  // --- mouse: drag-pan when zoomed, double-click zoom, ctrl/trackpad-pinch wheel ---
+  var mpan = null;
+  stage.addEventListener('mousedown', function (e) {
+    if (isUI(e.target) || scale <= 1.01) return;
+    var p = local(e);
+    mpan = { x: p.x, y: p.y, tx: tx, ty: ty };
+    layer.classList.remove('animating');
+    stage.style.cursor = 'grabbing';
+    e.stopPropagation(); e.preventDefault();
+  }, true);
+  window.addEventListener('mousemove', function (e) {
+    if (!mpan) return;
+    var p = local(e);
+    tx = mpan.tx + (p.x - mpan.x); ty = mpan.ty + (p.y - mpan.y);
+    apply(false);
+    e.stopPropagation();
+  }, true);
+  window.addEventListener('mouseup', function (e) {
+    if (!mpan) return;
+    mpan = null; stage.style.cursor = '';
+    e.stopPropagation();
+  }, true);
+  stage.addEventListener('dblclick', function (e) {
+    if (isUI(e.target)) return;
+    var p = local(e);
+    if (scale > 1.01) resetZoom(true); else zoomAt(2.5, p.x, p.y, true);
+  });
+  stage.addEventListener('wheel', function (e) {
+    var p = local(e);
+    if (e.ctrlKey) {                         // trackpad pinch / ctrl+wheel
+      e.preventDefault();
+      zoomAt(scale * Math.exp(-e.deltaY * 0.01), p.x, p.y, false);
+    } else if (scale > 1.01) {               // pan while zoomed
+      e.preventDefault();
+      tx -= e.deltaX; ty -= e.deltaY; apply(false);
+    }
+  }, { passive: false });
+
+  // Safari trackpad gesture events
+  var gStart = 1;
+  stage.addEventListener('gesturestart', function (e) { e.preventDefault(); gStart = scale; });
+  stage.addEventListener('gesturechange', function (e) {
+    e.preventDefault();
+    var r = stage.getBoundingClientRect();
+    zoomAt(gStart * e.scale, e.clientX - r.left, e.clientY - r.top, false);
+  });
+
+  /* ---------- fullscreen ---------- */
+  var fsBtn = document.getElementById('fs');
+  var root = document.documentElement;
+  if (root.requestFullscreen || root.webkitRequestFullscreen) {
+    fsBtn.hidden = false;
+    fsBtn.addEventListener('click', function () {
+      if (document.fullscreenElement || document.webkitFullscreenElement) {
+        (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+      } else {
+        (root.requestFullscreen || root.webkitRequestFullscreen).call(root);
+      }
+    });
+  }
+
+  /* ---------- hints ---------- */
+  var toastTimer;
+  function toast(msg, ms) {
+    toastEl.textContent = msg;
+    toastEl.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () { toastEl.classList.remove('show'); }, ms || 3200);
+  }
+  var isTouch = matchMedia('(pointer: coarse)').matches;
+  function hint() {
+    if (isTouch && isPortraitView()) toast('휴대폰을 가로로 돌리면 펼쳐서 볼 수 있어요', 4000);
+    else if (isTouch) toast('좌우로 넘기고, 두 손가락으로 확대하세요', 3200);
+    else toast('← → 키로 넘기고, 더블클릭으로 확대하세요', 3200);
+  }
+
+  /* ---------- resize / orientation ---------- */
+  var rt;
+  function onResize() {
+    clearTimeout(rt);
+    rt = setTimeout(function () {
+      resetZoom(false);
+      var wasPortrait = mode === 'portrait';
+      initBook();
+      if (isTouch && !wasPortrait && mode === 'portrait') hint();
+    }, 150);
+  }
+  window.addEventListener('resize', onResize);
+  window.addEventListener('orientationchange', onResize);
+
+  /* ---------- start ---------- */
+  function start() {
+    var first = new Image();
+    first.onload = first.onerror = function () {
+      fullReady[1] = true;
+      initBook();
+      setTimeout(hint, 600);
+    };
+    first.src = 'pages/p1.webp';
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
+  else start();
+})();
+</script>
+</body>
+</html>
