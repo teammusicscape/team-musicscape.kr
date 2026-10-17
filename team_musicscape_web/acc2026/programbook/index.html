@@ -12,7 +12,7 @@
 <meta property="og:image" content="https://team-musicscape.kr/acc2026/programbook/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#1b1c1e">
-<link rel="preload" as="image" href="pages/p1.webp">
+<link rel="preload" as="image" href="/acc2026/programbook/pages/p1.webp">
 <style>
   :root {
     --bg: #1b1c1e;
@@ -189,22 +189,13 @@
   </div>
 
   <div class="bar">
-    <div class="title"><a href="/acc2026"><b>치유의 밤 MUSICSCAPE</b> · 온라인 프로그램북</a></div>
+    <div class="title"><b>치유의 밤 MUSICSCAPE</b> · 온라인 프로그램북</div>
 
     <div class="group center">
-      <a class="ib" href="/acc2026" aria-label="공연 페이지로 돌아가기" title="공연 페이지">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg>
-      </a>
       <span class="counter" id="counter">1 <small>/ 8</small></span>
     </div>
 
     <div class="group right">
-      <button class="ib" id="zoomOut" aria-label="축소" title="축소">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M8 11h6M20 20l-4-4"/></svg>
-      </button>
-      <button class="ib" id="zoomIn" aria-label="확대" title="확대">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M8 11h6M11 8v6M20 20l-4-4"/></svg>
-      </button>
       <button class="ib hide-sm" id="fs" aria-label="전체 화면" title="전체 화면" hidden>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg>
       </button>
@@ -213,11 +204,12 @@
   </div>
 </div>
 
-<script src="page-flip.browser.js"></script>
+<script src="/acc2026/programbook/page-flip.browser.js"></script>
 <script>
 (function () {
   'use strict';
 
+  var BASE = '/acc2026/programbook/';   // absolute: the page is served without a trailing slash
   var TOTAL = 8;
   var RATIO = 1748 / 2480;          // A4 page aspect (w/h)
   var MAX_SCALE = 4;
@@ -241,7 +233,7 @@
       var nodes = document.querySelectorAll('img[data-p="' + i + '"]');
       for (var k = 0; k < nodes.length; k++) nodes[k].src = im.src;
     };
-    im.src = 'pages/p' + i + '.webp';
+    im.src = BASE + 'pages/p' + i + '.webp';
   }
 
   function buildPages() {
@@ -254,7 +246,7 @@
       img.setAttribute('data-p', i);
       img.alt = '프로그램북 ' + i + '쪽';
       img.draggable = false;
-      img.src = fullReady[i] ? 'pages/p' + i + '.webp' : 'pages/p' + i + '-s.webp';
+      img.src = BASE + (fullReady[i] ? 'pages/p' + i + '.webp' : 'pages/p' + i + '-s.webp');
       d.appendChild(img);
       frag.push(d);
     }
@@ -401,8 +393,6 @@
   }
   function resetZoom(animate) { scale = 1; tx = 0; ty = 0; apply(animate); }
 
-  document.getElementById('zoomIn').addEventListener('click', function () { zoomBy(1.6); });
-  document.getElementById('zoomOut').addEventListener('click', function () { zoomBy(1 / 1.6); });
 
   function local(e) {
     var r = stage.getBoundingClientRect();
@@ -593,7 +583,7 @@
       initBook();
       setTimeout(hint, 600);
     };
-    first.src = 'pages/p1.webp';
+    first.src = BASE + 'pages/p1.webp';
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
   else start();
