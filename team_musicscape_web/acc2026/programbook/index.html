@@ -60,6 +60,17 @@
   .book { width: 100%; height: 100%; transition: transform .6s cubic-bezier(.3,.7,.2,1); }
   .page { background: #fff; }
   .stage.portrait-mode .page { background: var(--bg); }
+  /* page-flip hides off-screen pages with display:none, which makes phones throw away
+     the decoded picture and redraw it (a blink) when the page comes back. Keep those
+     pages rendered, invisible and stacked behind the visible ones instead. */
+  .stf__item[style^="display: none"] {
+    display: block !important;
+    position: absolute; left: var(--hl, 0px); top: var(--ht, 0px);
+    width: var(--pw); height: var(--ph);
+    opacity: 0.002; z-index: 0 !important;
+    pointer-events: none;
+  }
+  .stf__item[style^="display: none"] * { pointer-events: none !important; }
   .sheet {
     position: absolute; left: 50%; top: 50%;
     transform: translate(-50%, -50%);
@@ -248,7 +259,7 @@
   var PW = 1748, PH = 2480;              // page image size, used for link areas
   // Clickable QR areas (pixel boxes on the page images).
   // Own-site QRs (cover → /acc2026, Team Musicscape homepage) are left out on purpose:
-  // the site pages carry video/sound and the book is read during the concert.
+  // those pages carry video/sound and the book is read during the concert.
   var LINKS = {
     '8': [
       { x: 140,  y: 1463, w: 1480, h: 390, href: '/acc2026/survey', label: '공연 만족도 조사 참여하기', same: true },
@@ -385,6 +396,7 @@
       maxWidth: 4000, minHeight: 100, maxHeight: 4000,
       showCover: true,
       usePortrait: true,
+      showPageCorners: false,               // no corner curl on mouse hover (it moved the links away)
       drawShadow: true,
       maxShadowOpacity: portrait ? 0.2 : 0.35,
       flippingTime: 750,
@@ -417,6 +429,9 @@
     var r = pf.getBoundsRect();
     bookEl.style.setProperty('--pw', r.pageWidth + 'px');
     bookEl.style.setProperty('--ph', r.height + 'px');
+    // tuck kept-alive hidden pages exactly under the right-hand (or only) page
+    bookEl.style.setProperty('--hl', (r.left + r.pageWidth) + 'px');
+    bookEl.style.setProperty('--ht', r.top + 'px');
   }
 
   // A closed book (front or back cover) sits on one half of the spread;
