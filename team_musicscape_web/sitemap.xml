@@ -13,8 +13,16 @@
   <!-- 최신 공연 공식 페이지 -->
   <url>
     <loc>https://www.team-musicscape.kr/acc2026/</loc>
-    <lastmod>2026-09-22</lastmod>
-    <changefreq>weekly</changefreq>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- 2026 ACC 공연 아카이브 -->
+  <url>
+    <loc>https://www.team-musicscape.kr/projects/2026-acc/archive/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <changefreq>yearly</changefreq>
     <priority>0.9</priority>
   </url>
 
