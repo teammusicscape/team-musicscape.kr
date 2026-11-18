@@ -380,6 +380,10 @@ img, video { display:block; max-width:100%; }
 .project-cta:hover,.project-cta:focus-visible { border-color:var(--gold); }
 .project-cta--archive { background:var(--gold); border-color:var(--gold); color:var(--black); }
 .project-cta--archive:hover,.project-cta--archive:focus-visible { background:transparent; color:var(--gold); }
+.project-cta--soon {
+    border-color:rgba(255,255,255,0.18); color:var(--gray);
+    cursor:default; opacity:0.72;
+}
 
 @media (max-width:600px) { .projects-grid { grid-template-columns:1fr; } }
 
