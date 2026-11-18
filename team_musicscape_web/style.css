@@ -337,6 +337,7 @@ img, video { display:block; max-width:100%; }
     background:var(--surface);
     transition: color 0.3s;
 }
+.project-media-link { display:block; }
 .project-img {
     overflow:hidden; aspect-ratio:3/4;
     position:relative;
@@ -361,16 +362,24 @@ img, video { display:block; max-width:100%; }
     font-family:var(--font-en); font-size:1.3rem;
     font-weight:300; margin-bottom:0.5rem;
 }
-.project-desc { font-size:0.88rem; color:var(--muted); margin-bottom:1rem; }
+.project-desc { font-size:0.88rem; color:var(--muted); margin-bottom:0; }
+.project-actions {
+    display:flex; flex-wrap:wrap; align-items:center;
+    gap:0.65rem; margin-top:1.25rem;
+}
 .project-cta {
+    display:inline-flex; align-items:center; justify-content:center;
     font-family:var(--font-en); font-size:0.73rem;
     letter-spacing:2px; text-transform:uppercase;
     color:var(--gold);
-    border-bottom:1px solid var(--gold-t);
-    padding-bottom:2px;
-    transition:border-color 0.3s;
+    border:1px solid var(--gold-t);
+    border-radius:999px;
+    padding:0.66rem 0.9rem;
+    transition:border-color 0.3s, background 0.3s, color 0.3s;
 }
-.project-card:hover .project-cta { border-color:var(--gold); }
+.project-cta:hover,.project-cta:focus-visible { border-color:var(--gold); }
+.project-cta--archive { background:var(--gold); border-color:var(--gold); color:var(--black); }
+.project-cta--archive:hover,.project-cta--archive:focus-visible { background:transparent; color:var(--gold); }
 
 @media (max-width:600px) { .projects-grid { grid-template-columns:1fr; } }
 
