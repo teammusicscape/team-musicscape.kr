@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Press Room | 치유의 밤 Musicscape</title>
+  <meta name="description" content="2026년 10월 30일 치유의 밤 Musicscape 프레스 키트와 언론 보도 링크를 제공합니다.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23080a09'/%3E%3Cpath d='M18 45V19h7l7 13 7-13h7v26h-7V31l-7 13-7-13v14z' fill='%23e9eee9'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #111512;
+      --muted: #68716b;
+      --paper: #f4f6f3;
+      --white: #ffffff;
+      --green: #365844;
+      --line: rgba(17, 21, 18, .15);
+      --dark-line: rgba(255, 255, 255, .16);
+      color-scheme: light;
+      font-family: "Inter", "Noto Sans KR", sans-serif;
+      font-synthesis: none;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--paper); color: var(--ink); line-height: 1.55; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .shell { width: min(1180px, calc(100% - 48px)); margin: 0 auto; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      color: #fff;
+      background: rgba(7, 9, 8, .94);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--dark-line);
+    }
+    .nav {
+      min-height: 66px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: baseline;
+      gap: 12px;
+      text-decoration: none;
+      font-size: .88rem;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+    .brand span { color: rgba(255,255,255,.56); font-weight: 500; letter-spacing: .08em; }
+    .nav-links { display: flex; align-items: center; gap: 22px; font-size: .84rem; }
+    .nav-links a { color: rgba(255,255,255,.72); text-decoration: none; }
+    .nav-links a:hover, .nav-links a:focus-visible { color: #fff; }
+
+    .hero {
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 83% 18%, rgba(116, 147, 124, .28), transparent 30%),
+        linear-gradient(135deg, #080a09 0%, #121814 55%, #1b2820 100%);
+      border-bottom: 1px solid var(--dark-line);
+    }
+    .hero-grid {
+      min-height: 590px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, 380px);
+      gap: 84px;
+      align-items: center;
+      padding: 78px 0 70px;
+    }
+    .eyebrow {
+      margin: 0 0 26px;
+      color: #a8bdad;
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    h1 {
+      margin: 0;
+      max-width: 740px;
+      line-height: .92;
+    }
+    .hero-korean {
+      display: block;
+      margin: 0 0 18px;
+      color: rgba(255,255,255,.68);
+      font-size: clamp(1.15rem, 2vw, 1.65rem);
+      line-height: 1.2;
+      letter-spacing: .12em;
+      font-weight: 500;
+    }
+    .hero-main {
+      display: block;
+      font-size: clamp(3.5rem, 7.3vw, 6.7rem);
+      letter-spacing: -.075em;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+    .hero-subtitle {
+      display: block;
+      margin-top: 20px;
+      color: rgba(255,255,255,.58);
+      font-size: clamp(1.15rem, 2.3vw, 2rem);
+      line-height: 1.3;
+      letter-spacing: -.035em;
+      font-weight: 400;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 24px;
+      margin: 40px 0 0;
+      color: rgba(255,255,255,.72);
+      font-size: .98rem;
+      line-height: 1.6;
+      word-break: keep-all;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+    .button {
+      min-height: 48px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 0 18px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      text-decoration: none;
+      font-size: .9rem;
+      font-weight: 650;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { background: #e9eee9; color: #0b0f0c; }
+    .button-ghost { color: #fff; border-color: rgba(255,255,255,.28); background: rgba(255,255,255,.04); }
+    .button-dark { background: var(--ink); color: #fff; }
+    .button-line { border-color: var(--line); background: transparent; }
+    .hero-media { justify-self: end; width: min(100%, 350px); }
+    .poster-wrap { position: relative; width: 100%; aspect-ratio: 1200 / 1697; }
+    .poster-wrap::before {
+      content: "OFFICIAL VISUALS";
+      position: absolute;
+      top: 20px;
+      left: -52px;
+      z-index: 2;
+      color: rgba(255,255,255,.52);
+      font-size: .68rem;
+      letter-spacing: .2em;
+      writing-mode: vertical-rl;
+    }
+    .poster { display: block; width: 100%; height: 100%; box-shadow: 0 42px 90px rgba(0,0,0,.52); }
+
+    main { padding: 82px 0 110px; }
+    .section-kicker { margin: 0 0 12px; color: var(--green); font-size: .74rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase; }
+    h2 { margin: 0; font-size: clamp(2rem, 4vw, 3.35rem); line-height: 1.08; letter-spacing: -.055em; }
+    .section-intro { max-width: 670px; margin: 18px 0 0; color: var(--muted); font-size: 1rem; line-height: 1.8; letter-spacing: -.012em; word-break: keep-all; }
+    .resources { margin-top: 40px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+    .resource {
+      min-height: 245px;
+      display: flex;
+      flex-direction: column;
+      padding: 28px 26px 25px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.35);
+    }
+    .resource:first-child { border-left: 1px solid var(--line); }
+    .resource-label { color: var(--green); font-size: .72rem; font-weight: 700; letter-spacing: .13em; }
+    .resource h3 { margin: 36px 0 8px; font-size: 1.28rem; line-height: 1.35; letter-spacing: -.03em; word-break: keep-all; }
+    .resource p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.7; letter-spacing: -.01em; word-break: keep-all; }
+    .resource .button { align-self: flex-start; margin-top: auto; min-height: 43px; }
+    .button-muted { color: var(--muted); border-color: var(--line); background: rgba(255,255,255,.35); cursor: default; }
+
+    .content-grid { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(280px, .7fr); gap: 72px; margin-top: 96px; }
+    .article-card { display: block; margin-top: 34px; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; }
+    .article-meta { display: flex; gap: 12px; color: var(--muted); font-size: .78rem; }
+    .article-title { max-width: 720px; margin: 18px 0 0; font-size: clamp(1.45rem, 3vw, 2.1rem); line-height: 1.42; letter-spacing: -.04em; word-break: keep-all; }
+    .keep-word { white-space: nowrap; }
+    .article-link { display: inline-block; margin-top: 24px; color: var(--green); font-size: .88rem; font-weight: 700; }
+    .facts { margin: 0; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .facts li { display: grid; grid-template-columns: 94px 1fr; gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); font-size: .92rem; line-height: 1.5; }
+    .facts strong { color: var(--muted); font-size: .78rem; letter-spacing: .05em; }
+    .contact { margin-top: 28px; padding: 24px; color: #fff; background: var(--ink); }
+    .contact p { margin: 0 0 18px; color: rgba(255,255,255,.6); font-size: .76rem; letter-spacing: .1em; }
+    .contact a { display: block; margin-top: 8px; text-decoration: none; font-size: .92rem; }
+
+    .usage { margin-top: 92px; padding-top: 30px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; gap: 36px; align-items: flex-start; }
+    .usage h2 { font-size: 1.35rem; letter-spacing: -.03em; }
+    .usage p { max-width: 700px; margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.75; }
+
+    footer { color: rgba(255,255,255,.66); background: #080a09; }
+    .footer-inner { min-height: 112px; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-size: .82rem; }
+    .footer-inner a { color: #fff; text-decoration: none; }
+
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 52px; }
+      .hero-media { justify-self: start; width: min(74vw, 330px); }
+      .resources { grid-template-columns: 1fr; }
+      .resource, .resource:first-child { border-left: 1px solid var(--line); }
+      .content-grid { grid-template-columns: 1fr; gap: 58px; }
+    }
+    @media (max-width: 640px) {
+      .shell { width: min(100% - 32px, 1180px); }
+      .nav { min-height: 58px; }
+      .brand span, .nav-links a:first-child { display: none; }
+      .nav-links { gap: 14px; }
+      .hero-grid { min-height: auto; padding: 62px 0; }
+      .hero-main { font-size: clamp(3rem, 18vw, 4.6rem); white-space: normal; }
+      .hero-meta { flex-direction: column; }
+      main { padding: 66px 0 84px; }
+      .resource { min-height: 218px; }
+      .usage, .footer-inner { flex-direction: column; }
+      .footer-inner { padding: 28px 0; align-items: flex-start; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+    }
+    #coverage, #resources { scroll-margin-top: 88px; }
+    a:focus-visible { outline: 2px solid #8eaa96; outline-offset: 4px; }
+    .nav-links a, .contact a, .footer-inner a { display:inline-flex; align-items:center; min-height:44px; }
+  </style>
+  <link rel="canonical" href="https://www.team-musicscape.kr/acc2026/press/">
+  <meta property="og:url" content="https://www.team-musicscape.kr/acc2026/press/">
+  <meta property="og:title" content="Press Room | 치유의 밤 Musicscape">
+  <meta property="og:image" content="https://www.team-musicscape.kr/images/acc-poster.jpg">
+  <script defer src="/acc2026/press/press-room-config.js"></script>
+  <script defer src="/acc2026/press/press-room.js"></script>
+</head>
+<body>
+  <header>
+    <div class="shell nav">
+      <a class="brand" href="https://www.team-musicscape.kr/" aria-label="Team Musicscape 홈페이지">
+        Team Musicscape <span>PRESS ROOM</span>
+      </a>
+      <nav class="nav-links" aria-label="주요 링크">
+        <a href="https://www.team-musicscape.kr/acc2026/">공연 소개</a>
+        <a href="#resources">자료 다운로드</a>
+        <a href="#coverage">언론 보도</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="page-title">
+    <div class="shell hero-grid">
+      <div>
+        <p class="eyebrow">Official Press Room · 2026</p>
+        <h1 id="page-title"><span class="hero-korean">치유의 밤</span><span class="hero-main">Musicscape</span><span class="hero-subtitle">From Here to Everywhere...</span></h1>
+        <div class="hero-meta">
+          <span>2026. 10. 30. FRI · 19:00</span>
+          <span>국립아시아문화전당 예술극장 극장2</span>
+        </div>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#resources">보도자료 다운로드 ↓</a>
+          <a class="button button-ghost" href="https://www.team-musicscape.kr/acc2026/">공연 페이지 ↗</a>
+        </div>
+      </div>
+      <div class="hero-media" aria-label="공식 공연 포스터">
+        <div class="poster-wrap">
+          <img class="poster" src="/images/acc-poster.jpg" alt="치유의 밤 Musicscape 공식 공연 포스터" width="1200" height="1697">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="shell">
+      <section id="resources" aria-labelledby="resources-title">
+        <p class="section-kicker">Media Resources</p>
+        <h2 id="resources-title">미디어 자료</h2>
+        <p class="section-intro">기사 작성과 공연 소개에 필요한 기존 공식 배포 자료입니다. PDF·Word와 사진 패키지는 기존 배포 파일을 열며, 포스터는 이 홈페이지에서 제공합니다.</p>
+
+        <div class="resources">
+          <article class="resource">
+            <span class="resource-label">PRESS RELEASE · PDF</span>
+            <h3>보도자료 · PDF</h3>
+            <p>3쪽 · 화면 열람과 인쇄에 적합</p>
+            <a class="button button-dark" href="https://muse-press-acc2026.teammusicscape.chatgpt.site/downloads/2026-10-30-musicscape-press-release-v1.0.pdf" target="_blank" rel="noopener noreferrer">PDF 다운로드</a>
+          </article>
+          <article class="resource">
+            <span class="resource-label">PRESS RELEASE · DOCX</span>
+            <h3>보도자료 원문 · DOCX</h3>
+            <p>편집 가능한 DOCX 원본</p>
+            <a class="button button-line" href="https://muse-press-acc2026.teammusicscape.chatgpt.site/downloads/2026-10-30-musicscape-press-release-v1.0.docx" target="_blank" rel="noopener noreferrer">Word 다운로드</a>
+          </article>
+          <article class="resource">
+            <span class="resource-label">OFFICIAL ASSET · JPG</span>
+            <h3>공식 포스터</h3>
+            <p>JPG · 게시 시 Team Musicscape 표기</p>
+            <a class="button button-line" href="/images/acc-poster.jpg" download="2026-musicscape-official-poster.jpg">포스터 다운로드</a>
+          </article>
+          <article class="resource">
+            <span class="resource-label">OFFICIAL IMAGES · ZIP</span>
+            <h3>공식 이미지</h3>
+            <p>고화질 승인본 · 기사 및 홍보용</p>
+            <a class="button button-line" href="https://drive.google.com/file/d/116_9SMiNWLAFmWiadMfwXThqGGiRdP1r/view?usp=drive_link" target="_blank" rel="noopener noreferrer">이미지 ZIP 다운로드 ↗</a>
+          </article>
+        </div>
+      </section>
+
+      <div class="content-grid">
+        <section id="coverage" aria-labelledby="coverage-title">
+          <p class="section-kicker">Media Coverage</p>
+          <h2 id="coverage-title">언론 보도</h2>
+          <div id="coverage-list" role="status" aria-live="polite">승인된 보도를 불러오는 중입니다.</div>
+          <noscript>언론 보도 목록을 보려면 JavaScript를 활성화해 주세요.</noscript>
+        </section>
+
+        <aside aria-label="공연 정보와 홍보 문의">
+          <p class="section-kicker">Event Facts</p>
+          <ul class="facts">
+            <li><strong>공연명</strong><span>치유의 밤 Musicscape - From here to everywhere...</span></li>
+            <li><strong>일시</strong><span>2026. 10. 30. 금 19:00</span></li>
+            <li><strong>장소</strong><span>국립아시아문화전당 예술극장 극장2</span></li>
+            <li><strong>출연</strong><span>최인 · 유현수 · 송지원</span></li>
+            <li><strong>러닝타임</strong><span>인터미션 포함 110분</span></li>
+            <li><strong>예매</strong><span><a href="https://nol.yanolja.com/ticket/products/26013395">NOL 티켓 ↗</a></span></li>
+          </ul>
+          <div class="contact"><p>PRESS CONTACT</p><a href="/acc2026/#credits">공연 홈페이지에서 홍보 문의 안내 확인 ↗</a></div>
+        </aside>
+      </div>
+
+      <section class="usage" aria-labelledby="usage-title">
+        <h2 id="usage-title">자료 이용 안내</h2>
+        <p>이 페이지의 보도자료, 포스터와 공연 사진은 공연 보도 및 소개 목적으로 사용할 수 있습니다. 자료를 수정하거나 다른 용도로 사용할 경우 사전에 뮤직스케이프랩으로 문의해 주세요. 최신 승인본 여부는 파일명과 페이지의 버전 표시를 기준으로 확인할 수 있습니다.</p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="shell footer-inner">
+      <span>© 2026 Team Musicscape · Press Room</span>
+      <a href="https://www.team-musicscape.kr/acc2026/">공연 소개로 돌아가기 →</a>
+    </div>
+  </footer>
+
+</body>
+</html>
