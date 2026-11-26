@@ -1,6 +1,6 @@
 # ACC 2026 Press Room — operator notes
 
-- **Deployment pending.** Local implementation only; commit, push, main integration and deployment require separate explicit approval. No live database changes are part of this work.
+- **Production verified 2026-11-26.** Commit `8363c25` was integrated into main and pushed; its Production deployment succeeded. Canonical-domain page, reader/config scripts, poster, entry pages and sitemap matched that commit. An isolated live read-only browser initially rendered 12 articles with a working poster/coverage anchor, no page errors and no mobile/desktop overflow. MUSE OS link commit `53cf493` was released afterward. A later separately authorized one-record HTTP correction reset that article to review and removed it from anonymous reads; republication is pending a signed-in organization manager. No RLS/publication guard was weakened. Documentation rollback does not reverse that saved database correction.
 - The actual deployed document root is `team_musicscape_web/`, not the obsolete HTML/sitemap copies at repository root. Canonical page: `/acc2026/press/`. Both slash and non-slash requests must resolve to this directory's `index.html` (or the server may redirect non-slash to slash). Scripts and poster use root-absolute paths. The deployed sitemap includes the canonical slash route.
 - The existing visual design is retained. Concert and archive Press Room entry points now target this owned route. No private contact export or local PDF/DOCX copies are included.
 
@@ -16,7 +16,7 @@ No article snapshot or static article fallback is stored. Loading/error/empty st
 
 ## Existing downloads
 
-PDF and DOCX retain their existing public old-provider download URLs; the photo package retains its existing Google Drive URL. These dependencies were intentionally not migrated or downloaded into Git. Their continuing availability/permissions need separate live checks. The poster is served locally from `/images/acc-poster.jpg`.
+PDF and DOCX retain their existing public old-provider download URLs; the photo package retains its existing Google Drive URL. These dependencies were intentionally not migrated or copied into Git. Generic HTTP HEAD/GET probes returned 403, but an isolated real browser verified the PDF with HTTP 200 and a valid PDF body signature, and the DOCX with a successful download and ZIP signature. Chrome PDF navigation exposes a viewer wrapper to response-body inspection, so the PDF bytes were checked by same-origin browser fetch. Photo-package permissions were not verified. The poster is served locally from `/images/acc-poster.jpg`.
 
 ## Local verification (Windows, bash/MSYS, Node 24)
 
